@@ -11,30 +11,30 @@ public class GlobalController {
     @GetMapping("/home")
     @ResponseStatus(HttpStatus.OK)
     public String getHomePage(){
-        return "/Project/Home.html";
+        return "/Project/home.html";
     }
 
     @GetMapping("/c-plus-plus")
     @ResponseStatus(HttpStatus.OK)
     public String getCPlusPlusPage(){
-        return "/C++.html";
+        return "/c-plus-plus.html";
     }
 
     @GetMapping("/c-sharp")
     @ResponseStatus(HttpStatus.OK)
     public String getCSharpPage(){
-        return "/CSharp.html";
+        return "/c-sharp.html";
     }
 
     @GetMapping("/java")
     @ResponseStatus(HttpStatus.OK)
     public String getJavaPage(){
-        return "/Java.html";
+        return "/java.html";
     }
 
     @GetMapping("/python")
     @ResponseStatus(HttpStatus.OK)
     public String getPythonPage(){
-        return "/Python.html";
+        return "/python.html";
     }
 }
