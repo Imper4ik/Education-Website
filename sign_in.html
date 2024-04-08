@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Sign in</title>
+<link rel="icon" href="imagens/web-development.png" type="image/png">
+<style>
+  form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  form h2 {
+    margin-bottom: 20px;
+  }
+
+  form div {
+    margin-bottom: 10px;
+  }
+
+  form label {
+    display: block;
+    font-weight: bold;
+  }
+
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"] {
+    width: calc(100% - 16px);
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  form button {
+    width: calc(100% - 16px);
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  form button:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+
+<header>
+    <div align="left">
+        <form action="/login" method="post">
+          <h2>Вход</h2>
+          <div align="left">
+            <label for="login_username">Имя пользователя или Email:</label>
+            <input type="text" id="login_username" name="login_username" required>
+          </div>
+          <div align="left">
+            <label for="login_password">Пароль:</label>
+            <input type="password" id="login_password" name="login_password" required>
+          </div>
+          <button type="submit">Войти</button>
+        </form>
+    </div>
+</header>
+<main>
+</main>
+</body>
+</html>
