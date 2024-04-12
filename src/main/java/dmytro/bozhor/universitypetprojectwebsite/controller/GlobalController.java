@@ -11,7 +11,7 @@ public class GlobalController {
     @GetMapping("/home")
     @ResponseStatus(HttpStatus.OK)
     public String getHomePage(){
-        return "/Project/home.html";
+        return "/project/home.html";
     }
 
     @GetMapping("/c-plus-plus")
@@ -36,5 +36,17 @@ public class GlobalController {
     @ResponseStatus(HttpStatus.OK)
     public String getPythonPage(){
         return "/python.html";
+    }
+
+    @GetMapping("/register")
+    @ResponseStatus(HttpStatus.OK)
+    public String getRegisterPage(){
+        return "/sign-up.html";
+    }
+
+    @GetMapping("/login")
+    @ResponseStatus(HttpStatus.OK)
+    public String getLoginPage(){
+        return "/sign-in.html";
     }
 }
