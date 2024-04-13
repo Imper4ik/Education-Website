@@ -1,4 +1,4 @@
-package dmytro.bozhor.universitypetprojectwebsite.config;
+package dmytro.bozhor.universitypetprojectwebsite.util;
 
 public interface EndpointValuesContainer {
     String C_PLUS_PLUS = "/c-plus-plus";
