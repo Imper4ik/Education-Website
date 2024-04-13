@@ -1,52 +1,55 @@
 package dmytro.bozhor.universitypetprojectwebsite.controller;
 
+import dmytro.bozhor.universitypetprojectwebsite.config.EndpointValuesContainer;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import static dmytro.bozhor.universitypetprojectwebsite.config.EndpointValuesContainer.*;
+
 @Controller
 public class GlobalController {
 
-    @GetMapping("/home")
+    @GetMapping(HOME)
     @ResponseStatus(HttpStatus.OK)
-    public String getHomePage(){
-        return "/project/home.html";
+    public String getHomePage() {
+        return EndpointValuesContainer.getHtmlPageByName(HOME);
     }
 
-    @GetMapping("/c-plus-plus")
+    @GetMapping(C_PLUS_PLUS)
     @ResponseStatus(HttpStatus.OK)
-    public String getCPlusPlusPage(){
-        return "/c-plus-plus.html";
+    public String getCPlusPlusPage() {
+        return EndpointValuesContainer.getHtmlPageByName(C_PLUS_PLUS);
     }
 
-    @GetMapping("/c-sharp")
+    @GetMapping(C_SHARP)
     @ResponseStatus(HttpStatus.OK)
-    public String getCSharpPage(){
-        return "/c-sharp.html";
+    public String getCSharpPage() {
+        return EndpointValuesContainer.getHtmlPageByName(C_SHARP);
     }
 
-    @GetMapping("/java")
+    @GetMapping(JAVA)
     @ResponseStatus(HttpStatus.OK)
-    public String getJavaPage(){
-        return "/java.html";
+    public String getJavaPage() {
+        return EndpointValuesContainer.getHtmlPageByName(JAVA);
     }
 
-    @GetMapping("/python")
+    @GetMapping(PYTHON)
     @ResponseStatus(HttpStatus.OK)
-    public String getPythonPage(){
-        return "/python.html";
+    public String getPythonPage() {
+        return EndpointValuesContainer.getHtmlPageByName(PYTHON);
     }
 
-    @GetMapping("/register")
+    @GetMapping(REGISTER)
     @ResponseStatus(HttpStatus.OK)
-    public String getRegisterPage(){
-        return "/sign-up.html";
+    public String getRegisterPage() {
+        return EndpointValuesContainer.getHtmlPageByName(REGISTER);
     }
 
-    @GetMapping("/login")
+    @GetMapping(LOGIN)
     @ResponseStatus(HttpStatus.OK)
-    public String getLoginPage(){
-        return "/sign-in.html";
+    public String getLoginPage() {
+        return EndpointValuesContainer.getHtmlPageByName(LOGIN);
     }
 }
