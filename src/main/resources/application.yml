@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: university-pet-project-website
+  datasource:
+    url: jdbc:postgresql://localhost:5432/website-user-registry
+    username: postgres
+    password: 1
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.CamelCaseToUnderscoresNamingStrategy
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        highlight_sql: true
+
+server:
+  port: 8000
+
+logging:
+  level:
+    root: info
+    dmytro: debug
