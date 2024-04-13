@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Sign up</title>
-<link rel="icon" href="imagens/web-development.png" type="image/png">
+<title>Sign in</title>
+<link rel="icon" href="../../../../../../Desktop/university_website/imagens/web-development.png" type="image/png">
 <style>
   form {
     max-width: 400px;
@@ -55,21 +55,17 @@
 
 <header>
     <div align="left">
-        <form action="/register" method="post">
-          <h2>Регистрация</h2>
-          <div align="left">
-            <label for="username">Имя пользователя:</label>
-            <input type="text" id="username" name="username" required>
-          </div>
+        <form action="/login" method="post">
+          <h2>Sign in</h2>
           <div align="left">
             <label for="email">Email:</label>
             <input type="email" id="email" name="email" required>
           </div>
           <div align="left">
-            <label for="password">Пароль:</label>
+            <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
           </div>
-          <button type="submit">Зарегистрироваться</button>
+          <button type="submit">Login</button>
         </form>
     </div>
 </header>
