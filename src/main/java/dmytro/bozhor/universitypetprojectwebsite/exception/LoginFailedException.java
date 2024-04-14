@@ -1,19 +1,14 @@
 package dmytro.bozhor.universitypetprojectwebsite.exception;
 
-public class LoginFailedException extends RuntimeException{
+import org.springframework.security.authentication.BadCredentialsException;
+
+public class LoginFailedException extends BadCredentialsException {
 
     public LoginFailedException() {
+        this("Email or password was not correct!", null);
     }
 
-    public LoginFailedException(String message) {
-        super(message);
-    }
-
-    public LoginFailedException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public LoginFailedException(Throwable cause) {
-        super(cause);
+    public LoginFailedException(String msg, Throwable cause) {
+        super(msg, cause);
     }
 }

@@ -1,17 +1,26 @@
 package dmytro.bozhor.universitypetprojectwebsite.service;
 
+import dmytro.bozhor.universitypetprojectwebsite.config.Role;
 import dmytro.bozhor.universitypetprojectwebsite.domain.Person;
 import dmytro.bozhor.universitypetprojectwebsite.exception.LoginFailedException;
 import dmytro.bozhor.universitypetprojectwebsite.repository.PersonRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Optional;
 
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class PersonService {
+public class PersonService /*implements UserDetailsService*/ {
 
     private final PersonRepository personRepository;
 
@@ -33,4 +42,12 @@ public class PersonService {
         return loggedIn;
     }
 
+    /*@Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+
+        var person = personRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("Falied to retrieve user by email: " + email));
+
+        return new User(person.getEmail(), person.getPassword(), Collections.singleton(Role.USER));
+    }*/
 }

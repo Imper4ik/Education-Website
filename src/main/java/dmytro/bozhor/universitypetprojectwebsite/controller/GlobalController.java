@@ -70,15 +70,15 @@ public class GlobalController {
         var person = personService.create(personMapper.map(username, email, password));
         log.debug("Person saved to the database: {}", person);
 
-        return ControllerDispatcherUtil.sendRedirect(HOME);
+        return ControllerDispatcherUtil.sendRedirect(LOGIN);
     }
 
-    @PostMapping(LOGIN)
+    /*@PostMapping(LOGIN)
     @ResponseStatus(HttpStatus.FOUND)
     public String login(@RequestParam String email, @RequestParam String password) {
 
         personService.login(email, password);
 
         return ControllerDispatcherUtil.sendRedirect(HOME);
-    }
+    }*/
 }

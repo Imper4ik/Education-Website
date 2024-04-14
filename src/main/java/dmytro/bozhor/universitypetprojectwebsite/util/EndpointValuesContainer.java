@@ -8,6 +8,7 @@ public interface EndpointValuesContainer {
     String HOME = "/home";
     String REGISTER = "/register";
     String LOGIN = "/login";
+    String LOGOUT = "/logout";
 
     static String getHtmlPageByName(String fileName) {
         return "%s.html".formatted(fileName);
