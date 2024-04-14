@@ -1,11 +1,9 @@
 package dmytro.bozhor.universitypetprojectwebsite.config;
 
-import dmytro.bozhor.universitypetprojectwebsite.service.PersonService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.authorization.AuthenticatedAuthorizationManager;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -15,6 +13,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 
+import static dmytro.bozhor.universitypetprojectwebsite.config.Role.*;
 import static dmytro.bozhor.universitypetprojectwebsite.util.EndpointValuesContainer.*;
 
 
@@ -24,15 +23,14 @@ import static dmytro.bozhor.universitypetprojectwebsite.util.EndpointValuesConta
 @AllArgsConstructor
 class SpringSecurityConfig {
 
-    private final PersonAuthenticationManager personAuthenticationManager;
-
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 
         return httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(registry -> registry
-                        .requestMatchers(HttpMethod.GET, C_PLUS_PLUS, C_SHARP, JAVA, PYTHON).authenticated()
+                        .requestMatchers(HttpMethod.GET, C_PLUS_PLUS, C_SHARP, JAVA, PYTHON)
+                        .hasAnyAuthority(USER.getAuthority(), ADMIN.getAuthority())
                         .anyRequest().permitAll()
                 )
                 .formLogin((form) -> form
@@ -46,11 +44,14 @@ class SpringSecurityConfig {
                 .logout(httpSecurityLogoutConfigurer -> httpSecurityLogoutConfigurer
                         .logoutUrl(LOGOUT)
                         .logoutSuccessUrl(HOME))
-                .sessionManagement(httpSecuritySessionManagementConfigurer ->
-                        httpSecuritySessionManagementConfigurer.sessionCreationPolicy(SessionCreationPolicy.ALWAYS))
-                .authenticationManager(personAuthenticationManager)
                 .build();
     }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
 }
 
 // TODO: add logout button

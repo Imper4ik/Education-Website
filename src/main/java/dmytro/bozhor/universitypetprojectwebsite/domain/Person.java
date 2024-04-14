@@ -1,5 +1,6 @@
 package dmytro.bozhor.universitypetprojectwebsite.domain;
 
+import dmytro.bozhor.universitypetprojectwebsite.config.Role;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
@@ -24,5 +25,8 @@ public class Person {
     private String email;
 
     private String password;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
 }

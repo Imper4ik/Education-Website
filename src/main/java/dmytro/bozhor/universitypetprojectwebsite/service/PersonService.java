@@ -10,36 +10,38 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Optional;
+import java.util.function.Supplier;
 
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class PersonService {
+public class PersonService implements UserDetailsService {
 
     private final PersonRepository personRepository;
 
+    private final PasswordEncoder passwordEncoder;
+
     public Person create(Person person) {
+        person.setPassword(passwordEncoder.encode(person.getPassword()));
         return personRepository.save(person);
     }
 
-    public Person findByEmail(String email) {
-        return personRepository.findByEmail(email)
-                .orElseThrow(LoginFailedException::new);
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+
+        var person = personRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("User was not found"));
+
+        return new User(
+                person.getEmail(),
+                person.getPassword(),
+                Collections.singletonList(person.getRole()));
     }
-
-    public boolean login(String email, String password) {
-        var person = findByEmail(email);
-        var loggedIn = person.getPassword().equals(password);
-
-        if (!loggedIn) throw new LoginFailedException();
-
-        return loggedIn;
-    }
-
 }

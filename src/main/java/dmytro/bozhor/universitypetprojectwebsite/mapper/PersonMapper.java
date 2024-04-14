@@ -1,5 +1,6 @@
 package dmytro.bozhor.universitypetprojectwebsite.mapper;
 
+import dmytro.bozhor.universitypetprojectwebsite.config.Role;
 import dmytro.bozhor.universitypetprojectwebsite.domain.Person;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +12,7 @@ public class PersonMapper {
                 .username(username)
                 .email(email)
                 .password(password)
+                .role(Role.USER)
                 .build();
     }
 
