@@ -20,7 +20,7 @@ import java.util.Optional;
 @Service
 @Transactional
 @RequiredArgsConstructor
-public class PersonService /*implements UserDetailsService*/ {
+public class PersonService {
 
     private final PersonRepository personRepository;
 
@@ -42,12 +42,4 @@ public class PersonService /*implements UserDetailsService*/ {
         return loggedIn;
     }
 
-    /*@Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-
-        var person = personRepository.findByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException("Falied to retrieve user by email: " + email));
-
-        return new User(person.getEmail(), person.getPassword(), Collections.singleton(Role.USER));
-    }*/
 }
