@@ -5,6 +5,8 @@ spring:
     url: jdbc:postgresql://localhost:5432/website-user-registry
     username: postgres
     password: 1
+  config:
+    import: google-credentials.properties
   jpa:
     hibernate:
       ddl-auto: create-drop
@@ -15,6 +17,15 @@ spring:
         show_sql: true
         format_sql: true
         highlight_sql: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            clientId: ${clientId}
+            clientSecret: ${clientSecret}
+            redirectUri: ${redirectUri}
+            scope: ${scope}
 
 server:
   port: 8000

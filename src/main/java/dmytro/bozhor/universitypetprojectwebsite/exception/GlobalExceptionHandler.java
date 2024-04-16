@@ -13,7 +13,13 @@ public class GlobalExceptionHandler {
 
     @ResponseStatus(HttpStatus.FOUND)
     @ExceptionHandler(LoginFailedException.class)
-    public String handle() {
+    public String handleLoginFailedException() {
+        return ControllerDispatcherUtil.sendRedirectWithError(LOGIN);
+    }
+
+    @ResponseStatus(HttpStatus.FOUND)
+    @ExceptionHandler(PersonAlreadyExists.class)
+    public String handlePersonAlreadyExists() {
         return ControllerDispatcherUtil.sendRedirectWithError(LOGIN);
     }
 

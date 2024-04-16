@@ -3,6 +3,7 @@ package dmytro.bozhor.universitypetprojectwebsite.service;
 import dmytro.bozhor.universitypetprojectwebsite.config.Role;
 import dmytro.bozhor.universitypetprojectwebsite.domain.Person;
 import dmytro.bozhor.universitypetprojectwebsite.exception.LoginFailedException;
+import dmytro.bozhor.universitypetprojectwebsite.exception.PersonAlreadyExists;
 import dmytro.bozhor.universitypetprojectwebsite.repository.PersonRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
@@ -29,6 +30,9 @@ public class PersonService implements UserDetailsService {
     private final PasswordEncoder passwordEncoder;
 
     public Person create(Person person) {
+
+        if (personRepository.findByEmail(person.getEmail()).isPresent()) throw new PersonAlreadyExists();
+
         person.setPassword(passwordEncoder.encode(person.getPassword()));
         return personRepository.save(person);
     }

@@ -4,10 +4,12 @@ import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.config.annotation.web.configurers.oauth2.client.OAuth2LoginConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -33,7 +35,7 @@ class SpringSecurityConfig {
                         .hasAnyAuthority(USER.getAuthority(), ADMIN.getAuthority())
                         .anyRequest().permitAll()
                 )
-                .formLogin((form) -> form
+                .formLogin(form -> form
                         .loginPage(LOGIN)
                         .loginProcessingUrl(LOGIN)
                         .defaultSuccessUrl(HOME, true)
@@ -44,6 +46,9 @@ class SpringSecurityConfig {
                 .logout(httpSecurityLogoutConfigurer -> httpSecurityLogoutConfigurer
                         .logoutUrl(LOGOUT)
                         .logoutSuccessUrl(HOME))
+                .oauth2Login(oAuth2LoginConfigurer -> oAuth2LoginConfigurer
+                        .loginPage(LOGIN)
+                        .defaultSuccessUrl(HOME, true))
                 .build();
     }
 
@@ -57,8 +62,8 @@ class SpringSecurityConfig {
 // TODO: add logout button
 // TODO: add "already have an account? -> login"
 // TODO: add "dont have an account? -> register"
-
-// TODO: add email validation (error if already exists)
+// TODO: make login with google better looking
+// TODO: sign in and sign up buttons disappear after authorization and authentication. logout button appears after that.
 
 // TODO: Google Authorization
 // TODO: JWT token
