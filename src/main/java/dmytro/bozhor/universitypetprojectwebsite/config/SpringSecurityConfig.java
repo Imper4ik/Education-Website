@@ -1,5 +1,7 @@
 package dmytro.bozhor.universitypetprojectwebsite.config;
 
+import dmytro.bozhor.universitypetprojectwebsite.domain.Person;
+import dmytro.bozhor.universitypetprojectwebsite.service.PersonService;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,9 +13,19 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.oauth2.client.OAuth2LoginConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.oauth2.client.oidc.userinfo.OidcUserRequest;
+import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
+import org.springframework.security.oauth2.core.oidc.OidcIdToken;
+import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
+import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.security.web.SecurityFilterChain;
+
+import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
+import java.util.Set;
 
 import static dmytro.bozhor.universitypetprojectwebsite.config.Role.*;
 import static dmytro.bozhor.universitypetprojectwebsite.util.EndpointValuesContainer.*;
@@ -24,6 +36,8 @@ import static dmytro.bozhor.universitypetprojectwebsite.util.EndpointValuesConta
 @EnableMethodSecurity
 @AllArgsConstructor
 class SpringSecurityConfig {
+
+    private final PersonService personService;
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
@@ -48,13 +62,30 @@ class SpringSecurityConfig {
                         .logoutSuccessUrl(HOME))
                 .oauth2Login(oAuth2LoginConfigurer -> oAuth2LoginConfigurer
                         .loginPage(LOGIN)
+                        .userInfoEndpoint(userInfo -> userInfo.oidcUserService(oidcUserService()))
+                        .failureUrl(SecurityUtil.FAILURE_URL)
                         .defaultSuccessUrl(HOME, true))
                 .build();
     }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
+    private OAuth2UserService<OidcUserRequest, OidcUser> oidcUserService() {
+        return userRequest -> {
+            var idToken = userRequest.getIdToken();
+            var email = (String) idToken.getClaim("email");
+            var userDetails = personService.loadUserByUsername(email);
+
+//            TODO: create user if not exists
+
+            var oidcUser = new DefaultOidcUser(userDetails.getAuthorities(), idToken);
+
+            var userDetailsMethods = Set.of(UserDetails.class.getMethods());
+
+            return (OidcUser) Proxy.newProxyInstance(SpringSecurityConfig.class.getClassLoader(),
+                    new Class[]{UserDetails.class, OidcUser.class},
+                    (proxy, method, args) -> userDetailsMethods.contains(method)
+                            ? method.invoke(userDetails, args)
+                            : method.invoke(oidcUser, args));
+        };
     }
 
 }
