@@ -1,4 +1,7 @@
 body {
+  background-image: url('imagens/BCKG.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   background-color: black;
   font-family: Arial, Helvetica, sans-serif;
   margin: 0; 
@@ -79,6 +82,9 @@ body {
 main{
   margin-top: 70px;
   color: white;
+}
+.align-left {
+  margin-left: 20px;
 }
 
 
