@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# Syntax</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="top-of-the-site">
+        <nav>
+            <ul class="top-menu">
+                <li style="margin-left: 50px;"><a href="home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">About ▴</a>
+                    <div class="dropdown-content">
+                        <a href="c-sharp">C#</a>
+                        <a href="c-plus-plus">C++</a>
+                        <a href="java">Java</a>
+                        <a href="python">Python</a>
+                    </div>
+                </li>
+                <li><a href="#docs">Docs</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#other">Other</a></li>
+            </ul>
+        </nav>
+
+        <div class="icon-container">
+            <img src="imagens/web-development.png" alt="Icon" class="icon">
+        </div>
+    </div>
+</header>
+
+<main>
+    <h1 class="align-left">C# Syntax</h1>
+    <p class="align-left">C# is a powerful and versatile programming language developed by Microsoft. It features a concise and expressive syntax, making it easy to learn and use for developers of all levels of experience.</p>
+    <p class="align-left">Here's a simple example of a C# program:</p>
+    <pre class="align-left">
+        <code>
+using System;
+
+namespace HelloWorld
+{
+	class Program
+	{
+		static void Main()
+		{
+			Console.WriteLine("Hello, world!");
+		}
+	}
+}
+        </code>
+    </pre>
+    <p class="align-left">This program simply prints "Hello, world!" to the console.</p>
+
+<h2>Example explained</h2>
+<p><strong>Line 1:</strong> using System means that we can use classes from the System namespace.</p>
+<p><strong>Line 2:</strong> A blank line. C# ignores white space. However, multiple lines makes the code more readable.</p>
+<p><strong>Line 3:</strong> namespace is used to organize your code, and it is a container for classes and other namespaces.</p>
+<p><strong>Line 4:</strong> The curly braces {} marks the beginning and the end of a block of code.</p>
+<p><strong>Line 5:</strong> class is a container for data and methods, which brings functionality to your program. Every line of code that runs in C# must be inside a class. In our example, we named the class Program.</p>
+<p><strong>Line 7:</strong> Another thing that always appear in a C# program is the Main method. Any code inside its curly brackets {} will be executed. You don't have to understand the keywords before and after Main. You will get to know them bit by bit while reading this tutorial.</p>
+<p><strong>Line 9:</strong> Console is a class of the System namespace, which has a WriteLine() method that is used to output/print text. In our example, it will output "Hello World!".</p>
+</main>
+</body>
+</html>
