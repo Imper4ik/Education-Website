@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Types</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="top-of-the-site">
+        <nav>
+            <ul class="top-menu">
+                <li style="margin-left: 50px;"><a href="home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">About ▴</a>
+                    <div class="dropdown-content">
+                        <a href="c-sharp">C#</a>
+                        <a href="c-plus-plus">C++</a>
+                        <a href="java">Java</a>
+                        <a href="python">Python</a>
+                    </div>
+                </li>
+                <li><a href="#docs">Docs</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#other">Other</a></li>
+            </ul>
+        </nav>
+
+        <div class="icon-container">
+            <img src="imagens/web-development.png" alt="Icon" class="icon">
+        </div>
+    </div>
+</header>
+
+<main>
+    <h1 class="align-left">Data Types in C#</h1>
+    <p class="align-left">Data types in C# define the type of data that a variable can hold. Here are some common data types in C#: </p>
+    <ul class="align-left">
+        <li><strong>int</strong>: Used to store integer values.</li>
+        <li><strong>double</strong>: Used to store floating-point values with double precision.</li>
+        <li><strong>bool</strong>: Used to store Boolean values (true or false).</li>
+        <li><strong>char</strong>: Used to store single characters.</li>
+        <li><strong>string</strong>: Used to store sequences of characters.</li>
+        <li><strong>decimal</strong>: Used to store decimal values with higher precision.</li>
+        <li><strong>float</strong>: Used to store floating-point values with single precision.</li>
+    </ul>
+    <p class="align-left">Here's an example demonstrating the usage of some data types in C#: </p>
+    <pre class="align-left">
+        <code>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int age = 30;
+        double height = 5.9;
+        bool isStudent = true;
+        char grade = 'A';
+        string name = "John Doe";
+        decimal salary = 50000.50m;
+        float weight = 70.5f;
+
+        Console.WriteLine("Name: " + name);
+        Console.WriteLine("Age: " + age);
+        Console.WriteLine("Height: " + height);
+        Console.WriteLine("Is Student: " + isStudent);
+        Console.WriteLine("Grade: " + grade);
+        Console.WriteLine("Salary: " + salary);
+        Console.WriteLine("Weight: " + weight);
+    }
+}
+        </code>
+    </pre>
+    <p class="align-left">This program declares variables of different data types and prints their values.</p>
+</main>
+
+</body>
+</html>

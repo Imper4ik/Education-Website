@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# Operators</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="top-of-the-site">
+        <nav>
+            <ul class="top-menu">
+                <li style="margin-left: 50px;"><a href="home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">About ▴</a>
+                    <div class="dropdown-content">
+                        <a href="c-sharp">C#</a>
+                        <a href="c-plus-plus">C++</a>
+                        <a href="java">Java</a>
+                        <a href="python">Python</a>
+                    </div>
+                </li>
+                <li><a href="#docs">Docs</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#other">Other</a></li>
+            </ul>
+        </nav>
+
+        <div class="icon-container">
+            <img src="imagens/web-development.png" alt="Icon" class="icon">
+        </div>
+    </div>
+</header>
+
+<main>
+    <h1 class="align-left">C# Operators</h1>
+    <p class="align-left">Operators in C# are symbols that are used to perform operations on operands. Here are some common operators in C#: </p>
+    <ul class="align-left">
+        <li>Arithmetic operators: +, -, *, /, %</li>
+        <li>Comparison operators: ==, !=, >, <, >=, <=</li>
+        <li>Assignment operators: =, +=, -=, *=, /=, %=</li>
+        <li>Logical operators: &&, ||, !</li>
+        <li>Bitwise operators: &, |, ^, ~, <<, >></li>
+        <li>Ternary operator: ? :</li>
+    </ul>
+    <p class="align-left">Here's an example demonstrating the usage of some operators in C#: </p>
+    <pre class="align-left">
+        <code>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int a = 10;
+        int b = 5;
+        int sum = a + b;
+        int difference = a - b;
+        int product = a * b;
+        int quotient = a / b;
+        int remainder = a % b;
+
+        Console.WriteLine("Sum: " + sum);
+        Console.WriteLine("Difference: " + difference);
+        Console.WriteLine("Product: " + product);
+        Console.WriteLine("Quotient: " + quotient);
+        Console.WriteLine("Remainder: " + remainder);
+    }
+}
+        </code>
+    </pre>
+    <p class="align-left">This program calculates the sum, difference, product, quotient, and remainder of two numbers.</p>
+</main>
+
+</body>
+</html>
