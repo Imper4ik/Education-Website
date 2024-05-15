@@ -21,7 +21,7 @@ public class GlobalController {
 
     private final PersonMapper personMapper;
 
-    @GetMapping(HOME)
+    @GetMapping({HOME, EMPTY_PATH})
     @ResponseStatus(HttpStatus.OK)
     public String getHomePage() {
         return EndpointValuesContainer.getHtmlPageByName(HOME);

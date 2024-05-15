@@ -1,6 +1,7 @@
 package dmytro.bozhor.universitypetprojectwebsite.util;
 
 public interface EndpointValuesContainer {
+    String EMPTY_PATH = "/";
     String C_PLUS_PLUS = "/c-plus-plus";
     String C_SHARP = "/c-sharp";
     String JAVA = "/java";
