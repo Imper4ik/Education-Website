@@ -1,12 +1,11 @@
 package dmytro.bozhor.universitypetprojectwebsite.service;
 
-import dmytro.bozhor.universitypetprojectwebsite.config.Role;
 import dmytro.bozhor.universitypetprojectwebsite.domain.Person;
-import dmytro.bozhor.universitypetprojectwebsite.exception.LoginFailedException;
 import dmytro.bozhor.universitypetprojectwebsite.exception.PersonAlreadyExists;
 import dmytro.bozhor.universitypetprojectwebsite.repository.PersonRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -15,10 +14,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Optional;
-import java.util.function.Supplier;
+import java.util.function.Function;
 
 @Service
 @Transactional
@@ -37,6 +35,10 @@ public class PersonService implements UserDetailsService {
         return personRepository.save(person);
     }
 
+    public Optional<Person> findByEmail(String email) {
+        return personRepository.findByEmail(email);
+    }
+
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
 
@@ -46,6 +48,9 @@ public class PersonService implements UserDetailsService {
         return new User(
                 person.getEmail(),
                 person.getPassword(),
-                Collections.singletonList(person.getRole()));
+                person.getRoles().stream()
+                        .map(SimpleGrantedAuthority::new)
+                        .toList()
+        );
     }
 }

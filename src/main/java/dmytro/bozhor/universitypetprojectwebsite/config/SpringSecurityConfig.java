@@ -2,6 +2,7 @@ package dmytro.bozhor.universitypetprojectwebsite.config;
 
 import dmytro.bozhor.universitypetprojectwebsite.domain.Person;
 import dmytro.bozhor.universitypetprojectwebsite.service.PersonService;
+import dmytro.bozhor.universitypetprojectwebsite.util.SecurityRolesHolder;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,29 +12,26 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
-import org.springframework.security.config.annotation.web.configurers.oauth2.client.OAuth2LoginConfigurer;
-import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.oauth2.client.oidc.userinfo.OidcUserRequest;
 import org.springframework.security.oauth2.client.userinfo.OAuth2UserService;
-import org.springframework.security.oauth2.core.oidc.OidcIdToken;
 import org.springframework.security.oauth2.core.oidc.user.DefaultOidcUser;
 import org.springframework.security.oauth2.core.oidc.user.OidcUser;
 import org.springframework.security.web.SecurityFilterChain;
 
-import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.Collections;
 import java.util.Set;
 
-import static dmytro.bozhor.universitypetprojectwebsite.config.Role.*;
 import static dmytro.bozhor.universitypetprojectwebsite.util.EndpointValuesContainer.*;
 
 
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity
+@EnableMethodSecurity(securedEnabled = true)
 @AllArgsConstructor
 class SpringSecurityConfig {
 
@@ -44,11 +42,8 @@ class SpringSecurityConfig {
 
         return httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(registry -> registry
-                        .requestMatchers(HttpMethod.GET, C_PLUS_PLUS, C_SHARP, JAVA, PYTHON)
-                        .hasAnyAuthority(USER.getAuthority(), ADMIN.getAuthority())
-                        .anyRequest().permitAll()
-                )
+                .httpBasic(Customizer.withDefaults())
+                .authorizeHttpRequests(registry -> registry.anyRequest().permitAll())
                 .formLogin(form -> form
                         .loginPage(LOGIN)
                         .loginProcessingUrl(LOGIN)
@@ -72,9 +67,7 @@ class SpringSecurityConfig {
         return userRequest -> {
             var idToken = userRequest.getIdToken();
             var email = (String) idToken.getClaim("email");
-            var userDetails = personService.loadUserByUsername(email);
-
-//            TODO: create user if not exists
+            var userDetails = getUserDetails(email);
 
             var oidcUser = new DefaultOidcUser(userDetails.getAuthorities(), idToken);
 
@@ -86,6 +79,21 @@ class SpringSecurityConfig {
                             ? method.invoke(userDetails, args)
                             : method.invoke(oidcUser, args));
         };
+    }
+
+    private UserDetails getUserDetails(String email) {
+
+        if (personService.findByEmail(email).isPresent()) {
+            return personService.loadUserByUsername(email);
+        }
+
+        var person = personService.create(Person.builder()
+                .username(email)
+                .email(email)
+                .password(email)
+                .roles(Collections.singletonList(SecurityRolesHolder.USER))
+                .build());
+        return personService.loadUserByUsername(person.getEmail());
     }
 
 }

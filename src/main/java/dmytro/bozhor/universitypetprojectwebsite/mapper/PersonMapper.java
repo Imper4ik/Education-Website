@@ -1,8 +1,10 @@
 package dmytro.bozhor.universitypetprojectwebsite.mapper;
 
-import dmytro.bozhor.universitypetprojectwebsite.config.Role;
 import dmytro.bozhor.universitypetprojectwebsite.domain.Person;
+import dmytro.bozhor.universitypetprojectwebsite.util.SecurityRolesHolder;
 import org.springframework.stereotype.Component;
+
+import java.util.Collections;
 
 @Component
 public class PersonMapper {
@@ -12,7 +14,7 @@ public class PersonMapper {
                 .username(username)
                 .email(email)
                 .password(password)
-                .role(Role.USER)
+                .roles(Collections.singletonList(SecurityRolesHolder.USER))
                 .build();
     }
 
