@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Strings in C#</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="top-of-the-site">
+        <nav>
+            <ul class="top-menu">
+                <li style="margin-left: 50px;"><a href="home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">About ▴</a>
+                    <div class="dropdown-content">
+                        <a href="c-sharp">C#</a>
+                        <a href="c-plus-plus">C++</a>
+                        <a href="java">Java</a>
+                        <a href="python">Python</a>
+                    </div>
+                </li>
+                <li><a href="#docs">Docs</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#other">Other</a></li>
+            </ul>
+        </nav>
+
+        <div class="icon-container">
+            <img src="imagens/web-development.png" alt="Icon" class="icon">
+        </div>
+    </div>
+</header>
+
+<main>
+    <h1 class="align-left">Character Strings in C#</h1>
+    <p class="align-left">In C#, a string is an object of the <code>System.String</code> class, which represents a sequence of characters. Strings are used extensively in programming to manipulate and store text.</p>
+    <p class="align-left">Here are some common operations you can perform with strings in C#:</p>
+    <ul class="align-left">
+        <li>Creating and initializing strings</li>
+        <li>Concatenating strings</li>
+        <li>Accessing characters in a string</li>
+        <li>Comparing strings</li>
+        <li>Finding substrings</li>
+        <li>Replacing parts of a string</li>
+    </ul>
+    <p class="align-left">Here's an example demonstrating some of these operations:</p>
+    <pre class="align-left">
+        <code>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Creating and initializing strings
+        string greeting = "Hello, world!";
+        string name = "Alice";
+        
+        // Concatenating strings
+        string message = greeting + " My name is " + name + ".";
+        Console.WriteLine(message);
+        
+        // Accessing characters in a string
+        char firstChar = greeting[0];
+        Console.WriteLine("The first character of the greeting is: " + firstChar);
+        
+        // Comparing strings
+        string name2 = "Bob";
+        bool areEqual = name == name2;
+        Console.WriteLine("Are the names equal? " + areEqual);
+        
+        // Finding substrings
+        bool containsWorld = greeting.Contains("world");
+        Console.WriteLine("Does the greeting contain 'world'? " + containsWorld);
+        
+        // Replacing parts of a string
+        string newGreeting = greeting.Replace("world", "everyone");
+        Console.WriteLine(newGreeting);
+    }
+}
+        </code>
+    </pre>
+    <p class="align-left">In the above example, various string operations are demonstrated, such as creating and initializing strings, concatenating them, accessing individual characters, comparing strings, finding substrings, and replacing parts of a string.</p>
+</main>
+
+</body>
+</html>
