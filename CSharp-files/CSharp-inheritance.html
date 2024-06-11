@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrays in C#</title>
+    <title>Inheritance in C#</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -77,18 +77,6 @@
             color: #00ff99; /* Green color for headings */
         }
 
-        pre {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-
-        code {
-            color: #f0f0f0;
-        }
-
         .align-left {
             text-align: left;
         }
@@ -125,58 +113,43 @@
 </header>
 
 <main>
-    <h1 class="align-left">Arrays in C#</h1>
-    <p class="align-left">Arrays in C# are used to store multiple values in a single variable, instead of declaring separate variables for each value. They are a collection of variables of the same type, stored in contiguous memory locations.</p>
-    <p class="align-left">Here is the basic syntax for declaring an array:</p>
-    <pre class="align-left">
-        <code>
-int[] arrayName;
-        </code>
-    </pre>
-    <p class="align-left">To initialize an array, you can use the following syntax:</p>
-    <pre class="align-left">
-        <code>
-int[] numbers = new int[5]; // Declares an array of 5 integers
-numbers[0] = 1;
-numbers[1] = 2;
-numbers[2] = 3;
-numbers[3] = 4;
-numbers[4] = 5;
-        </code>
-    </pre>
-    <p class="align-left">Alternatively, you can initialize an array with values upon declaration:</p>
-    <pre class="align-left">
-        <code>
-int[] numbers = { 1, 2, 3, 4, 5 };
-        </code>
-    </pre>
-    <p class="align-left">Here's an example demonstrating how to work with arrays in C#:</p>
+    <h1 class="align-left">Inheritance in C#</h1>
+    <p class="align-left">Inheritance is a fundamental concept in object-oriented programming that allows a class (subclass or derived class) to inherit properties and behavior (methods) from another class (superclass or base class). This promotes code reusability and establishes a hierarchical relationship between classes.</p>
+    <p class="align-left">Here's the syntax for defining a subclass that inherits from a superclass in C#: </p>
     <pre class="align-left">
         <code>
 using System;
+
+// Base class
+class Animal
+{
+    public void Eat()
+    {
+        Console.WriteLine("Animal is eating...");
+    }
+}
+
+// Subclass inheriting from Animal
+class Dog : Animal
+{
+    public void Bark()
+    {
+        Console.WriteLine("Dog is barking...");
+    }
+}
 
 class Program
 {
     static void Main()
     {
-        int[] numbers = { 1, 2, 3, 4, 5 };
-
-        // Accessing array elements
-        for (int i = 0; i < numbers.Length; i++)
-        {
-            Console.WriteLine("Element at index " + i + " is: " + numbers[i]);
-        }
-
-        // Using foreach loop
-        foreach (int number in numbers)
-        {
-            Console.WriteLine("Number: " + number);
-        }
+        Dog dog = new Dog();
+        dog.Eat(); // Inherited method from Animal class
+        dog.Bark(); // Method specific to Dog class
     }
 }
         </code>
     </pre>
-    <p class="align-left">In the above example, an array of integers is declared and initialized with values. The program then iterates through the array using both a for loop and a foreach loop to access and print the elements.</p>
+    <p class="align-left">In the example above, the `Dog` class inherits the `Eat()` method from the `Animal` class. This illustrates how inheritance allows subclasses to access and use the members (methods, properties) of their superclass.</p>
 </main>
 
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control Statements - C#</title>
+    <title>Abstract Classes in C#</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -77,6 +77,10 @@
             color: #00ff99; /* Green color for headings */
         }
 
+        .align-left {
+            text-align: left;
+        }
+
         pre {
             background-color: #333;
             color: white;
@@ -88,10 +92,6 @@
         code {
             color: #f0f0f0;
         }
-
-        .align-left {
-            text-align: left;
-        }
     </style>
 </head>
 <body>
@@ -100,7 +100,7 @@
     <div class="top-of-the-site">
         <nav>
             <ul class="top-menu">
-                <li style="margin-left: 50px;"><a href="home">Home</a></li>
+                <li style="margin-left: 50px;"><a href="Home.html">Home</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropbtn">About ▴</a>
                     <div class="dropdown-content">
@@ -125,54 +125,46 @@
 </header>
 
 <main>
-    <h1 class="align-left">Control Statements in C#</h1>
-    <p class="align-left">C# provides various control statements that allow you to control the flow of execution in your program. These include:</p>
-    <ul class="align-left">
-        <li><strong>if-else:</strong> Executes a block of code if a specified condition is true, otherwise executes another block of code.</li>
-        <li><strong>while:</strong> Repeats a block of code as long as a specified condition is true.</li>
-        <li><strong>do-while:</strong> Similar to the while loop, but the code block is executed at least once before the condition is tested.</li>
-        <li><strong>for:</strong> Executes a block of code a specified number of times.</li>
-        <li><strong>break:</strong> Terminates the loop or switch statement and transfers control to the statement immediately following the loop or switch.</li>
-        <li><strong>continue:</strong> Skips the current iteration of a loop and continues with the next iteration.</li>
-    </ul>
-
-    <h2 class="align-left">Example:</h2>
+    <h1 class="align-left">Abstract Classes in C#</h1>
+    <p class="align-left">Abstract classes in C# are classes that cannot be instantiated directly and may contain one or more abstract methods. They serve as templates for other classes and provide a common base for derived classes to inherit and implement.</p>
+    <p class="align-left">Here's an example demonstrating the usage of abstract classes:</p>
     <pre class="align-left">
         <code>
 using System;
+
+abstract class Shape
+{
+    public abstract double Area();
+}
+
+class Rectangle : Shape
+{
+    private double length;
+    private double width;
+
+    public Rectangle(double l, double w)
+    {
+        length = l;
+        width = w;
+    }
+
+    public override double Area()
+    {
+        return length * width;
+    }
+}
 
 class Program
 {
     static void Main()
     {
-        // if-else statement
-        int x = 10;
-        if (x > 5)
-        {
-            Console.WriteLine("x is greater than 5");
-        }
-        else
-        {
-            Console.WriteLine("x is not greater than 5");
-        }
-
-        // while loop
-        int y = 0;
-        while (y < 5)
-        {
-            Console.WriteLine(y);
-            y++;
-        }
-
-        // for loop
-        for (int i = 0; i < 5; i++)
-        {
-            Console.WriteLine(i);
-        }
+        Rectangle rect = new Rectangle(5, 3);
+        Console.WriteLine("Area of rectangle: " + rect.Area());
     }
 }
         </code>
     </pre>
+    <p class="align-left">In this example, `Shape` is an abstract class with an abstract method `Area()`. The `Rectangle` class inherits from `Shape` and provides an implementation for the `Area()` method. Abstract classes provide a way to define a common interface for a set of derived classes.</p>
 </main>
 
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arrays in C#</title>
+    <title>Access Control in C#</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -125,58 +125,18 @@
 </header>
 
 <main>
-    <h1 class="align-left">Arrays in C#</h1>
-    <p class="align-left">Arrays in C# are used to store multiple values in a single variable, instead of declaring separate variables for each value. They are a collection of variables of the same type, stored in contiguous memory locations.</p>
-    <p class="align-left">Here is the basic syntax for declaring an array:</p>
-    <pre class="align-left">
-        <code>
-int[] arrayName;
-        </code>
-    </pre>
-    <p class="align-left">To initialize an array, you can use the following syntax:</p>
-    <pre class="align-left">
-        <code>
-int[] numbers = new int[5]; // Declares an array of 5 integers
-numbers[0] = 1;
-numbers[1] = 2;
-numbers[2] = 3;
-numbers[3] = 4;
-numbers[4] = 5;
-        </code>
-    </pre>
-    <p class="align-left">Alternatively, you can initialize an array with values upon declaration:</p>
-    <pre class="align-left">
-        <code>
-int[] numbers = { 1, 2, 3, 4, 5 };
-        </code>
-    </pre>
-    <p class="align-left">Here's an example demonstrating how to work with arrays in C#:</p>
-    <pre class="align-left">
-        <code>
-using System;
-
-class Program
-{
-    static void Main()
-    {
-        int[] numbers = { 1, 2, 3, 4, 5 };
-
-        // Accessing array elements
-        for (int i = 0; i < numbers.Length; i++)
-        {
-            Console.WriteLine("Element at index " + i + " is: " + numbers[i]);
-        }
-
-        // Using foreach loop
-        foreach (int number in numbers)
-        {
-            Console.WriteLine("Number: " + number);
-        }
-    }
-}
-        </code>
-    </pre>
-    <p class="align-left">In the above example, an array of integers is declared and initialized with values. The program then iterates through the array using both a for loop and a foreach loop to access and print the elements.</p>
+    <h1 class="align-left">Access Control in C#</h1>
+    <p class="align-left">Access control in C# refers to the ability to restrict the visibility and accessibility of class members and types. This helps in enforcing encapsulation and hiding the implementation details of a class.</p>
+    <p class="align-left">There are several access modifiers in C#:</p>
+    <ul class="align-left">
+        <li>public</li>
+        <li>private</li>
+        <li>protected</li>
+        <li>internal</li>
+        <li>protected internal</li>
+        <li>private protected</li>
+    </ul>
+    <p class="align-left">These access modifiers control the visibility of classes, methods, and other members within the same assembly or across different assemblies.</p>
 </main>
 
 </body>

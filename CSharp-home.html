@@ -6,30 +6,137 @@
 <title>Development</title>
 <link rel="stylesheet" href="styles.css">
 <style>
-.firstInfo{
-  margin-left: 10px;
-  margin-bottom: 20px;
- }
+body {
+    background-image: url('imagens/BCKG.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
 
- .wikipedia{
-   line-height: 1.5;
- }
+.top-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: hsl(0, 0%, 20%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
 
- h2{
-   margin-left: 10px;
- }
+.top-menu li {
+    display: inline-block;
+    margin-right: 10px;
+}
 
- a{
-   color: white;
- }
+.top-menu li.right {
+    float: right;
+}
 
- p{
-  margin-left: 10px;
- }
- a:hover{
-   color: black;
-   background-color: azure;
- }
+.top-menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.top-menu li a:hover {
+    background-color: #555;
+}
+
+.icon-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    color: white;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: hsl(0, 0%, 20%);
+    min-width: 94px;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+main {
+    margin-top: 70px;
+    color: white;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 80px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    margin-left: 10px;
+    color: #00ff99;
+}
+
+.firstInfo, .secondInfo, .thirdInfo, .fourthInfo, .fifthInfo, .sixthInfo {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+a {
+    color: #00ff99;
+}
+
+a:hover {
+    color: black;
+    background-color: azure;
+}
+
+p {
+    margin-left: 10px;
+    line-height: 1.5;
+}
+
+.content {
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.content p, .content ul {
+    margin: 10px 0;
+}
+
+ul {
+    padding-left: 20px;
+}
 </style>
 </head>
 <body>
@@ -51,8 +158,8 @@
         <li><a href="#docs">Docs</a></li>
         <li><a href="#contact">Contact</a></li>
         <li><a href="#other">Other</a></li>
-        <li class="right"><a href="#sing in">Sign in</a></li>
-        <li class="right"><a href="#sing up">Sign up</a></li>
+        <li class="right"><a href="#sign-in">Sign in</a></li>
+        <li class="right"><a href="#sign-up">Sign up</a></li>
       </ul>
     </nav>
 
@@ -64,76 +171,80 @@
 <main>
 <div class="firstInfo">
   <h1>C# .NET</h1>
-  <div class="wikipedia"> Welcome to the section dedicated to the C# language and the .NET platform. We hope you will help us to develop it by adding new articles, information about elements of the language. Don't be afraid to modify or add articles - changes can always be undone.
+  <div class="wikipedia">Welcome to the section dedicated to the C# language and the .NET platform. We hope you will help us to develop it by adding new articles, information about elements of the language. Don't be afraid to modify or add articles - changes can always be undone.
 
     Before creating a page, please read the text Rules of Work.
 
     C# (read "si szarp") is an object-oriented programming language created on 15 July 2000 by a team led by Anders Hejlsberg working at Microsoft. It is very similar to Java both in terms of the compilation principle and the overall programming outline.
 
-    C# is the core language of the .NET platform.</div>
+    C# is the core language of the .NET platform.
   </div>
-  <div class="secondInfo">
-    <h2>Introduction</h2>
-   <p>
-    <a href="CSharp-files\CSharp-syntax.html">Syntax</a>
+</div>
+<div class="secondInfo">
+  <h2>Introduction</h2>
+  <p>
+    <a href="CSharp-files/CSharp-syntax.html">Syntax</a>
     -
-    <a href="CSharp-files\CSharp-control-statements.html">Control statements</a>
+    <a href="CSharp-files/CSharp-control-statements.html">Control statements</a>
     -
-    <a href="CSharp-files\CSharp-operators.html">Operators</a>
+    <a href="CSharp-files/CSharp-operators.html">Operators</a>
     -
-    <a href="CSharp-files\CSharp-data-types.html">Data types</a>
+    <a href="CSharp-files/CSharp-data-types.html">Data types</a>
     -
-    <a href="CSharp-files\CSharp-functions.html">Functions</a>
+    <a href="CSharp-files/CSharp-functions.html">Functions</a>
     -
-    <a href="CSharp-files\CSharp-namespaces.html">Namespaces</a>
+    <a href="CSharp-files/CSharp-namespaces.html">Namespaces</a>
     -
-    <a href="CSharp-files\CSharp-arrays.html">Arrays</a>
+    <a href="CSharp-files/CSharp-arrays.html">Arrays</a>
     -
-    <a href="CSharp-files\CSharp-character-strings.html">Character strings</a>
+    <a href="CSharp-files/CSharp-character-strings.html">Character strings</a>
   </p>
   <div class="content">
-        <p><strong>About C#</strong></p>
-        <p>C# is a versatile programming language developed by Microsoft. It is widely used for building various types of applications, including desktop, web, and mobile apps. C# is known for its simplicity, type-safety, and object-oriented features, making it popular among developers for its ease of use and robustness. It's closely integrated with the .NET framework, providing access to a vast library of pre-built functions and tools for rapid development.</p>
-    </div>
-    <div class="content">
-        <p><strong>Prerequisite to Learn C#</strong></p>
-        <p>Before learning C#, ensure you understand basic programming concepts and have familiarity with object-oriented programming. Knowing common development tools, having a grasp of the .NET framework, and possessing problem-solving skills are also beneficial. Additionally, motivation and patience are crucial for success.</p>
-    </div>
-    <div class="content">
-        <p><strong>C# Features</strong></p>
-        <ul>
-            <li>Simplicity</li>
-            <li>Strong Typing</li>
-            <li>Object-Oriented Programming (OOP)</li>
-            <li>Scalability</li>
-            <li>Integration with .NET Framework</li>
-            <li>Language Interoperability</li>
-            <li>Extensive Libraries</li>
-        </ul>
-	</div>
+    <p><strong>About C#</strong></p>
+    <p>C# is a versatile programming language developed by Microsoft. It is widely used for building various types of applications, including desktop, web, and mobile apps. C# is known for its simplicity, type-safety, and object-oriented features, making it popular among developers for its ease of use and robustness. It's closely integrated with the .NET framework, providing access to a vast library of pre-built functions and tools for rapid development.</p>
   </div>
-  <div class="thirdInfo">
-    <h2>Object-oriented programming</h2>
+  <div class="content">
+    <p><strong>Prerequisite to Learn C#</strong></p>
+    <p>Before learning C#, ensure you understand basic programming concepts and have familiarity with object-oriented programming. Knowing common development tools, having a grasp of the .NET framework, and possessing problem-solving skills are also beneficial. Additionally, motivation and patience are crucial for success.</p>
+  </div>
+  <div class="content">
+    <p><strong>C# Features</strong></p>
+    <ul>
+      <li>Simplicity</li>
+      <li>Strong Typing</li>
+      <li>Object-Oriented Programming (OOP)</li>
+      <li>Scalability</li>
+      <li>Integration with .NET Framework</li>
+      <li>Language Interoperability</li>
+      <li>Extensive Libraries</li>
+    </ul>
+  </div>
+</div>
+<div class="thirdInfo">
+  <h2>Object-oriented programming</h2>
   <p>
-    <a href="#">Classes</a>
+    <a href="CSharp-files/CSharp-classes.html">Classes</a>
     -
-    <a href="#">Access control</a>
+    <a href="CSharp-files/CSharp-access-control.html">Access control</a>
     -
-    <a href="#">Constructors</a>
+    <a href="CSharp-files/CSharp-constructors.html">Constructors</a>
     -
-    <a href="#">Destructors</a>
+    <a href="CSharp-files/CSharp-destructors.html">Destructors</a>
     -
-    <a href="#">Inheritance</a>
+    <a href="CSharp-files/CSharp-inheritance.html">Inheritance</a>
     -
-    <a href="#">Virtual functions</a>
+    <a href="CSharp-files/CSharp-virtual-functions.html">Virtual functions</a>
     -
-    <a href="#">Abstract classes</a>
+    <a href="CSharp-files/CSharp-abstract-classes.html">Abstract classes</a>
     -
-    <a href="#">Overloading operators</a>
+    <a href="CSharp-files/CSharp-operator-overloading.html">Overloading operators</a>
   </p>
+  <div class="content">
+    <p>Object-oriented programming (OOP) in C# is a paradigm that uses "objects" to design applications and computer programs. It utilizes several core concepts: classes and objects, inheritance, polymorphism, encapsulation, and abstraction. These principles help in creating modular, reusable, and maintainable code.</p>
   </div>
-  <div class="fourthInfo">
-    <h2>Syntax and language elements</h2>
+</div>
+<div class="fourthInfo">
+  <h2>Syntax and language elements</h2>
   <p>
     <a href="#">Exception handling</a>
     -
@@ -141,9 +252,12 @@
     -
     <a href="#">Class templates</a>
   </p>
+  <div class="content">
+    <p>C# syntax is clean and easy to understand. It includes various language elements such as data types, variables, operators, control statements, and more. Proper understanding of C# syntax and language elements is essential for writing efficient and error-free code.</p>
   </div>
-  <div class="fifthInfo">
-    <h2>C# course - Introduction to programming in C#</h2>
+</div>
+<div class="fifthInfo">
+  <h2>C# course - Introduction to programming in C#</h2>
   <p>
     <a href="#">Stdio.h (cstdio)</a>
     -
@@ -159,16 +273,21 @@
     -
     <a href="#">Standard Templates Library</a>
   </p>
+  <div class="content">
+    <p>This introductory course on C# will guide you through the basics of programming in C#. Starting from basic syntax and data types, it covers essential concepts and gradually advances to more complex topics. It's designed to provide a solid foundation for beginners and a comprehensive understanding of C# programming.</p>
   </div>
-  <div class="sixthInfo">
-    <h2>Programming in C#
-      Windows.Forms applications</h2>
+</div>
+<div class="sixthInfo">
+  <h2>Programming in C# Windows.Forms applications</h2>
   <p>
     <a href="#">Articles</a>
     -
     <a href="#">Discussion forum</a>
   </p>
+  <div class="content">
+    <p>Programming in C# for Windows.Forms applications involves creating graphical user interface (GUI) applications. This section covers various aspects of Windows.Forms, including form design, event handling, and control manipulation. It helps developers build interactive and user-friendly desktop applications using C#.</p>
   </div>
+</div>
 </main>
 </body>
 </html>

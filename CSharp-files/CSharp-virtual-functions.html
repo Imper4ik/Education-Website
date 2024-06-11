@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Control Statements - C#</title>
+    <title>Virtual Functions in C#</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -77,6 +77,10 @@
             color: #00ff99; /* Green color for headings */
         }
 
+        .align-left {
+            text-align: left;
+        }
+
         pre {
             background-color: #333;
             color: white;
@@ -88,10 +92,6 @@
         code {
             color: #f0f0f0;
         }
-
-        .align-left {
-            text-align: left;
-        }
     </style>
 </head>
 <body>
@@ -100,7 +100,7 @@
     <div class="top-of-the-site">
         <nav>
             <ul class="top-menu">
-                <li style="margin-left: 50px;"><a href="home">Home</a></li>
+                <li style="margin-left: 50px;"><a href="Home.html">Home</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropbtn">About ▴</a>
                     <div class="dropdown-content">
@@ -125,54 +125,51 @@
 </header>
 
 <main>
-    <h1 class="align-left">Control Statements in C#</h1>
-    <p class="align-left">C# provides various control statements that allow you to control the flow of execution in your program. These include:</p>
-    <ul class="align-left">
-        <li><strong>if-else:</strong> Executes a block of code if a specified condition is true, otherwise executes another block of code.</li>
-        <li><strong>while:</strong> Repeats a block of code as long as a specified condition is true.</li>
-        <li><strong>do-while:</strong> Similar to the while loop, but the code block is executed at least once before the condition is tested.</li>
-        <li><strong>for:</strong> Executes a block of code a specified number of times.</li>
-        <li><strong>break:</strong> Terminates the loop or switch statement and transfers control to the statement immediately following the loop or switch.</li>
-        <li><strong>continue:</strong> Skips the current iteration of a loop and continues with the next iteration.</li>
-    </ul>
-
-    <h2 class="align-left">Example:</h2>
+    <h1 class="align-left">Virtual Functions in C#</h1>
+    <p class="align-left">Virtual functions are functions in a base class that can be overridden in derived classes. They enable polymorphism, allowing objects of different classes to be treated as objects of the same class, simplifying code and making it more flexible.</p>
+    <p class="align-left">Here's an example demonstrating the usage of virtual functions:</p>
     <pre class="align-left">
         <code>
 using System;
+
+class Animal
+{
+    public virtual void Sound()
+    {
+        Console.WriteLine("Animal makes a sound");
+    }
+}
+
+class Dog : Animal
+{
+    public override void Sound()
+    {
+        Console.WriteLine("Dog barks");
+    }
+}
+
+class Cat : Animal
+{
+    public override void Sound()
+    {
+        Console.WriteLine("Cat meows");
+    }
+}
 
 class Program
 {
     static void Main()
     {
-        // if-else statement
-        int x = 10;
-        if (x > 5)
-        {
-            Console.WriteLine("x is greater than 5");
-        }
-        else
-        {
-            Console.WriteLine("x is not greater than 5");
-        }
+        Animal animal1 = new Dog();
+        Animal animal2 = new Cat();
 
-        // while loop
-        int y = 0;
-        while (y < 5)
-        {
-            Console.WriteLine(y);
-            y++;
-        }
-
-        // for loop
-        for (int i = 0; i < 5; i++)
-        {
-            Console.WriteLine(i);
-        }
+        animal1.Sound(); // Output: Dog barks
+        animal2.Sound(); // Output: Cat meows
     }
 }
         </code>
     </pre>
+    <p class="align-left">In this example, the `Sound()` method is declared as virtual in the base class `Animal` and overridden in the derived classes `Dog` and `Cat`. This allows the method to be dynamically bound at runtime, depending on the type of object.</p>
 </main>
 
 </body>
