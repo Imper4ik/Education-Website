@@ -9,71 +9,71 @@ import dmytro.bozhor.universitypetprojectwebsite.domain.Person;
 import dmytro.bozhor.universitypetprojectwebsite.exception.PersonAlreadyExists;
 import dmytro.bozhor.universitypetprojectwebsite.repository.PersonRepository;
 import dmytro.bozhor.universitypetprojectwebsite.service.PersonService;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
 @ExtendWith(MockitoExtension.class)
 class PersonServiceTest {
 
     @Mock
-    private PersonRepository personRepositoryMock;
+    private PersonRepository personRepository;
 
     @Mock
-    private PasswordEncoder passwordEncoderMock;
+    private PasswordEncoder passwordEncoder;
+
     @InjectMocks
     private PersonService personService;
 
-    @BeforeEach
-    public void setup() {
-        MockitoAnnotations.initMocks(this);
-        personService = new PersonService(personRepositoryMock, passwordEncoderMock);
-    }
-
     @Test
-    public void testCreateNewPerson() {
-        // Arrange
-        Person person = new Person();
-        person.setEmail("test@example.com");
-        person.setPassword("password123");
+    public void testCreate_shouldCreateNewPerson_whenValidPersonDataProvided() {
 
-        when(personRepositoryMock.findByEmail("test@example.com")).thenReturn(Optional.empty());
-        when(passwordEncoderMock.encode("password123")).thenReturn("encodedPassword");
+        // given
+        var person = Person.builder()
+                .username("testUser")
+                .email("test@example.com")
+                .password("password123")
+                .build();
+        var encodedPassword = "encodedPassword";
 
-        // Act
-        Person savedPerson = personService.create(person);
+        doReturn(Optional.empty()).when(personRepository).findByEmail(person.getEmail());
+        doReturn(encodedPassword).when(passwordEncoder).encode(person.getPassword());
+        doReturn(person).when(personRepository).save(person);
 
-        // Assert
+        // when
+        var savedPerson = personService.create(person);
+
+        // then
         assertNotNull(savedPerson);
-        assertEquals("test@example.com", savedPerson.getEmail());
-        assertEquals("encodedPassword", savedPerson.getPassword());
-        verify(personRepositoryMock, times(1)).findByEmail("test@example.com");
-        verify(passwordEncoderMock, times(1)).encode("password123");
-        verify(personRepositoryMock, times(1)).save(person);
+        assertEquals(person.getEmail(), savedPerson.getEmail());
+        assertEquals(encodedPassword, savedPerson.getPassword());
+
+        verify(personRepository).findByEmail(any(String.class));
+        verify(passwordEncoder).encode(any(String.class));
+        verify(personRepository).save(person);
     }
 
     @Test
-    public void testCreateExistingPerson() {
-        // Arrange
-        Person existingPerson = new Person();
-        existingPerson.setEmail("existing@example.com");
-        existingPerson.setPassword("existingPassword");
+    public void testCreate_shouldThrowPersonAlreadyExists_whenInvalidPersonDataProvided() {
 
-        when(personRepositoryMock.findByEmail("existing@example.com")).thenReturn(Optional.of(existingPerson));
+        // given
+        var person = Person.builder()
+                .username("testUser")
+                .email("test@example.com")
+                .password("password123")
+                .build();
 
-        // Act and Assert
-        assertThrows(PersonAlreadyExists.class, () -> {
-            Person person = new Person();
-            person.setEmail("existing@example.com");
-            person.setPassword("password123");
-            personService.create(person);
-        });
+        doReturn(Optional.of(Person.builder().build())).when(personRepository).findByEmail(person.getEmail());
 
-        verify(personRepositoryMock, times(1)).findByEmail("existing@example.com");
+        // when
+        assertThrows(PersonAlreadyExists.class, () -> personService.create(person));
 
+        // then
+        verify(personRepository).findByEmail(any(String.class));
+        verify(passwordEncoder, never()).encode(any(String.class));
+        verify(personRepository, never()).save(person);
     }
 }
