@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exception Handling in C#</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('imagens/BCKG.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            color: white;
+        }
+
+        .top-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: hsl(0, 0%, 20%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .top-menu li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .top-menu li.right {
+            float: right;
+        }
+
+        .top-menu li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .top-menu li a:hover {
+            background-color: #555;
+        }
+
+        .icon-container {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            color: white;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        main {
+            margin-top: 70px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            max-width: 900px;
+            margin: 80px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        h1, h2 {
+            color: #00ff99; /* Green color for headings */
+        }
+
+        .align-left {
+            text-align: left;
+        }
+
+        pre {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="top-of-the-site">
+    <nav>
+      <ul class="top-menu">
+        <li style="margin-left: 50px;"><a href="Home.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">About ▴</a>
+          <div class="dropdown-content">
+            <a href="c-sharp">C#</a>
+            <a href="c-plus-plus">C++</a>
+            <a href="java">Java</a>
+            <a href="python">Python</a>
+          </div>
+        </li>
+        <li><a href="#docs">Docs</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#other">Other</a></li>
+        <li class="right"><a href="#sign-in">Sign in</a></li>
+        <li class="right"><a href="#sign-up">Sign up</a></li>
+      </ul>
+    </nav>
+
+    <div class="icon-container">
+       <img src="imagens/web-development.png" alt="Icon" class="icon">
+    </div>
+  </div>
+</header>
+
+<main>
+    <h1 class="align-left">Exception Handling in C#</h1>
+    <p class="align-left">Exception handling in C# is a powerful mechanism for handling runtime errors, allowing your program to continue running and providing meaningful error messages to users. It is implemented using try, catch, and finally blocks.</p>
+    <p class="align-left">Here's an example demonstrating the usage of exception handling:</p>
+    <pre class="align-left">
+        <code>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            Console.WriteLine("Enter a number: ");
+            int num = Convert.ToInt32(Console.ReadLine());
+            int result = 10 / num;
+            Console.WriteLine("Result: " + result);
+        }
+        catch (DivideByZeroException ex)
+        {
+            Console.WriteLine("Error: Cannot divide by zero.");
+        }
+        catch (FormatException ex)
+        {
+            Console.WriteLine("Error: Invalid input format.");
+        }
+        finally
+        {
+            Console.WriteLine("Execution of the try-catch block is complete.");
+        }
+    }
+}
+        </code>
+    </pre>
+    <p class="align-left">In this example, the `try` block contains code that may throw an exception. The `catch` blocks handle specific exceptions (`DivideByZeroException` and `FormatException`), while the `finally` block contains code that will always execute, regardless of whether an exception was thrown or not.</p>
+</main>
+
+</body>
+</html>
