@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iostream in C#</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('imagens/BCKG.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            color: white;
+        }
+
+        .top-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: hsl(0, 0%, 20%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .top-menu li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .top-menu li.right {
+            float: right;
+        }
+
+        .top-menu li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .top-menu li a:hover {
+            background-color: #555;
+        }
+
+        .icon-container {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            color: white;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        main {
+            margin-top: 70px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            max-width: 900px;
+            margin: 80px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        h1, h2 {
+            color: #00ff99; /* Green color for headings */
+        }
+
+        .align-left {
+            text-align: left;
+        }
+
+        pre {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="top-of-the-site">
+    <nav>
+      <ul class="top-menu">
+        <li style="margin-left: 50px;"><a href="Home.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">About ▴</a>
+          <div class="dropdown-content">
+            <a href="c-sharp">C#</a>
+            <a href="c-plus-plus">C++</a>
+            <a href="java">Java</a>
+            <a href="python">Python</a>
+          </div>
+        </li>
+        <li><a href="#docs">Docs</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#other">Other</a></li>
+        <li class="right"><a href="#sign-in">Sign in</a></li>
+        <li class="right"><a href="#sign-up">Sign up</a></li>
+      </ul>
+    </nav>
+
+    <div class="icon-container">
+       <img src="imagens/web-development.png" alt="Icon" class="icon">
+    </div>
+  </div>
+</header>
+
+<main>
+    <h1 class="align-left">Iostream in C#</h1>
+    <p class="align-left">In C++, the `iostream` library is used for input and output operations using streams. In C#, similar functionality is provided by the `System.Console` class for console input and output, and by the `System.IO` namespace for file and stream operations.</p>
+    <p class="align-left">Here's an example demonstrating console input and output in C#:</p>
+    <pre class="align-left">
+        <code>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Output to console
+        Console.WriteLine("Enter your name:");
+
+        // Input from console
+        string name = Console.ReadLine();
+
+        Console.WriteLine("Hello, " + name + "!");
+    }
+}
+        </code>
+    </pre>
+    <p class="align-left">In this example, we use `Console.WriteLine` to output text to the console and `Console.ReadLine` to read input from the user. This is similar to using `std::cout` and `std::cin` in C++.</p>
+    <p class="align-left">For file input and output, we use the `System.IO` namespace:</p>
+    <pre class="align-left">
+        <code>
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        // Writing to a file
+        string path = "example.txt";
+        string[] lines = { "First line", "Second line", "Third line" };
+
+        File.WriteAllLines(path, lines);
+
+        // Reading from a file
+        string[] readLines = File.ReadAllLines(path);
+
+        foreach (string line in readLines)
+        {
+            Console.WriteLine(line);
+        }
+    }
+}
+        </code>
+    </pre>
+    <p class="align-left">In this example, we use `File.WriteAllLines` to write an array of strings to a file and `File.ReadAllLines` to read the lines back from the file. The `System.IO` namespace provides various classes for working with files and streams, offering functionality similar to C++'s `<fstream>`.</p>
+</main>
+
+</body>
+</html>
