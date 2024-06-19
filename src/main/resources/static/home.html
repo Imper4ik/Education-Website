@@ -35,11 +35,202 @@
         </div>
     </div>
 </header>
+<style>
+.top-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: hsl(200, 100%, 20%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.top-menu li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.top-menu li.right {
+    float: right;
+}
+
+.top-menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.top-menu li a:hover {
+    background-color: #555;
+}
+
+.icon-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    color: white;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: hsl(200, 100%, 20%);
+    min-width: 94px;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+main {
+    margin-top: 70px;
+    color: white;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 80px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    margin-left: 10px;
+    color: #00ccff;
+}
+
+.firstInfo, .secondInfo, .thirdInfo, .fourthInfo, .fifthInfo, .sixthInfo {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+a {
+    color: #00ccff;
+}
+
+a:hover {
+    color: black;
+    background-color: azure;
+}
+
+p {
+    margin-left: 10px;
+    line-height: 1.5;
+}
+
+.content {
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.content p, .content ul {
+    margin: 10px 0;
+}
+
+ul {
+    padding-left: 20px;
+}
+</style>
 <main>
-    <h1>Lorem ipsum </h1>
-    <div> Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, aspernatur totam nihil delectus accusamus,
-        quidem aut repudiandae error quis, iusto repellat. Id cumque reprehenderit deleniti repellat et eum? Quas, iure?
-    </div>
+    <div class="firstInfo">
+  <h1>Welcome to the Programming Languages Hub</h1>
+  <div class="content">
+    <p>Explore the world of programming languages with our comprehensive guides and tutorials on C#, C++, Python, and Java. Whether you are a beginner or an experienced developer, you'll find valuable information and resources to enhance your skills and knowledge.</p>
+    <p>To gain access to learning programming languages, don't forget to register! :)</p>
+  </div>
+</div>
+<div class="secondInfo">
+  <h2>Popular Programming Languages</h2>
+  <div class="content">
+      <h3><a href="CSharp-home.html">C#</a></h3>
+    <p>C# is a modern, object-oriented programming language developed by Microsoft. It is widely used for developing desktop applications, web applications, and games.</p>
+    <p><strong>Key Features:</strong></p>
+    <ul>
+      <li><strong>Object-Oriented:</strong> Encourages modular, reusable code with classes and objects.</li>
+      <li><strong>Versatile:</strong> Used in various domains like web development, mobile apps, and game development.</li>
+      <li><strong>Rich Library:</strong> Extensive standard library in the .NET framework.</li>
+      <li><strong>Interoperable:</strong> Easily integrates with other languages and technologies.</li>
+      <li><strong>Robust:</strong> Strong type-checking and exception handling.</li>
+    </ul>
+  </div>
+  <div class="content">
+    <h3><a href="c-plus-plus.html">C++</a></h3>
+    <p>C++ is a powerful, high-performance programming language that supports both procedural and object-oriented programming. It is commonly used in system/software development, game development, and real-time simulations.</p>
+    <p><strong>Key Features:</strong></p>
+    <ul>
+      <li><strong>Multi-Paradigm:</strong> Supports procedural, object-oriented, and generic programming.</li>
+      <li><strong>High Performance:</strong> Offers close-to-hardware performance.</li>
+      <li><strong>Standard Template Library (STL):</strong> Provides a set of common classes and functions.</li>
+      <li><strong>Memory Management:</strong> Fine control over system resources.</li>
+      <li><strong>Portability:</strong> Code can be easily compiled on different platforms.</li>
+    </ul>
+  </div>
+  <div class="content">
+    <h3><a href="java.html">Java</a></h3>
+    <p>Java is a versatile, platform-independent programming language known for its portability, robustness, and ease of use. It is widely used in enterprise applications, mobile applications, and web development.</p>
+    <p><strong>Key Features:</strong></p>
+    <ul>
+      <li><strong>Platform-Independent:</strong> Write once, run anywhere (WORA) capability.</li>
+      <li><strong>Object-Oriented:</strong> Promotes reusable and modular code.</li>
+      <li><strong>Secure:</strong> Built-in security features for safe execution of code.</li>
+      <li><strong>Robust:</strong> Strong memory management and error-handling mechanisms.</li>
+      <li><strong>Multi-threaded:</strong> Supports concurrent execution of threads.</li>
+    </ul>
+  </div>
+  <div class="content">
+    <h3><a href="python.html">Python</a></h3>
+    <p>Python is an easy-to-learn, high-level programming language known for its readability and versatility. It is popular for web development, data analysis, artificial intelligence, and scientific computing.</p>
+    <p><strong>Key Features:</strong></p>
+    <ul>
+      <li><strong>Easy to Learn:</strong> Simple and readable syntax.</li>
+      <li><strong>Versatile:</strong> Used in various fields like web development, data science, and automation.</li>
+      <li><strong>Extensive Libraries:</strong> Rich set of libraries and frameworks.</li>
+      <li><strong>Dynamic Typing:</strong> Flexible variable usage without explicit declarations.</li>
+      <li><strong>Community Support:</strong> Large and active community providing extensive resources.</li>
+    </ul>
+  </div>
+</div>
+<div class="thirdInfo">
+  <h2>Get Started</h2>
+  <div class="content">
+    <p>To begin your journey, choose a language from the navigation menu above or explore the sections below for more detailed information on each language, including tutorials, documentation, and community resources.</p>
+	<p>Happy browsing! 🚀</p>
+  </div>
+</div>
+<div class="fourthInfo">
+  <h2>Stay Connected</h2>
+  <div class="content">
+    <p>Join our community and stay updated with the latest news, tutorials, and discussions. Follow us on social media and participate in our forums to connect with fellow developers and enthusiasts.</p>
+  </div>
+</div>
 </main>
 </body>
 </html>
