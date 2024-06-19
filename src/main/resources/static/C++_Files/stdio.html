@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Standard Library: cstdio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Standard Library: cstdio</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>The `<cstdio>` library in C++ (or `stdio.h` in C) provides functions for input and output operations using the standard streams. It includes functions for reading and writing files, formatting output, and handling errors.</p>
+        </section>
+        <section>
+            <h2>Basic Input and Output</h2>
+            <p>Here are some basic input and output functions provided by `<cstdio>`:</p>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+
+int main() {
+    // Basic output using printf
+    std::printf("Hello, world! This is printed using printf.\n");
+
+    // Basic input using scanf
+    int number;
+    std::printf("Enter a number: ");
+    std::scanf("%d", &number);
+    std::printf("You entered: %d\n", number);
+
+    return 0;
+}</code></pre>
+            <p>This example demonstrates the use of `std::printf` for output and `std::scanf` for input operations.</p>
+        </section>
+        <section>
+            <h2>File Operations</h2>
+            <p>Functions for file input and output:</p>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+
+int main() {
+    // File operations example
+    FILE* file = std::fopen("example.txt", "w");
+    if (file != nullptr) {
+        std::fprintf(file, "This is written to example.txt using fprintf.\n");
+        std::fclose(file);
+        std::printf("File written successfully.\n");
+    } else {
+        std::printf("Failed to open file.\n");
+    }
+
+    return 0;
+}</code></pre>
+            <p>This code snippet demonstrates how to use `std::fopen`, `std::fprintf`, and `std::fclose` for file operations.</p>
+        </section>
+        <section>
+            <h2>Error Handling</h2>
+            <p>Functions for error handling:</p>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;cstdio&gt;
+
+int main() {
+    // Error handling example
+    int result = std::remove("nonexistent_file.txt");
+    if (result == 0) {
+        std::printf("File deleted successfully.\n");
+    } else {
+        std::perror("Error deleting file");
+    }
+
+    return 0;
+}</code></pre>
+            <p>This snippet uses `std::remove` for deleting a file and demonstrates error handling with `std::perror`.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>The `<cstdio>` library in C++ (or `stdio.h` in C) provides essential functions for performing input and output operations using standard streams, handling files, formatting output, and managing errors. It enhances productivity by offering efficient and standardized I/O operations.</p>
+        </section>
+    </main>
+</body>
+</html>

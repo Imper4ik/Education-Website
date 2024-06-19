@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Math with cmath</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Math with cmath</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>The `<cmath>` library in C++ provides a set of common mathematical functions and constants. It includes functions for basic arithmetic, trigonometry, logarithms, exponentiation, and more.</p>
+        </section>
+        <section>
+            <h2>Basic Functions</h2>
+            <p>Here are some basic mathematical functions provided by `<cmath>`:</p>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+int main() {
+    // Square root
+    double number = 16.0;
+    double squareRoot = std::sqrt(number);
+    std::cout &lt;&lt; "Square root of " &lt;&lt; number &lt;&lt; " is " &lt;&lt; squareRoot &lt;&lt; std::endl;
+
+    // Trigonometric functions
+    double angle = 45.0;
+    double sineValue = std::sin(angle * std::acos(-1.0) / 180.0);
+    std::cout &lt;&lt; "Sine of " &lt;&lt; angle &lt;&lt; " degrees is " &lt;&lt; sineValue &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre>
+            <p>This example demonstrates the use of `std::sqrt` for computing square roots and `std::sin` for computing sine values.</p>
+        </section>
+        <section>
+            <h2>Constants</h2>
+            <p>The `<cmath>` library also provides mathematical constants:</p>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+
+int main() {
+    // Pi constant
+    double piValue = std::acos(-1.0);
+    std::cout &lt;&lt; "The value of Pi is approximately " &lt;&lt; piValue &lt;&lt; std::endl;
+
+    // Euler's number (e)
+    double eValue = std::exp(1.0);
+    std::cout &lt;&lt; "The value of e (Euler's number) is approximately " &lt;&lt; eValue &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre>
+            <p>This code snippet shows how to retrieve the values of Pi and Euler's number using `<cmath>`.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>The `<cmath>` library in C++ provides essential mathematical functions and constants for performing common calculations. It enhances productivity by offering ready-to-use implementations of mathematical operations.</p>
+        </section>
+    </main>
+</body>
+</html>

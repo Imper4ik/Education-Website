@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ I/O with iostream</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ I/O with iostream</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>The `<iostream>` library in C++ provides classes and objects to perform input and output operations. It includes the `cin` for input and `cout` for output, among others.</p>
+        </section>
+        <section>
+            <h2>Basic Usage</h2>
+            <p>Here's a simple example demonstrating the use of `<iostream>` for input and output:</p>
+            <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    // Output to console
+    std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;
+
+    // Input from console
+    int num;
+    std::cout &lt;&lt; "Enter a number: ";
+    std::cin &gt;&gt; num;
+    std::cout &lt;&lt; "You entered: " &lt;&lt; num &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre>
+            <p>This example outputs a greeting message and prompts the user to enter a number, then displays the entered number.</p>
+        </section>
+        <section>
+            <h2>Formatted Output</h2>
+            <p>You can format output using stream manipulators:</p>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+
+int main() {
+    double pi = 3.14159265359;
+    std::cout &lt;&lt; "Pi value with precision: " &lt;&lt; std::fixed &lt;&lt; std::setprecision(4) &lt;&lt; pi &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre>
+            <p>This code snippet formats the output of the value of Pi with a specific precision.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>The `<iostream>` library in C++ provides a convenient way to perform input and output operations using `cin` for input and `cout` for output. It supports formatted output using stream manipulators for precision and other formatting options.</p>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exception Handling in JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exception Handling in JavaScript</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Exception handling in JavaScript allows you to gracefully handle runtime errors that may occur during the execution of your code.</p>
+        </section>
+        <section>
+            <h2>Try-Catch Statement</h2>
+            <p>The <code>try-catch</code> statement is used to handle exceptions in JavaScript:</p>
+            <pre><code>try {
+    // Block of code to try
+    throw new Error('Custom error message');
+} catch (error) {
+    // Block of code to handle errors
+    console.error('An error occurred:', error.message);
+}</code></pre>
+        </section>
+        <section>
+            <h2>Throw Statement</h2>
+            <p>The <code>throw</code> statement allows you to create a custom error:</p>
+            <pre><code>function divide(x, y) {
+    if (y === 0) {
+        throw new Error('Division by zero');
+    }
+    return x / y;
+}
+
+try {
+    console.log(divide(10, 2)); // Output: 5
+    console.log(divide(10, 0)); // This will throw an error
+} catch (error) {
+    console.error('An error occurred:', error.message);
+}</code></pre>
+        </section>
+        <section>
+            <h2>Finally Block</h2>
+            <p>The <code>finally</code> block is executed regardless of whether an exception is thrown or caught:</p>
+            <pre><code>try {
+    // Block of code to try
+    throw new Error('Custom error message');
+} catch (error) {
+    // Block of code to handle errors
+    console.error('An error occurred:', error.message);
+} finally {
+    // Block of code to execute regardless of errors
+    console.log('Cleanup code here');
+}</code></pre>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Exception handling in JavaScript using <code>try-catch</code> statements allows you to manage errors effectively, improving the robustness and reliability of your applications.</p>
+        </section>
+    </main>
+</body>
+</html>
