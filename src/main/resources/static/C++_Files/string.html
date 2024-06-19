@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C/C++ Standard Library: string.h</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C/C++ Standard Library: string.h</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>The `<string.h>` library in C (or `<cstring>` in C++) provides functions for manipulating C-style strings. These functions are essential for tasks such as copying strings, comparing strings, and searching within strings.</p>
+        </section>
+        <section>
+            <h2>Basic String Operations</h2>
+            <p>Here are some basic string operations provided by `<string.h>`:</p>
+            <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    // Example of string copy
+    char source[] = "Hello, world!";
+    char destination[20];
+    strcpy(destination, source);
+    printf("Copied string: %s\n", destination);
+
+    // Example of string length
+    char str[] = "Example";
+    printf("Length of '%s' is %lu\n", str, strlen(str));
+
+    return 0;
+}</code></pre>
+            <p>This example demonstrates the use of `strcpy` for copying strings and `strlen` for getting the length of a string.</p>
+        </section>
+        <section>
+            <h2>String Comparison</h2>
+            <p>Functions for comparing strings:</p>
+            <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    // Example of string comparison
+    char str1[] = "apple";
+    char str2[] = "banana";
+    int result = strcmp(str1, str2);
+    if (result < 0) {
+        printf("%s is less than %s\n", str1, str2);
+    } else if (result > 0) {
+        printf("%s is greater than %s\n", str1, str2);
+    } else {
+        printf("%s is equal to %s\n", str1, str2);
+    }
+
+    return 0;
+}</code></pre>
+            <p>This snippet uses `strcmp` to compare two strings.</p>
+        </section>
+        <section>
+            <h2>Searching in Strings</h2>
+            <p>Functions for searching within strings:</p>
+            <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    // Example of string searching
+    char str[] = "The quick brown fox";
+    char substr[] = "brown";
+    char *ptr = strstr(str, substr);
+    if (ptr != NULL) {
+        printf("'%s' found at position %ld in '%s'\n", substr, ptr - str, str);
+    } else {
+        printf("'%s' not found in '%s'\n", substr, str);
+    }
+
+    return 0;
+}</code></pre>
+            <p>This code uses `strstr` to search for a substring within a string.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>The `<string.h>` library in C (or `<cstring>` in C++) provides essential functions for manipulating C-style strings. It includes operations for copying, comparing, and searching within strings, making it indispensable for string handling tasks in C and C++ programming.</p>
+        </section>
+    </main>
+</body>
+</html>

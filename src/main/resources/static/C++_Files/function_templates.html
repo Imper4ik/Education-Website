@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Function Templates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Function Templates</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Function templates in C++ allow you to write generic functions that can operate with any data type. They enable code reusability and flexibility by allowing functions to work with different data types without having to write multiple function definitions.</p>
+        </section>
+        <section>
+            <h2>Syntax of Function Templates</h2>
+            <p>A function template is defined using the `template` keyword followed by a template parameter list:</p>
+            <pre><code>template &lt;class T&gt;
+T add(T a, T b) {
+    return a + b;
+}</code></pre>
+            <p>In this example, `T` is a placeholder for the data type of the parameters and return value.</p>
+        </section>
+        <section>
+            <h2>Using Function Templates</h2>
+            <p>You can use the function template with different data types:</p>
+            <pre><code>int sum_int = add(3, 5); // Calls add<int>(3, 5)
+double sum_double = add(2.5, 3.7); // Calls add<double>(2.5, 3.7)</code></pre>
+            <p>The compiler generates the appropriate function instances based on the types used.</p>
+        </section>
+        <section>
+            <h2>Explicit Template Specialization</h2>
+            <p>You can provide specialized implementations for specific data types:</p>
+            <pre><code>template &lt;&gt;
+char add(char a, char b) {
+    return a + b;
+}</code></pre>
+            <p>In this case, `add<char>` provides a different implementation compared to the generic template.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Function templates are powerful tools in C++ for writing flexible and reusable code that can handle multiple data types efficiently. They improve code maintainability and reduce redundancy by enabling generic programming techniques.</p>
+        </section>
+    </main>
+</body>
+</html>

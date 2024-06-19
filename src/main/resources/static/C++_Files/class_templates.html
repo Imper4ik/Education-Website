@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Class Templates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Class Templates</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Class templates in C++ allow you to create generic classes that can work with any data type. They provide a way to write reusable code for classes that can adapt to different data types without having to rewrite the class for each type.</p>
+        </section>
+        <section>
+            <h2>Syntax of Class Templates</h2>
+            <p>A class template is defined using the `template` keyword followed by a template parameter list:</p>
+            <pre><code>template &lt;class T&gt;
+class Pair {
+private:
+    T first;
+    T second;
+public:
+    Pair(T a, T b) : first(a), second(b) {}
+    T getFirst() { return first; }
+    T getSecond() { return second; }
+};</code></pre>
+            <p>In this example, `Pair` is a template class with a constructor and methods that work with the template parameter `T`.</p>
+        </section>
+        <section>
+            <h2>Using Class Templates</h2>
+            <p>You can instantiate a class template with different data types:</p>
+            <pre><code>Pair<int> intPair(3, 5);
+Pair<double> doublePair(2.5, 3.7);</code></pre>
+            <p>The compiler generates distinct class implementations based on the template arguments (`int` and `double` in this case).</p>
+        </section>
+        <section>
+            <h2>Template Specialization</h2>
+            <p>You can provide specialized implementations for specific data types:</p>
+            <pre><code>template &lt;&gt;
+class Pair&lt;char&gt; {
+private:
+    char first;
+    char second;
+public:
+    Pair(char a, char b) : first(a), second(b) {}
+    char getFirst() { return first; }
+    char getSecond() { return second; }
+};</code></pre>
+            <p>In this case, `Pair<char>` provides a different implementation compared to the generic template.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Class templates in C++ are essential for writing generic and reusable classes that can handle different data types efficiently. They enhance code flexibility and maintainability by enabling generic programming techniques.</p>
+        </section>
+    </main>
+</body>
+</html>

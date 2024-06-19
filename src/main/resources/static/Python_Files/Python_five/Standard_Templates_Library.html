@@ -2,9 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python String Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Python String Operations</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Strings in Python are immutable sequences of characters. Python's `str` class provides a rich set of methods for string manipulation, including operations for concatenation, slicing, formatting, and more.</p>
+        </section>
+        <section>
+            <h2>Basic String Operations</h2>
+            <p>Here are some basic string operations provided by Python's `str`:</p>
+            <pre><code>def main():
+    # Example of string concatenation
+    str1 = "Hello, "
+    str2 = "world!"
+    result = str1 + str2
+    print("Concatenated string:", result)
 
+    # Example of string length
+    str_len = len("Example")
+    print("Length of 'Example' is", str_len)
+
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>This example demonstrates string concatenation using `+` operator and calculating string length using `len()` function.</p>
+        </section>
+        <section>
+            <h2>String Formatting</h2>
+            <p>Formatting strings in Python:</p>
+            <pre><code>def main():
+    # Example of string formatting
+    name = "Alice"
+    age = 30
+    formatted_str = f"My name is {name} and I am {age} years old."
+    print(formatted_str)
+
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>This snippet uses formatted string literals (f-strings) for string interpolation.</p>
+        </section>
+        <section>
+            <h2>String Methods</h2>
+            <p>Commonly used methods for string manipulation:</p>
+            <pre><code>def main():
+    # Example of string methods
+    text = "    Hello, world!    "
+    print(text.strip())         # Removes leading and trailing whitespace
+    print(text.lower())         # Converts string to lowercase
+    print(text.replace("world", "Python"))  # Replaces substring
+    print(text.startswith("Hello"))         # Checks if string starts with a substring
+
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>This code demonstrates methods like `strip()`, `lower()`, `replace()`, and `startswith()` for string manipulation.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Python's `str` class offers versatile methods for manipulating strings, making string handling in Python efficient and straightforward. Understanding these operations is essential for effective Python programming.</p>
+        </section>
+    </main>
 </body>
 </html>

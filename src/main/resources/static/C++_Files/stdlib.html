@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Standard Library: cstdlib</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Standard Library: cstdlib</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>The `<cstdlib>` library in C++ (or `stdlib.h` in C) provides general utilities, including functions for memory allocation, random number generation, and string manipulation.</p>
+        </section>
+        <section>
+            <h2>Memory Allocation</h2>
+            <p>Here's an example using memory allocation functions:</p>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+
+int main() {
+    // Allocate memory for an array of integers
+    int* array = (int*)std::malloc(5 * sizeof(int));
+    if (array != nullptr) {
+        for (int i = 0; i &lt; 5; ++i) {
+            array[i] = i + 1;
+        }
+        std::cout &lt;&lt; "Array elements: ";
+        for (int i = 0; i &lt; 5; ++i) {
+            std::cout &lt;&lt; array[i] &lt;&lt; " ";
+        }
+        std::cout &lt;&lt; std::endl;
+        std::free(array);
+    }
+
+    return 0;
+}</code></pre>
+            <p>This example demonstrates the use of `std::malloc` for dynamic memory allocation and `std::free` for freeing allocated memory.</p>
+        </section>
+        <section>
+            <h2>String Manipulation</h2>
+            <p>Functions for string manipulation:</p>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;cstring&gt;
+
+int main() {
+    // String manipulation example
+    char str[] = "Hello, world!";
+    std::cout &lt;&lt; "Length of string: " &lt;&lt; std::strlen(str) &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre>
+            <p>This code snippet shows how to use `std::strlen` to get the length of a C-style string.</p>
+        </section>
+        <section>
+            <h2>Random Number Generation</h2>
+            <p>Functions for random number generation:</p>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;cstdlib&gt;
+#include &lt;ctime&gt;
+
+int main() {
+    // Random number generation
+    std::srand(std::time(nullptr)); // seed random number generator
+    int randomNumber = std::rand() % 100 + 1; // generate random number between 1 and 100
+    std::cout &lt;&lt; "Random number: " &lt;&lt; randomNumber &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre>
+            <p>This snippet seeds the random number generator with `std::srand` and generates a random number using `std::rand`.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>The `<cstdlib>` library in C++ (or `stdlib.h` in C) provides essential utilities for memory allocation, string manipulation, and random number generation. It enhances productivity by offering ready-to-use implementations of common functionalities.</p>
+        </section>
+    </main>
+</body>
+</html>

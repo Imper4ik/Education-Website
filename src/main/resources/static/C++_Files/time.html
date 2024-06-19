@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Time with ctime</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Time with ctime</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>The `<ctime>` library in C++ provides functions for manipulating dates and times. It includes functions to get the current time, convert time formats, and perform arithmetic operations on time values.</p>
+        </section>
+        <section>
+            <h2>Basic Functions</h2>
+            <p>Here are some basic time-related functions provided by `<ctime>`:</p>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;ctime&gt;
+
+int main() {
+    // Get current time
+    std::time_t currentTime = std::time(nullptr);
+    std::cout &lt;&lt; "Current time: " &lt;&lt; std::ctime(&currentTime);
+
+    // Convert time to UTC
+    std::tm* utcTime = std::gmtime(&currentTime);
+    std::cout &lt;&lt; "UTC time: " &lt;&lt; (utcTime-&gt;tm_hour) &lt;&lt; ":" &lt;&lt; (utcTime-&gt;tm_min) &lt;&lt; ":" &lt;&lt; (utcTime-&gt;tm_sec) &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre>
+            <p>This example demonstrates the use of `std::time` to get the current time and `std::gmtime` to convert it to UTC format.</p>
+        </section>
+        <section>
+            <h2>Time Arithmetic</h2>
+            <p>You can perform arithmetic operations on time values using `<ctime>`:</p>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;ctime&gt;
+
+int main() {
+    std::time_t currentTime = std::time(nullptr);
+
+    // Add 1 day to the current time
+    std::time_t futureTime = currentTime + 24 * 60 * 60; // 24 hours * 60 minutes * 60 seconds
+    std::cout &lt;&lt; "Future time: " &lt;&lt; std::ctime(&futureTime);
+
+    return 0;
+}</code></pre>
+            <p>This code snippet adds 1 day to the current time and prints the future time.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>The `<ctime>` library in C++ provides essential functions for working with dates and times, including retrieving the current time, converting time formats, and performing arithmetic operations on time values. It enhances productivity by offering ready-to-use implementations of time-related operations.</p>
+        </section>
+    </main>
+</body>
+</html>

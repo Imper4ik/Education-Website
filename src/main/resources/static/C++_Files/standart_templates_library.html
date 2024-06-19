@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Standard Template Library (STL)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Standard Template Library (STL)</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>The C++ Standard Template Library (STL) is a powerful set of C++ template classes to provide general-purpose classes and functions with templates that implement many popular and commonly used algorithms and data structures, like vectors, lists, queues, and stacks, to name a few.</p>
+        </section>
+        <section>
+            <h2>Components of STL</h2>
+            <p>The STL consists of several components:</p>
+            <ul>
+                <li><strong>Containers:</strong> Classes to store collections of data.</li>
+                <li><strong>Algorithms:</strong> Functions to perform operations on the data stored in containers.</li>
+                <li><strong>Iterators:</strong> Objects that can traverse through the elements of a container.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Example: Using STL Vectors</h2>
+            <p>STL vectors are dynamic arrays that can resize themselves automatically when an element is inserted or deleted:</p>
+            <pre><code>#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int main() {
+    std::vector<int> numbers = {1, 2, 3, 4, 5};
+
+    // Adding elements to the vector
+    numbers.push_back(6);
+    numbers.push_back(7);
+
+    // Iterating through the vector
+    std::cout &lt;&lt; "Vector elements:";
+    for (auto it = numbers.begin(); it != numbers.end(); ++it) {
+        std::cout &lt;&lt; " " &lt;&lt; *it;
+    }
+    std::cout &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre>
+            <p>This example demonstrates how to use the `std::vector` container from STL to store integers dynamically and iterate over its elements.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>The C++ Standard Template Library (STL) is a powerful toolset that provides essential components like containers, algorithms, and iterators. It enhances productivity by providing ready-to-use generic implementations of common data structures and algorithms.</p>
+        </section>
+    </main>
+</body>
+</html>
