@@ -2,9 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Standard Input and Output</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Python Standard Input and Output</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>In Python, standard input and output operations are handled through built-in functions for reading and writing data.</p>
+        </section>
+        <section>
+            <h2>Basic Input and Output</h2>
+            <p>Examples of basic input and output operations:</p>
+            <pre><code>def main():
+    # Example of standard output
+    print("Hello, world!")
 
+    # Example of standard input
+    name = input("Enter your name: ")
+    print("Hello,", name)
+
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>This example demonstrates using `print()` function for output and `input()` function for input.</p>
+        </section>
+        <section>
+            <h2>File Input and Output</h2>
+            <p>Reading from and writing to files in Python:</p>
+            <pre><code>def main():
+    # Example of file output
+    with open('output.txt', 'w') as f:
+        f.write("Hello, file!\n")
+
+    # Example of file input
+    with open('output.txt', 'r') as f:
+        content = f.read()
+        print("Content of 'output.txt':", content)
+
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>This snippet shows writing to a file using `open()` function with 'w' mode and reading from it using 'r' mode.</p>
+        </section>
+        <section>
+            <h2>Formatted Output</h2>
+            <p>Formatting output in Python:</p>
+            <pre><code>def main():
+    # Example of formatted output
+    name = "Alice"
+    age = 30
+    print(f"My name is {name} and I am {age} years old.")
+
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>This code uses formatted string literals (f-strings) for string interpolation in output.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Python provides versatile functions and methods for input and output operations, enabling effective interaction with users and handling of data through files. Understanding these operations is fundamental for Python programming.</p>
+        </section>
+    </main>
 </body>
 </html>

@@ -2,9 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Math Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Python Math Operations</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>In Python, mathematical operations are performed using basic operators and functions provided by the `math` module for more advanced operations.</p>
+        </section>
+        <section>
+            <h2>Basic Math Operations</h2>
+            <p>Examples of basic arithmetic operations:</p>
+            <pre><code>def main():
+    # Example of basic arithmetic operations
+    a = 10
+    b = 5
+    print(f"Addition: {a} + {b} = {a + b}")
+    print(f"Subtraction: {a} - {b} = {a - b}")
+    print(f"Multiplication: {a} * {b} = {a * b}")
+    print(f"Division: {a} / {b} = {a / b}")
 
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>This example demonstrates addition, subtraction, multiplication, and division using basic Python operators.</p>
+        </section>
+        <section>
+            <h2>The Math Module</h2>
+            <p>Using functions from the `math` module:</p>
+            <pre><code>import math
+
+def main():
+    # Example of using math module functions
+    num = 16
+    print(f"Square root of {num}: {math.sqrt(num)}")
+    print(f"Factorial of {num}: {math.factorial(num)}")
+    print(f"Power of 2^3: {math.pow(2, 3)}")
+
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>This snippet shows examples of using `math.sqrt()` for square root, `math.factorial()` for factorial, and `math.pow()` for exponentiation.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Python provides powerful built-in capabilities for performing basic and advanced mathematical operations. Utilizing operators and functions from the `math` module allows for efficient computation in Python programs.</p>
+        </section>
+    </main>
 </body>
 </html>
