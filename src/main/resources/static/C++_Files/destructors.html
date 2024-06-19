@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Destructors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Destructors</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Destructors in C++ are special member functions that are executed when an object of a class is destroyed. They are used to release resources that the object may have acquired during its lifetime.</p>
+        </section>
+        <section>
+            <h2>Syntax of Destructors</h2>
+            <p>A destructor has the same name as the class, preceded by a tilde (~), and it cannot take arguments or return a value.</p>
+            <pre><code>class MyClass {
+public:
+    ~MyClass() {
+        // Destructor code here
+    }
+};</code></pre>
+        </section>
+        <section>
+            <h2>When are Destructors Called?</h2>
+            <p>Destructors are called automatically in the following scenarios:</p>
+            <ul>
+                <li>When an object goes out of scope.</li>
+                <li>When a dynamically allocated object is deleted using the <code>delete</code> operator.</li>
+                <li>When a program ends and global or static objects are destroyed.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Example of a Destructor</h2>
+            <p>Below is an example of a class with a destructor that prints a message when it is called:</p>
+            <pre><code>class MyClass {
+public:
+    MyClass() {
+        cout &lt;&lt; "Constructor called!" &lt;&lt; endl;
+    }
+    ~MyClass() {
+        cout &lt;&lt; "Destructor called!" &lt;&lt; endl;
+    }
+};
+
+int main() {
+    MyClass obj; // Constructor is called
+    // Destructor will be called automatically when obj goes out of scope
+    return 0;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Releasing Resources</h2>
+            <p>Destructors are commonly used to release resources such as memory, file handles, or network connections. Here is an example of a destructor that releases dynamically allocated memory:</p>
+            <pre><code>class MyClass {
+private:
+    int* data;
+public:
+    MyClass(int size) {
+        data = new int[size];
+        cout &lt;&lt; "Memory allocated!" &lt;&lt; endl;
+    }
+    ~MyClass() {
+        delete[] data;
+        cout &lt;&lt; "Memory deallocated!" &lt;&lt; endl;
+    }
+};
+
+int main() {
+    MyClass obj(10); // Memory allocated
+    // Memory will be deallocated when obj goes out of scope
+    return 0;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Destructors are essential for resource management in C++. They ensure that resources are properly released when an object is no longer needed. Understanding how to use destructors effectively is crucial for writing robust and efficient C++ programs.</p>
+        </section>
+    </main>
+</body>
+</html>

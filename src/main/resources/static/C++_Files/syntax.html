@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic C++ Syntax</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Basic C++ Syntax</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>C++ is a powerful general-purpose programming language. It is used for creating high-performance applications. Here are some of the basic syntax elements of C++.</p>
+        </section>
+        <section>
+            <h2>Hello, World!</h2>
+            <p>The following example shows a simple C++ program that prints "Hello, World!" to the console.</p>
+            <pre><code>#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; "Hello, World!" &lt;&lt; std::endl;
+    return 0;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Variables</h2>
+            <p>Variables are used to store data. In C++, you must declare a variable before you use it. Here is an example of variable declaration and initialization:</p>
+            <pre><code>int myNumber = 5;
+double myFloat = 5.99;
+char myLetter = 'D';</code></pre>
+        </section>
+        <section>
+            <h2>Data Types</h2>
+            <p>C++ supports several different data types, including:</p>
+            <ul>
+                <li><code>int</code>: Integer type</li>
+                <li><code>double</code>: Floating point type</li>
+                <li><code>char</code>: Character type</li>
+                <li><code>bool</code>: Boolean type</li>
+                <li><code>string</code>: String type (provided by the standard library)</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Control Structures</h2>
+            <p>Control structures in C++ include:</p>
+            <h3>If-Else</h3>
+            <pre><code>int x = 10;
+if (x > 0) {
+    std::cout &lt;&lt; "x is positive" &lt;&lt; std::endl;
+} else {
+    std::cout &lt;&lt; "x is not positive" &lt;&lt; std::endl;
+}</code></pre>
+            <h3>For Loop</h3>
+            <pre><code>for (int i = 0; i < 5; i++) {
+    std::cout &lt;&lt; i &lt;&lt; std::endl;
+}</code></pre>
+            <h3>While Loop</h3>
+            <pre><code>int i = 0;
+while (i < 5) {
+    std::cout &lt;&lt; i &lt;&lt; std::endl;
+    i++;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Functions</h2>
+            <p>Functions are blocks of code that perform a specific task. Here is an example of a function in C++:</p>
+            <pre><code>void myFunction() {
+    std::cout &lt;&lt; "Hello from myFunction!" &lt;&lt; std::endl;
+}
+
+int main() {
+    myFunction();
+    return 0;
+}</code></pre>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Control Statements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Control Statements</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Control statements are used to determine the flow of control in a program. C++ provides various control statements to achieve different types of flow control.</p>
+        </section>
+        <section>
+            <h2>If-Else Statement</h2>
+            <p>The if-else statement allows you to execute certain code based on a condition.</p>
+            <pre><code>int x = 10;
+if (x > 0) {
+    std::cout &lt;&lt; "x is positive" &lt;&lt; std::endl;
+} else {
+    std::cout &lt;&lt; "x is not positive" &lt;&lt; std::endl;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Switch Statement</h2>
+            <p>The switch statement allows you to select one of many code blocks to be executed.</p>
+            <pre><code>int day = 4;
+switch (day) {
+    case 1:
+        std::cout &lt;&lt; "Monday" &lt;&lt; std::endl;
+        break;
+    case 2:
+        std::cout &lt;&lt; "Tuesday" &lt;&lt; std::endl;
+        break;
+    case 3:
+        std::cout &lt;&lt; "Wednesday" &lt;&lt; std::endl;
+        break;
+    case 4:
+        std::cout &lt;&lt; "Thursday" &lt;&lt; std::endl;
+        break;
+    case 5:
+        std::cout &lt;&lt; "Friday" &lt;&lt; std::endl;
+        break;
+    case 6:
+        std::cout &lt;&lt; "Saturday" &lt;&lt; std::endl;
+        break;
+    case 7:
+        std::cout &lt;&lt; "Sunday" &lt;&lt; std::endl;
+        break;
+    default:
+        std::cout &lt;&lt; "Invalid day" &lt;&lt; std::endl;
+}</code></pre>
+        </section>
+        <section>
+            <h2>For Loop</h2>
+            <p>The for loop is used to iterate over a range of values.</p>
+            <pre><code>for (int i = 0; i < 5; i++) {
+    std::cout &lt;&lt; i &lt;&lt; std::endl;
+}</code></pre>
+        </section>
+        <section>
+            <h2>While Loop</h2>
+            <p>The while loop executes a block of code as long as a specified condition is true.</p>
+            <pre><code>int i = 0;
+while (i < 5) {
+    std::cout &lt;&lt; i &lt;&lt; std::endl;
+    i++;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Do-While Loop</h2>
+            <p>The do-while loop is similar to the while loop, but it checks the condition after executing the block of code.</p>
+            <pre><code>int i = 0;
+do {
+    std::cout &lt;&lt; i &lt;&lt; std::endl;
+    i++;
+} while (i < 5);</code></pre>
+        </section>
+        <section>
+            <h2>Break Statement</h2>
+            <p>The break statement is used to exit a loop or switch statement prematurely.</p>
+            <pre><code>for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+        break;
+    }
+    std::cout &lt;&lt; i &lt;&lt; std::endl;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Continue Statement</h2>
+            <p>The continue statement skips the current iteration of a loop and moves to the next iteration.</p>
+            <pre><code>for (int i = 0; i < 10; i++) {
+    if (i == 5) {
+        continue;
+    }
+    std::cout &lt;&lt; i &lt;&lt; std::endl;
+}</code></pre>
+        </section>
+    </main>
+</body>
+</html>

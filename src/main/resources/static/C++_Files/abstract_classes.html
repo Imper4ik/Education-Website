@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Abstract Classes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Abstract Classes</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>In C++, an abstract class is a class that has at least one pure virtual function. Abstract classes cannot be instantiated directly; they are meant to be inherited by other classes, which must implement all pure virtual functions to become concrete classes.</p>
+        </section>
+        <section>
+            <h2>Declaration of Abstract Classes</h2>
+            <p>To declare an abstract class, you use at least one pure virtual function:</p>
+            <pre><code>class AbstractBase {
+public:
+    virtual void pureVirtualFunction() = 0; // Pure virtual function
+    virtual void regularVirtualFunction() {
+        // Regular virtual function implementation
+    }
+};</code></pre>
+            <p>Here, <code>pureVirtualFunction()</code> is a pure virtual function, denoted by <code>= 0</code>, meaning any class inheriting from <code>AbstractBase</code> must provide an implementation for it.</p>
+        </section>
+        <section>
+            <h2>Using Abstract Classes</h2>
+            <p>Abstract classes are used to define interfaces and provide a common base for derived classes:</p>
+            <pre><code>class Shape {
+public:
+    virtual void draw() const = 0; // Pure virtual function
+    virtual double area() const = 0; // Another pure virtual function
+    virtual ~Shape() {} // Virtual destructor
+};
+
+class Circle : public Shape {
+private:
+    double radius;
+public:
+    Circle(double r) : radius(r) {}
+    void draw() const override {
+        cout &lt;&lt; "Drawing Circle" &lt;&lt; endl;
+    }
+    double area() const override {
+        return 3.14 * radius * radius;
+    }
+};
+
+int main() {
+    // Shape shape; // Error: Cannot instantiate abstract class
+    Circle circle(5.0);
+    circle.draw();
+    cout &lt;&lt; "Area: " &lt;&lt; circle.area() &lt;&lt; endl;
+    return 0;
+}</code></pre>
+            <p>In this example, <code>Shape</code> is an abstract base class with pure virtual functions <code>draw()</code> and <code>area()</code>. <code>Circle</code> inherits from <code>Shape</code> and provides concrete implementations for these functions.</p>
+        </section>
+        <section>
+            <h2>Benefits of Abstract Classes</h2>
+            <p>Abstract classes facilitate:</p>
+            <ul>
+                <li><strong>Polymorphism:</strong> Derived classes can be treated uniformly through pointers or references of the abstract base class.</li>
+                <li><strong>Forcing interfaces:</strong> Ensures derived classes implement specific functionality, enforcing design contracts.</li>
+                <li><strong>Code organization:</strong> Defines a clear hierarchy of related classes and interfaces.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Abstract classes in C++ provide a way to define interfaces and enforce the implementation of specific methods in derived classes. They play a crucial role in achieving polymorphism and designing robust object-oriented systems.</p>
+        </section>
+    </main>
+</body>
+</html>

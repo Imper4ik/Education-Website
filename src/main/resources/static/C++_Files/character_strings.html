@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Character Strings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Character Strings</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Character strings are arrays of characters in C++. They are used to store sequences of characters, such as words or sentences. C++ provides several ways to handle character strings, including C-style strings and the C++ <code>string</code> class.</p>
+        </section>
+        <section>
+            <h2>C-Style Strings</h2>
+            <p>C-style strings are arrays of characters terminated by a null character (<code>'\0'</code>). They can be declared and initialized as follows:</p>
+            <pre><code>char str1[] = "Hello, World!";  // String literal
+char str2[13] = "Hello, World!";  // Specifying the size
+char str3[] = {'H', 'e', 'l', 'l', 'o', ',', ' ', 'W', 'o', 'r', 'l', 'd', '!', '\0'};  // Character array</code></pre>
+        </section>
+        <section>
+            <h2>String Input and Output</h2>
+            <p>To read a C-style string from the user, you can use <code>cin</code>. To output a string, you can use <code>cout</code>:</p>
+            <pre><code>char name[50];
+cout &lt;&lt; "Enter your name: ";
+cin &gt;&gt; name;
+cout &lt;&lt; "Hello, " &lt;&lt; name &lt;&lt; "!";</code></pre>
+        </section>
+        <section>
+            <h2>String Manipulation Functions</h2>
+            <p>C++ provides a number of functions for manipulating C-style strings, which are available in the <code>&lt;cstring&gt;</code> header. Some commonly used functions include:</p>
+            <ul>
+                <li><code>strlen(str)</code> - Returns the length of the string <code>str</code></li>
+                <li><code>strcpy(dest, src)</code> - Copies the string <code>src</code> to <code>dest</code></li>
+                <li><code>strcat(dest, src)</code> - Appends the string <code>src</code> to <code>dest</code></li>
+                <li><code>strcmp(str1, str2)</code> - Compares the strings <code>str1</code> and <code>str2</code></li>
+            </ul>
+            <pre><code>char str1[20] = "Hello";
+char str2[20] = "World";
+char str3[40];
+
+strcpy(str3, str1);  // Copy str1 into str3
+strcat(str3, " ");   // Concatenate a space to str3
+strcat(str3, str2);  // Concatenate str2 to str3
+
+cout &lt;&lt; "Combined String: " &lt;&lt; str3;  // Output: "Hello World"</code></pre>
+        </section>
+        <section>
+            <h2>C++ <code>string</code> Class</h2>
+            <p>The C++ Standard Library provides the <code>string</code> class to handle strings more easily and safely than C-style strings. To use it, include the <code>&lt;string&gt;</code> header:</p>
+            <pre><code>#include &lt;string&gt;
+using namespace std;
+
+string str1 = "Hello";
+string str2 = "World";
+string str3 = str1 + " " + str2;
+
+cout &lt;&lt; "Combined String: " &lt;&lt; str3;  // Output: "Hello World"</code></pre>
+        </section>
+        <section>
+            <h2>Common <code>string</code> Class Methods</h2>
+            <p>The <code>string</code> class provides many useful methods for string manipulation:</p>
+            <ul>
+                <li><code>length()</code> - Returns the length of the string</li>
+                <li><code>append(str)</code> - Appends <code>str</code> to the string</li>
+                <li><code>substr(pos, len)</code> - Returns a substring starting at <code>pos</code> with length <code>len</code></li>
+                <li><code>find(str)</code> - Returns the position of the first occurrence of <code>str</code> in the string</li>
+                <li><code>replace(pos, len, str)</code> - Replaces a portion of the string starting at <code>pos</code> with length <code>len</code> with <code>str</code></li>
+            </ul>
+            <pre><code>string str = "Hello, World!";
+cout &lt;&lt; "Length: " &lt;&lt; str.length();  // Output: 13
+cout &lt;&lt; "Substring: " &lt;&lt; str.substr(7, 5);  // Output: "World"
+str.replace(7, 5, "C++");
+cout &lt;&lt; "Modified String: " &lt;&lt; str;  // Output: "Hello, C++!"</code></pre>
+        </section>
+    </main>
+</body>
+</html>

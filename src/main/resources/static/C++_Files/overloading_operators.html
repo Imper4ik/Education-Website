@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Operator Overloading</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Operator Overloading</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Operator overloading in C++ allows you to redefine the way operators work for user-defined types (classes and structs). It enables you to extend the functionality of operators to work with objects.</p>
+        </section>
+        <section>
+            <h2>Overloading Operators</h2>
+            <p>To overload an operator, you define a function with the keyword <code>operator</code> followed by the operator symbol or keyword:</p>
+            <pre><code>class Complex {
+private:
+    double real;
+    double imaginary;
+public:
+    Complex(double r, double i) : real(r), imaginary(i) {}
+
+    // Overloading the + operator
+    Complex operator+(const Complex& other) const {
+        return Complex(real + other.real, imaginary + other.imaginary);
+    }
+
+    // Overloading the * operator
+    Complex operator*(const Complex& other) const {
+        return Complex(real * other.real - imaginary * other.imaginary,
+                       real * other.imaginary + imaginary * other.real);
+    }
+
+    // Overloading the << operator (as a friend function)
+    friend ostream& operator<<(ostream& os, const Complex& c) {
+        os &lt;&lt; c.real &lt;&lt; " + " &lt;&lt; c.imaginary &lt;&lt; "i";
+        return os;
+    }
+};
+
+int main() {
+    Complex a(1.0, 2.0);
+    Complex b(3.0, 4.0);
+
+    Complex c = a + b; // Calls operator+
+    Complex d = a * b; // Calls operator*
+
+    cout &lt;&lt; "a + b = " &lt;&lt; c &lt;&lt; endl;
+    cout &lt;&lt; "a * b = " &lt;&lt; d &lt;&lt; endl;
+
+    return 0;
+}</code></pre>
+            <p>In this example, <code>Complex</code> class overloads the addition (<code>+</code>), multiplication (<code>*</code>), and insertion (<code><<</code>) operators. Overloaded operators can be member functions or non-member functions (often friend functions).</p>
+        </section>
+        <section>
+            <h2>Commonly Overloaded Operators</h2>
+            <p>Some commonly overloaded operators include:</p>
+            <ul>
+                <li><code>+, -, *, /</code> for arithmetic operations</li>
+                <li><code>+=, -=, *=, /=</code> for compound assignment</li>
+                <li><code>++, --</code> for prefix and postfix increment/decrement</li>
+                <li><code>==, !=, <, >, <=, >=</code> for comparison</li>
+                <li><code>[], (), -></code> for subscripting, function call, and member access</li>
+                <li><code>=, <<, >></code> for assignment, output, and input</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Considerations</h2>
+            <p>Operator overloading should be used judiciously to maintain clarity and consistency in code. Overloaded operators should mimic the behavior expected from built-in types to avoid confusion.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Operator overloading in C++ allows you to redefine the behavior of operators for user-defined types, providing flexibility and enabling intuitive use of objects in expressions. Understanding how to correctly overload operators is important for creating expressive and maintainable code.</p>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Constructors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Constructors</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Constructors in C++ are special member functions that are executed whenever an object of a class is created. They are used to initialize objects.</p>
+        </section>
+        <section>
+            <h2>Default Constructor</h2>
+            <p>A default constructor is a constructor that takes no parameters. If no constructor is defined, the compiler generates a default constructor.</p>
+            <pre><code>class MyClass {
+public:
+    MyClass() {
+        cout &lt;&lt; "Default constructor called!";
+    }
+};
+
+int main() {
+    MyClass obj; // Default constructor is called
+    return 0;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Parameterized Constructor</h2>
+            <p>A parameterized constructor is a constructor that takes arguments. It allows initializing an object with specific values.</p>
+            <pre><code>class MyClass {
+private:
+    int value;
+public:
+    MyClass(int v) {
+        value = v;
+    }
+    void display() {
+        cout &lt;&lt; "Value: " &lt;&lt; value;
+    }
+};
+
+int main() {
+    MyClass obj(10); // Parameterized constructor is called
+    obj.display();
+    return 0;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Copy Constructor</h2>
+            <p>A copy constructor is a constructor that initializes an object using another object of the same class. It takes a reference to an object of the same class as a parameter.</p>
+            <pre><code>class MyClass {
+private:
+    int value;
+public:
+    MyClass(int v) {
+        value = v;
+    }
+    MyClass(const MyClass &obj) {
+        value = obj.value;
+    }
+    void display() {
+        cout &lt;&lt; "Value: " &lt;&lt; value;
+    }
+};
+
+int main() {
+    MyClass obj1(10); // Parameterized constructor is called
+    MyClass obj2 = obj1; // Copy constructor is called
+    obj2.display();
+    return 0;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Destructor</h2>
+            <p>A destructor is a special member function that is executed when an object of a class is destroyed. It is used to release resources allocated by the object.</p>
+            <pre><code>class MyClass {
+public:
+    ~MyClass() {
+        cout &lt;&lt; "Destructor called!";
+    }
+};
+
+int main() {
+    MyClass obj; // Destructor will be called when obj goes out of scope
+    return 0;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Constructors are essential for initializing objects in C++. They provide a mechanism to set initial values and allocate resources when an object is created. Destructors complement constructors by cleaning up resources when an object is destroyed.</p>
+        </section>
+    </main>
+</body>
+</html>

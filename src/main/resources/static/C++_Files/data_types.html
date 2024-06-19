@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Data Types</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Data Types</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Data types in C++ specify the type of data that a variable can hold. C++ provides several built-in data types, as well as the ability to define your own types using structures, classes, and enumerations.</p>
+        </section>
+        <section>
+            <h2>Basic Data Types</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Description</th>
+                        <th>Size</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>int</code></td>
+                        <td>Integer type</td>
+                        <td>Usually 4 bytes</td>
+                    </tr>
+                    <tr>
+                        <td><code>float</code></td>
+                        <td>Floating point type</td>
+                        <td>Usually 4 bytes</td>
+                    </tr>
+                    <tr>
+                        <td><code>double</code></td>
+                        <td>Double precision floating point type</td>
+                        <td>Usually 8 bytes</td>
+                    </tr>
+                    <tr>
+                        <td><code>char</code></td>
+                        <td>Character type</td>
+                        <td>1 byte</td>
+                    </tr>
+                    <tr>
+                        <td><code>bool</code></td>
+                        <td>Boolean type</td>
+                        <td>1 byte</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Derived Data Types</h2>
+            <p>Derived data types include arrays, pointers, references, and function types.</p>
+            <ul>
+                <li><code>int arr[10];</code> - Array of integers</li>
+                <li><code>int* ptr;</code> - Pointer to an integer</li>
+                <li><code>int& ref = var;</code> - Reference to an integer</li>
+                <li><code>int func();</code> - Function returning an integer</li>
+            </ul>
+        </section>
+        <section>
+            <h2>User-defined Data Types</h2>
+            <p>User-defined data types include structures, unions, classes, and enumerations.</p>
+            <ul>
+                <li><code>struct</code> - Defines a structure</li>
+                <li><code>union</code> - Defines a union</li>
+                <li><code>class</code> - Defines a class</li>
+                <li><code>enum</code> - Defines an enumeration</li>
+            </ul>
+            <pre><code>struct Person {
+    std::string name;
+    int age;
+};
+
+union Data {
+    int intValue;
+    float floatValue;
+};
+
+class Animal {
+public:
+    std::string species;
+    void makeSound() {
+        std::cout << "Sound!" << std::endl;
+    }
+};
+
+enum Color {
+    RED,
+    GREEN,
+    BLUE
+};</code></pre>
+        </section>
+    </main>
+</body>
+</html>

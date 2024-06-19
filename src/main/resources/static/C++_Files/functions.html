@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Functions</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Functions are a fundamental building block in C++ programming. They allow you to encapsulate code into reusable blocks that can be called multiple times throughout a program. Functions help make programs more modular, readable, and maintainable.</p>
+        </section>
+        <section>
+            <h2>Defining a Function</h2>
+            <p>A function definition in C++ consists of a return type, function name, parameters, and a body. Here's the basic syntax:</p>
+            <pre><code>return_type function_name(parameters) {
+    // function body
+}</code></pre>
+            <p>Example:</p>
+            <pre><code>int add(int a, int b) {
+    return a + b;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Calling a Function</h2>
+            <p>Once a function is defined, it can be called from anywhere in the program. When calling a function, you provide arguments for its parameters:</p>
+            <pre><code>int result = add(5, 3);  // result will be 8</code></pre>
+        </section>
+        <section>
+            <h2>Function Parameters</h2>
+            <p>Functions can take zero or more parameters. Parameters act as placeholders for the values passed into the function when it is called. Parameters are specified within the parentheses in the function definition.</p>
+            <pre><code>void greet(std::string name) {
+    std::cout << "Hello, " << name << "!" << std::endl;
+}</code></pre>
+            <p>Example of calling the function:</p>
+            <pre><code>greet("Alice");  // Output: Hello, Alice!</code></pre>
+        </section>
+        <section>
+            <h2>Return Values</h2>
+            <p>Functions can return values of any data type. The return type is specified before the function name. Use the <code>return</code> statement to return a value from the function.</p>
+            <pre><code>double multiply(double x, double y) {
+    return x * y;
+}</code></pre>
+            <p>Example of calling the function:</p>
+            <pre><code>double product = multiply(2.5, 4.0);  // product will be 10.0</code></pre>
+        </section>
+        <section>
+            <h2>Function Overloading</h2>
+            <p>C++ allows you to define multiple functions with the same name but different parameter lists. This is called function overloading. The correct function is chosen based on the arguments provided during the function call.</p>
+            <pre><code>int multiply(int a, int b) {
+    return a * b;
+}
+
+double multiply(double x, double y) {
+    return x * y;
+}</code></pre>
+            <p>Example of calling the overloaded functions:</p>
+            <pre><code>int product1 = multiply(3, 4);        // Calls int version, product1 will be 12
+double product2 = multiply(2.5, 4.0);  // Calls double version, product2 will be 10.0</code></pre>
+        </section>
+    </main>
+</body>
+</html>

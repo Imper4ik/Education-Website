@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Access Control</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Access Control</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Access control in C++ is implemented using access specifiers. These specifiers determine the accessibility of class members (attributes and methods) within and outside the class. The three primary access specifiers are <code>public</code>, <code>private</code>, and <code>protected</code>.</p>
+        </section>
+        <section>
+            <h2>Public Access</h2>
+            <p>Members declared as <code>public</code> are accessible from anywhere in the program where the object is visible.</p>
+            <pre><code>class MyClass {
+public:
+    int myNumber;
+    void myFunction() {
+        cout &lt;&lt; "Hello, World!";
+    }
+};
+
+int main() {
+    MyClass obj;
+    obj.myNumber = 10; // Accessible
+    obj.myFunction();  // Accessible
+    return 0;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Private Access</h2>
+            <p>Members declared as <code>private</code> are accessible only within the class itself. They cannot be accessed directly from outside the class.</p>
+            <pre><code>class MyClass {
+private:
+    int myNumber;
+    void myFunction() {
+        cout &lt;&lt; "Hello, World!";
+    }
+public:
+    void setNumber(int num) {
+        myNumber = num;
+    }
+    int getNumber() {
+        return myNumber;
+    }
+};
+
+int main() {
+    MyClass obj;
+    // obj.myNumber = 10; // Not accessible
+    // obj.myFunction();  // Not accessible
+    obj.setNumber(10);   // Accessible through public function
+    cout &lt;&lt; obj.getNumber(); // Accessible through public function
+    return 0;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Protected Access</h2>
+            <p>Members declared as <code>protected</code> are accessible within the class itself and by derived classes.</p>
+            <pre><code>class Base {
+protected:
+    int myNumber;
+public:
+    void setNumber(int num) {
+        myNumber = num;
+    }
+};
+
+class Derived : public Base {
+public:
+    void display() {
+        cout &lt;&lt; myNumber; // Accessible in derived class
+    }
+};
+
+int main() {
+    Derived obj;
+    obj.setNumber(10); // Accessible through public function
+    obj.display();     // Accessible in derived class function
+    return 0;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Access specifiers are crucial in implementing encapsulation in C++. They help in controlling the visibility and accessibility of class members, thereby protecting the integrity of the data.</p>
+        </section>
+    </main>
+</body>
+</html>

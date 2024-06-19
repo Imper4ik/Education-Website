@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Namespaces</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Namespaces</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Namespaces are used in C++ to organize code into logical groups and to prevent name collisions that can occur especially when your code base includes multiple libraries. Namespaces provide a way to group identifiers (names of types, functions, variables, etc.) under a name.</p>
+        </section>
+        <section>
+            <h2>Defining a Namespace</h2>
+            <p>You define a namespace using the <code>namespace</code> keyword followed by the name of the namespace and a block of code enclosed in curly braces:</p>
+            <pre><code>namespace myNamespace {
+    int myVariable;
+    void myFunction() {
+        // function body
+    }
+}</code></pre>
+        </section>
+        <section>
+            <h2>Using a Namespace</h2>
+            <p>To access members of a namespace, you use the scope resolution operator <code>::</code>:</p>
+            <pre><code>int main() {
+    myNamespace::myVariable = 5;
+    myNamespace::myFunction();
+    return 0;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Namespace Aliases</h2>
+            <p>You can create an alias for a namespace to make it easier to work with, especially if the namespace name is long:</p>
+            <pre><code>namespace mn = myNamespace;
+
+int main() {
+    mn::myVariable = 5;
+    mn::myFunction();
+    return 0;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Unnamed (Anonymous) Namespaces</h2>
+            <p>An unnamed or anonymous namespace is a namespace that doesn't have a name. Members of an unnamed namespace have internal linkage, meaning they are only accessible within the file they are declared in:</p>
+            <pre><code>namespace {
+    int myInternalVariable;
+    void myInternalFunction() {
+        // function body
+    }
+}
+
+int main() {
+    myInternalVariable = 5;
+    myInternalFunction();
+    return 0;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Nested Namespaces</h2>
+            <p>Namespaces can be nested inside other namespaces. You can access members of a nested namespace using the scope resolution operator:</p>
+            <pre><code>namespace outerNamespace {
+    namespace innerNamespace {
+        int myVariable;
+        void myFunction() {
+            // function body
+        }
+    }
+}
+
+int main() {
+    outerNamespace::innerNamespace::myVariable = 5;
+    outerNamespace::innerNamespace::myFunction();
+    return 0;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Using Directive</h2>
+            <p>The <code>using</code> directive allows you to use all the members of a namespace without prefixing them with the namespace name:</p>
+            <pre><code>using namespace myNamespace;
+
+int main() {
+    myVariable = 5;
+    myFunction();
+    return 0;
+}</code></pre>
+            <p>Note that using directives can lead to name collisions and should be used with caution.</p>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Classes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Classes</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Classes are user-defined types in C++ that represent real-world entities. They allow you to bundle data and functions together to form objects. Classes form the foundation of Object-Oriented Programming (OOP) in C++.</p>
+        </section>
+        <section>
+            <h2>Defining a Class</h2>
+            <p>A class definition starts with the <code>class</code> keyword, followed by the class name and a pair of curly braces containing its members:</p>
+            <pre><code>class MyClass {
+public:
+    int myNumber;
+    void myFunction() {
+        cout &lt;&lt; "Hello, World!";
+    }
+};</code></pre>
+        </section>
+        <section>
+            <h2>Creating Objects</h2>
+            <p>Once a class is defined, you can create objects (instances of the class) using the class name:</p>
+            <pre><code>MyClass myObj;  // Create an object of MyClass
+myObj.myNumber = 5;  // Access the data member
+myObj.myFunction();  // Call the member function</code></pre>
+        </section>
+        <section>
+            <h2>Access Specifiers</h2>
+            <p>Access specifiers define the access level of class members. The three access specifiers are:</p>
+            <ul>
+                <li><code>public</code>: Members are accessible from outside the class.</li>
+                <li><code>private</code>: Members are accessible only within the class.</li>
+                <li><code>protected</code>: Members are accessible within the class and by derived classes.</li>
+            </ul>
+            <pre><code>class MyClass {
+public:
+    int publicNumber;
+private:
+    int privateNumber;
+};</code></pre>
+        </section>
+        <section>
+            <h2>Constructors and Destructors</h2>
+            <p>Constructors are special member functions that are called when an object is created. Destructors are called when an object is destroyed.</p>
+            <pre><code>class MyClass {
+public:
+    // Constructor
+    MyClass() {
+        cout &lt;&lt; "Object is created";
+    }
+    // Destructor
+    ~MyClass() {
+        cout &lt;&lt; "Object is destroyed";
+    }
+};</code></pre>
+        </section>
+        <section>
+            <h2>Member Functions</h2>
+            <p>Member functions can be defined inside or outside the class definition. When defined outside, use the scope resolution operator <code>::</code>.</p>
+            <pre><code>class MyClass {
+public:
+    void myFunction();  // Declaration
+};
+
+// Definition outside the class
+void MyClass::myFunction() {
+    cout &lt;&lt; "Hello, World!";
+}</code></pre>
+        </section>
+        <section>
+            <h2>Encapsulation</h2>
+            <p>Encapsulation is the concept of wrapping data and functions that operate on the data into a single unit. It helps in data hiding and abstraction.</p>
+            <pre><code>class MyClass {
+private:
+    int myNumber;
+public:
+    void setNumber(int num) {
+        myNumber = num;
+    }
+    int getNumber() {
+        return myNumber;
+    }
+};</code></pre>
+        </section>
+    </main>
+</body>
+</html>

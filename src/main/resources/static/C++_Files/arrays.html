@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Arrays</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Arrays</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Arrays are used in C++ to store multiple values of the same type in a single variable. Arrays are a collection of elements that are accessed by indexing.</p>
+        </section>
+        <section>
+            <h2>Declaring an Array</h2>
+            <p>You declare an array by specifying the type of its elements and the number of elements required by an array as follows:</p>
+            <pre><code>int myArray[10];  // Declares an array of 10 integers</code></pre>
+        </section>
+        <section>
+            <h2>Initializing an Array</h2>
+            <p>Arrays can be initialized when they are declared. The initializer is a comma-separated list enclosed in curly braces:</p>
+            <pre><code>int myArray[5] = {1, 2, 3, 4, 5};  // Array with 5 integers initialized</code></pre>
+            <p>If you do not initialize all elements, the remaining elements will be set to zero in the case of numeric types:</p>
+            <pre><code>int myArray[5] = {1, 2};  // Array initialized with 1, 2, 0, 0, 0</code></pre>
+        </section>
+        <section>
+            <h2>Accessing Array Elements</h2>
+            <p>You access elements of an array by using the index number, which starts from zero:</p>
+            <pre><code>myArray[0] = 10;  // Sets the first element to 10
+int value = myArray[1];  // Retrieves the second element</code></pre>
+        </section>
+        <section>
+            <h2>Multi-dimensional Arrays</h2>
+            <p>C++ allows multidimensional arrays. The simplest form of the multidimensional array is the two-dimensional array:</p>
+            <pre><code>int matrix[3][4];  // Declares a 3x4 matrix (2D array)</code></pre>
+            <p>Multi-dimensional arrays can also be initialized when they are declared:</p>
+            <pre><code>int matrix[3][4] = {
+    {1, 2, 3, 4},
+    {5, 6, 7, 8},
+    {9, 10, 11, 12}
+};</code></pre>
+        </section>
+        <section>
+            <h2>Array of Strings</h2>
+            <p>In C++, an array of strings is actually a two-dimensional array of characters. Here is an example:</p>
+            <pre><code>char colors[4][10] = {
+    "Red",
+    "Green",
+    "Blue",
+    "Yellow"
+};</code></pre>
+        </section>
+        <section>
+            <h2>Using Loops with Arrays</h2>
+            <p>Loops are commonly used to iterate over the elements of an array:</p>
+            <pre><code>for (int i = 0; i < 5; i++) {
+    cout &lt;&lt; myArray[i] &lt;&lt; " ";
+}</code></pre>
+        </section>
+    </main>
+</body>
+</html>

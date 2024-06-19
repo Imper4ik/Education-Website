@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Inheritance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Inheritance</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Inheritance in C++ allows one class (derived class) to inherit properties and behaviors from another class (base class). This enables code reusability and the creation of hierarchical relationships between classes.</p>
+        </section>
+        <section>
+            <h2>Syntax of Inheritance</h2>
+            <p>To derive a class in C++, use the following syntax:</p>
+            <pre><code>class DerivedClass : accessSpecifier BaseClass {
+    // Derived class members
+};</code></pre>
+            <p>Here, <code>DerivedClass</code> inherits from <code>BaseClass</code> with the specified <code>accessSpecifier</code> (public, protected, or private).</p>
+        </section>
+        <section>
+            <h2>Types of Inheritance</h2>
+            <p>C++ supports several types of inheritance:</p>
+            <ul>
+                <li><strong>Single inheritance:</strong> One derived class inherits from one base class.</li>
+                <li><strong>Multiple inheritance:</strong> One derived class inherits from multiple base classes.</li>
+                <li><strong>Multi-level inheritance:</strong> Deriving a class from another derived class.</li>
+                <li><strong>Hierarchical inheritance:</strong> Multiple derived classes inherit from a single base class.</li>
+                <li><strong>Hybrid inheritance:</strong> Combination of two or more types of inheritance.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Example of Inheritance</h2>
+            <p>Below is an example demonstrating single inheritance:</p>
+            <pre><code>class Animal {
+public:
+    void eat() {
+        cout &lt;&lt; "Animal eats" &lt;&lt; endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void bark() {
+        cout &lt;&lt; "Dog barks" &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Dog dog;
+    dog.eat();  // Accessing base class method
+    dog.bark(); // Accessing derived class method
+    return 0;
+}</code></pre>
+        </section>
+        <section>
+            <h2>Benefits of Inheritance</h2>
+            <p>Using inheritance offers several advantages:</p>
+            <ul>
+                <li><strong>Code reuse:</strong> Avoids redundant code by inheriting existing functionalities.</li>
+                <li><strong>Modularity:</strong> Classes can be easily extended and modified.</li>
+                <li><strong>Hierarchical structure:</strong> Facilitates modeling real-world relationships.</li>
+                <li><strong>Polymorphism:</strong> Allows objects to be treated uniformly through base class pointers or references.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Inheritance is a powerful feature of C++ that supports the creation of hierarchies and facilitates code reuse. Understanding its syntax and types helps in designing efficient and maintainable object-oriented programs.</p>
+        </section>
+    </main>
+</body>
+</html>

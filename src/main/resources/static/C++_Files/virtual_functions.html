@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Virtual Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>C++ Virtual Functions</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Virtual functions in C++ are functions declared in a base class and overridden in derived classes. They enable runtime polymorphism, allowing the correct function to be invoked for an object, regardless of the expression used to call it.</p>
+        </section>
+        <section>
+            <h2>Usage of Virtual Functions</h2>
+            <p>To declare a virtual function in C++, use the <code>virtual</code> keyword in the base class:</p>
+            <pre><code>class Base {
+public:
+    virtual void display() {
+        cout &lt;&lt; "Displaying from Base class" &lt;&lt; endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void display() override {
+        cout &lt;&lt; "Displaying from Derived class" &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Base* basePtr = new Derived();
+    basePtr->display(); // Calls Derived class's display()
+    delete basePtr;
+    return 0;
+}</code></pre>
+            <p>In this example, <code>Base</code> has a virtual function <code>display()</code> which is overridden in <code>Derived</code>. The virtual function mechanism ensures that <code>Derived</code>'s version of <code>display()</code> is called even though the pointer is of type <code>Base*</code>.</p>
+        </section>
+        <section>
+            <h2>Virtual Destructor</h2>
+            <p>It's important to make the base class destructor virtual if the class is intended to be used polymorphically to ensure proper cleanup of resources:</p>
+            <pre><code>class Base {
+public:
+    virtual ~Base() {
+        // Virtual destructor
+    }
+};</code></pre>
+        </section>
+        <section>
+            <h2>Abstract Classes</h2>
+            <p>Virtual functions are commonly used in abstract classes, which are classes that cannot be instantiated on their own but are meant to be inherited:</p>
+            <pre><code>class AbstractBase {
+public:
+    virtual void pureVirtualFunction() = 0; // Pure virtual function
+    virtual void regularVirtualFunction() {
+        // Regular virtual function implementation
+    }
+};</code></pre>
+            <p>A class with at least one pure virtual function is called an abstract class and cannot be instantiated directly. Derived classes must provide implementations for all pure virtual functions to be instantiated.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Virtual functions enable polymorphism in C++, allowing derived classes to provide specific implementations of functions defined in base classes. Understanding virtual functions is crucial for leveraging polymorphism effectively in object-oriented programming.</p>
+        </section>
+    </main>
+</body>
+</html>
