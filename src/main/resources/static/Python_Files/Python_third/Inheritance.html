@@ -2,9 +2,123 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Inheritance</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Python Inheritance</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Inheritance is a powerful feature of object-oriented programming (OOP) in Python. It allows a class (subclass) to inherit properties and behaviors from another class (superclass). This promotes code reusability and supports the concept of hierarchical relationships between classes.</p>
+        </section>
+        <section>
+            <h2>Basic Syntax</h2>
+            <p>To define a subclass that inherits from a superclass in Python, you use the following syntax:</p>
+            <pre><code>class SuperClass:
+    # Superclass attributes and methods
 
+class SubClass(SuperClass):
+    # Subclass inherits from SuperClass
+    # Additional attributes and methods can be defined here</code></pre>
+        </section>
+        <section>
+            <h2>Example of Inheritance</h2>
+            <p>Here's an example demonstrating inheritance in Python:</p>
+            <pre><code>class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        raise NotImplementedError("Subclass must implement abstract method")
+
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} says Woof!"
+
+class Cat(Animal):
+    def speak(self):
+        return f"{self.name} says Meow!"
+
+# Creating instances of subclasses
+dog = Dog("Buddy")
+cat = Cat("Whiskers")
+
+# Calling methods of subclasses
+print(dog.speak())  # Output: Buddy says Woof!
+print(cat.speak())  # Output: Whiskers says Meow!</code></pre>
+        </section>
+        <section>
+            <h2>Types of Inheritance</h2>
+            <p>Python supports various types of inheritance:</p>
+            <ul>
+                <li>Single Inheritance: A subclass inherits from only one superclass.</li>
+                <li>Multiple Inheritance: A subclass inherits from more than one superclass.</li>
+                <li>Multilevel Inheritance: A subclass inherits from another subclass.</li>
+                <li>Hierarchical Inheritance: Multiple subclasses inherit from the same superclass.</li>
+                <li>Hybrid Inheritance: Combination of different types of inheritance.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Method Resolution Order (MRO)</h2>
+            <p>Python uses the C3 linearization algorithm to determine the order in which methods are inherited in cases of multiple inheritance. This order is known as the Method Resolution Order (MRO).</p>
+            <pre><code>class A:
+    pass
+
+class B(A):
+    pass
+
+class C(A):
+    pass
+
+class D(B, C):
+    pass
+
+# Method Resolution Order
+print(D.__mro__)  # Output: (<class '__main__.D'>, <class '__main__.B'>, <class '__main__.C'>, <class '__main__.A'>, <class 'object'>)</code></pre>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Inheritance is a fundamental concept in Python's object-oriented programming paradigm. It allows classes to inherit attributes and methods from other classes, enabling code reuse and supporting hierarchical relationships between classes. Understanding inheritance is crucial for designing and implementing efficient and maintainable Python applications.</p>
+        </section>
+    </main>
 </body>
 </html>

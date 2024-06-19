@@ -2,9 +2,106 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Access Control</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Python Access Control</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Access control in Python refers to mechanisms for restricting access to certain parts of code or data. It helps in maintaining security, data integrity, and encapsulation in programs.</p>
+        </section>
+        <section>
+            <h2>Access Modifiers</h2>
+            <p>Python does not have private or protected keywords like some other programming languages. Instead, it uses conventions to indicate the level of access:</p>
+            <ul>
+                <li><strong>Public:</strong> Members (variables and methods) are accessible from outside the class. There are no explicit modifiers for public access.</li>
+                <li><strong>Protected:</strong> Conventionally, members prefixed with a single underscore (<code>_variable</code> or <code>_method()</code>) are considered protected. They can be accessed within the class itself and its subclasses.</li>
+                <li><strong>Private:</strong> Conventionally, members prefixed with a double underscore (<code>__variable</code> or <code>__method()</code>) are considered private. They cannot be accessed directly from outside the class.</li>
+            </ul>
+            <p>Python does not enforce these conventions; they are purely a matter of convention and good practice.</p>
+        </section>
+        <section>
+            <h2>Example of Access Control</h2>
+            <p>Below is an example demonstrating access control using public, protected, and private members:</p>
+            <pre><code>class MyClass:
+    def __init__(self):
+        self.public_variable = "Public"   # Public member
+        self._protected_variable = "Protected"   # Protected member
+        self.__private_variable = "Private"   # Private member
 
+    def public_method(self):
+        print("This is a public method.")
+
+    def _protected_method(self):
+        print("This is a protected method.")
+
+    def __private_method(self):
+        print("This is a private method.")
+
+# Outside the class
+obj = MyClass()
+
+# Accessing public members
+print(obj.public_variable)
+obj.public_method()
+
+# Accessing protected members (conventionally)
+print(obj._protected_variable)
+obj._protected_method()
+
+# Accessing private members (name mangling)
+# This is how Python handles private members access
+print(obj._MyClass__private_variable)
+obj._MyClass__private_method()</code></pre>
+        </section>
+        <section>
+            <h2>Encapsulation</h2>
+            <p>Access control helps in achieving encapsulation, where implementation details are hidden and only essential features are exposed. This improves code maintainability and reduces complexity.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Understanding access control in Python is crucial for writing maintainable and secure code. By following conventions for public, protected, and private members, developers can achieve better encapsulation and manage code complexity effectively.</p>
+        </section>
+    </main>
 </body>
 </html>

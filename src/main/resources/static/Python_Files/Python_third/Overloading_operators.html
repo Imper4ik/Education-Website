@@ -2,9 +2,118 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Operator Overloading</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Python Operator Overloading</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Operator overloading in Python allows you to define how operators behave for user-defined objects (instances of classes). By overloading operators, you can make your objects work with built-in Python operators like <code>+</code>, <code>-</code>, <code>*</code>, etc.</p>
+        </section>
+        <section>
+            <h2>Basic Syntax</h2>
+            <p>To overload an operator in Python, you define special methods in your class. These methods have predefined names and are called automatically when the corresponding operator is used on instances of your class.</p>
+            <pre><code>class MyClass:
+    def __init__(self, value):
+        self.value = value
 
+    def __add__(self, other):
+        return self.value + other.value
+
+# Creating instances
+obj1 = MyClass(10)
+obj2 = MyClass(5)
+
+# Using overloaded operator +
+result = obj1 + obj2
+print(result)  # Output: 15</code></pre>
+        </section>
+        <section>
+            <h2>Commonly Overloaded Operators</h2>
+            <p>Some commonly overloaded operators in Python include:</p>
+            <ul>
+                <li><code>__add__</code> for addition (<code>+</code>)</li>
+                <li><code>__sub__</code> for subtraction (<code>-</code>)</li>
+                <li><code>__mul__</code> for multiplication (<code>*</code>)</li>
+                <li><code>__truediv__</code> for true division (<code>/</code>)</li>
+                <li><code>__floordiv__</code> for floor division (<code>//</code>)</li>
+                <li><code>__mod__</code> for modulus (<code>%</code>)</li>
+                <li><code>__eq__</code> for equality (<code>==</code>)</li>
+                <li><code>__lt__</code> for less than (<code><</code>)</li>
+                <li><code>__gt__</code> for greater than (<code>></code>)</li>
+                <li><code>__str__</code> for string representation (<code>str()</code>)</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Example of Overloading</h2>
+            <p>Here's an example demonstrating how to overload the addition operator (<code>+</code>):</p>
+            <pre><code>class Vector:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+
+# Creating instances
+v1 = Vector(1, 2)
+v2 = Vector(3, 4)
+
+# Adding vectors using overloaded operator +
+result = v1 + v2
+print(result)  # Output: (4, 6)</code></pre>
+        </section>
+        <section>
+            <h2>Special Methods</h2>
+            <p>Special methods (often called magic methods or dunder methods) in Python are surrounded by double underscores (<code>__</code>). These methods provide special functionality like operator overloading, string representation, and more.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Operator overloading in Python allows you to define how operators should behave for instances of your custom classes. By implementing special methods, you can make your objects work seamlessly with built-in operators, enhancing the flexibility and readability of your code.</p>
+        </section>
+    </main>
 </body>
 </html>

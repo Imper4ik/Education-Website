@@ -2,9 +2,111 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Control Statements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
-
+    <header>
+        <h1>Python Control Statements</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Control statements in Python allow you to control the flow of execution based on conditions or loops. They are essential for making decisions and iterating over data.</p>
+        </section>
+        <section>
+            <h2>If Statement</h2>
+            <p>The `if` statement executes a block of code only if a specified condition is true:</p>
+            <pre><code>num = 10
+if num > 0:
+    print("Number is positive")</code></pre>
+            <p>Python uses indentation (whitespace at the beginning of a line) to indicate code blocks.</p>
+        </section>
+        <section>
+            <h2>Else Statement</h2>
+            <p>The `else` statement follows an `if` statement and executes a block of code if the condition is false:</p>
+            <pre><code>num = -5
+if num > 0:
+    print("Number is positive")
+else:
+    print("Number is non-positive")</code></pre>
+        </section>
+        <section>
+            <h2>Elif Statement</h2>
+            <p>The `elif` statement allows you to check multiple conditions sequentially:</p>
+            <pre><code>num = 0
+if num > 0:
+    print("Number is positive")
+elif num < 0:
+    print("Number is negative")
+else:
+    print("Number is zero")</code></pre>
+        </section>
+        <section>
+            <h2>For Loop</h2>
+            <p>The `for` loop is used for iterating over a sequence (such as a list, tuple, string, or range):</p>
+            <pre><code>fruits = ["apple", "banana", "cherry"]
+for fruit in fruits:
+    print(fruit)</code></pre>
+        </section>
+        <section>
+            <h2>While Loop</h2>
+            <p>The `while` loop executes a block of code as long as a specified condition is true:</p>
+            <pre><code>num = 1
+while num <= 5:
+    print(num)
+    num += 1</code></pre>
+        </section>
+        <section>
+            <h2>Break and Continue</h2>
+            <p>The `break` statement terminates the loop immediately, and `continue` skips the current iteration and moves to the next:</p>
+            <pre><code>for num in range(1, 6):
+    if num == 3:
+        continue
+    print(num)
+    if num == 4:
+        break</code></pre>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Control statements such as `if`, `else`, loops (`for` and `while`), `break`, and `continue` are fundamental in Python for decision-making and iterative tasks. Mastering these statements allows you to write efficient and structured Python programs.</p>
+        </section>
+    </main>
 </body>
 </html>

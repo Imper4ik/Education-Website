@@ -2,9 +2,120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Exception Handling</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Python Exception Handling</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Exception handling in Python allows you to handle runtime errors gracefully. It enables you to catch and manage exceptions that may occur during program execution.</p>
+        </section>
+        <section>
+            <h2>Basic Syntax</h2>
+            <p>The basic syntax for exception handling in Python uses `try`, `except`, `else`, and `finally` blocks:</p>
+            <pre><code>def main():
+    try:
+        # Code that may raise an exception
+        result = 10 / 0  # Division by zero
+    except ZeroDivisionError as e:
+        # Handling specific exception
+        print("Error:", e)
+    except Exception as e:
+        # Handling general exception
+        print("Unexpected error:", e)
+    else:
+        # Executed if no exception occurred
+        print("Operation successful.")
+    finally:
+        # Always executed, cleanup or final operations
+        print("End of program.")
 
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>This example demonstrates handling a `ZeroDivisionError` and a generic `Exception`, along with `else` and `finally` blocks.</p>
+        </section>
+        <section>
+            <h2>Raising Exceptions</h2>
+            <p>Raising exceptions explicitly:</p>
+            <pre><code>def validate_age(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative.")
+    elif age < 18:
+        raise ValueError("Must be at least 18 years old.")
+
+def main():
+    try:
+        validate_age(-5)
+    except ValueError as e:
+        print("Validation error:", e)
+
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>This snippet shows how to raise and handle custom exceptions using `raise`.</p>
+        </section>
+        <section>
+            <h2>Exception Hierarchy</h2>
+            <p>Python's exception hierarchy and handling multiple exceptions:</p>
+            <pre><code>def main():
+    try:
+        # Code that may raise exceptions
+        file = open("nonexistent.txt", "r")
+        content = file.read()
+    except FileNotFoundError as e:
+        print("File not found error:", e)
+    except (IOError, OSError) as e:
+        print("I/O or OS error:", e)
+    except Exception as e:
+        print("Unexpected error:", e)
+
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>This example demonstrates handling specific exceptions like `FileNotFoundError` and grouping exceptions.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Exception handling in Python is crucial for managing errors and ensuring program stability. Using `try`, `except`, `else`, and `finally` blocks allows you to gracefully handle unexpected situations and clean up resources.</p>
+        </section>
+    </main>
 </body>
 </html>

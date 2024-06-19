@@ -2,9 +2,99 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Abstract Classes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Python Abstract Classes</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>In Python, an abstract class is a class that cannot be instantiated directly. It serves as a blueprint for other classes, providing a common interface and structure that its subclasses must implement.</p>
+        </section>
+        <section>
+            <h2>Creating Abstract Classes</h2>
+            <p>Python abstract classes are created using the <code>abc</code> module and the <code>ABC</code> class as a base. Abstract methods within these classes are declared using the <code>@abstractmethod</code> decorator.</p>
+            <pre><code>from abc import ABC, abstractmethod
 
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def perimeter(self):
+        pass</code></pre>
+        </section>
+        <section>
+            <h2>Subclassing Abstract Classes</h2>
+            <p>Subclasses of abstract classes must implement all abstract methods defined in the abstract class. Failure to do so will result in a TypeError during instantiation.</p>
+            <pre><code>class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius * self.radius
+
+    def perimeter(self):
+        return 2 * 3.14 * self.radius</code></pre>
+        </section>
+        <section>
+            <h2>Using Abstract Classes</h2>
+            <p>Abstract classes are used to define a common interface for related classes. They allow for consistency and enforce the implementation of specific methods across different subclasses.</p>
+            <pre><code>def print_shape_details(shape):
+    print(f"Area: {shape.area()}")
+    print(f"Perimeter: {shape.perimeter()}")
+
+circle = Circle(5)
+print_shape_details(circle)</code></pre>
+        </section>
+        <section>
+            <h2>Benefits of Abstract Classes</h2>
+            <p>Abstract classes promote code reusability and enforce structure in object-oriented design. They define a contract for subclasses, ensuring that they provide necessary functionality while allowing flexibility in implementation.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Python abstract classes provide a way to define common interfaces and enforce rules for subclasses. They are essential for creating hierarchies of related classes and ensuring consistency in object-oriented programming.</p>
+        </section>
+    </main>
 </body>
 </html>

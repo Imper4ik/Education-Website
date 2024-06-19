@@ -3,35 +3,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Development</title>
+<title>Development - Python</title>
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" href="imagens/web-development.png" type="image/png">
 <style>
-  .firstInfo{
+body {
+    background-image: url('imagens/BCKG.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.top-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: hsl(0, 0%, 20%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.top-menu li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.top-menu li.right {
+    float: right;
+}
+
+.top-menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.top-menu li a:hover {
+    background-color: #555;
+}
+
+.icon-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    color: white;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: hsl(0, 0%, 20%);
+    min-width: 94px;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+main {
+    margin-top: 70px;
+    color: white;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 80px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    margin-left: 10px;
+    color: #ffcc00;
+}
+
+.firstInfo, .secondInfo, .thirdInfo, .fourthInfo, .fifthInfo, .sixthInfo {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+a {
+    color: #ffcc00;
+}
+
+a:hover {
+    color: black;
+    background-color: azure;
+}
+
+p {
+    margin-left: 10px;
+    line-height: 1.5;
+}
+
+.content {
     margin-left: 10px;
     margin-bottom: 20px;
-   }
-  
-   .wikipedia{
-     line-height: 1.5;
-   }
-  
-   h2{
-     margin-left: 10px;
-   }
-   
-   a{
-     color: white;
-   }
-  
-   p{
-    margin-left: 10px;
-   }
-   a:hover{
-     color: black;
-     background-color: azure;
-   }
-  </style>
+}
+
+.content p, .content ul {
+    margin: 10px 0;
+}
+
+ul {
+    padding-left: 20px;
+}
+</style>
 </head>
 <body>
 
@@ -39,138 +146,157 @@
   <div class="top-of-the-site">
     <nav>
       <ul class="top-menu">
-        <li style="margin-left: 50px;"><a href="/home">Home</a></li>
+        <li style="margin-left: 50px;"><a href="home.html">Home</a></li>
         <li class="dropdown">
           <a href="#" class="dropbtn">About ▴</a>
           <div class="dropdown-content">
-            <a href="CSharp-home.html">C#</a>
-            <a href="c-plus-plus.html">C++</a>
+            <a href="c-plus-plus">C++</a>
             <a href="java">Java</a>
             <a href="python">Python</a>
           </div>
         </li>
         <li><a href="docs.html">Docs</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li class="right"><a href="login">Sign in</a></li>
-        <li class="right"><a href="register">Sign up</a></li>
+        <li class="right"><a href="#sign-in">Sign in</a></li>
+        <li class="right"><a href="#sign-up">Sign up</a></li>
       </ul>
     </nav>
-  
+
     <div class="icon-container">
        <img src="imagens/web-development.png" alt="Icon" class="icon">
     </div>
   </div>
 </header>
 <main>
-  <div class="firstInfo">
-    <h1 style="color: chartreuse">Python</h1>
-    <div class="wikipedia">Python to interpretowany język programowania z silnym i dynamicznym systemem typów i automatycznym zarządzaniem pamięcią. Dzięki bogatej bibliotece standardowej, łatwości pisania i przejrzystej składni oprogramowanie w nim tworzone powstaje bardzo szybko. Stąd też promuje się go jako język do prototypowania aplikacji. Ogólny zalecany proces tworzenia oprogramowania w Pythonie wygląda następująco:
-      <ul>
-        <li>napisz program</li>
-        <li>przetestuj go, sprawdzając czy wydajność jest wystarczająca</li>
-        <li>jeżeli tak to koniec</li>
-        <li>jeżeli nie rozważ zastosowanie kompilatora JIT (PyPy)</li>
-        <li>sprofiluj kod i znajdź wąskie gardła (moduł profile w bibliotece standardowej)</li>
-        <li>zmodyfikuj kod aż osiągniesz żądaną wydajność lub przepisz wąskie gardła w C (lub użyj Cythona do zautomatyzowania tego)</li>
-      </ul>
-      <p>W praktyce bardzo często okazuje się, że wydajność jaką osiągniemy już na początku jest wystarczająca, gdyż wąskie gardła już wcześniej zostały przeniesione do kodu w C. Tak jest np. z programowaniem gier przy wykorzystaniu istniejących bibliotek.</p>
-      <h2>Zastosowania</h2>
-      <p>Python jest używany w bardzo różnych dziedzinach. PyPI to repozytorium niektórych projektów wykorzystujących Pythona. Repozytorium można przeglądać m. in. pod kątem dziedzin zastosowań. Oto niektóre z zastosowań:</p>
-      <ul>
-        <li>bazy danych</li>
-        <li>bezpieczeństwo</li>
-        <li>dokumentacja</li>
-        <li>druk</li>
-        <li>edukacja</li>
-        <li>gry</li>
-        <li>graficzne interfejsy użytkownika</li>
-        <li>internet</li>
-        <li>inżynieria oprogramowania</li>
-        <li>komunikacja</li>
-        <li>multimedia</li>
-        <li>oprogramowanie artystyczne</li>
-        <li>obliczenia naukowe</li>
-        <li>przetwarzanie tekstu</li>
-      </ul>
-    </div>
-    </div>
-    <div class="secondInfo">
-      <h2>Introduction</h2>
-     <p>
-      <a href="Python_Files/Python_second/syntax.html">Syntax</a>
-      -
-      <a href="Python_Files/Python_second/Control_statements.html">Control statements</a>
-      -
-      <a href="Python_Files/Python_second/operators.html">Operators</a>
-      -
-      <a href="Python_Files/Python_second/Data%20types.html">Data types</a>
-      -
-      <a href="Python_Files/Python_second/Functions.html">Functions</a>
-      -
-      <a href="Python_Files/Python_second/Namespaces.html">Namespaces</a>
-      -
-      <a href="Python_Files/Python_second/Arrays.html">Arrays</a>
-      -
-      <a href="Python_Files/Python_second/Character%20strings.html">Character strings</a>
-    </p>
-    </div>
-    <div class="thirdInfo">
-      <h2>Object-oriented programming</h2>
+<div class="firstInfo">
+  <h1>Python</h1>
+  <div class="wikipedia">Python is a high-level, interpreted programming language known for its simplicity and readability. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming.</div>
+</div>
+<div class="secondInfo">
+  <h2>Language basics</h2>
+  <p>
+    <a href="Python_Files/Python_second/syntax.html">Syntax</a>
+    -
+    <a href="Python_Files/Python_second/Control_statements.html">Control statements</a>
+    -
+    <a href="Python_Files/Python_second/operators.html">Operators</a>
+    -
+    <a href="Python_Files/Python_second/Data%20types.html">Data types</a>
+    -
+    <a href="Python_Files/Python_second/Functions.html">Functions</a>
+    -
+    <a href="Python_Files/Python_second/Namespaces.html">Namespaces</a>
+    -
+    <a href="Python_Files/Python_second/Arrays.html">Arrays</a>
+    -
+    <a href="Python_Files/Python_second/strings.html">Strings</a>
+  </p>
+  <div class="content">
+    <p><strong>About Python</strong></p>
+    <p>Python is widely used for web development, data analysis, artificial intelligence, scientific computing, and more. Its simplicity and versatility make it a popular choice among developers.</p>
+  </div>
+  <div class="content">
+    <p><strong>Prerequisite to Learn Python</strong></p>
+    <p>No prior programming knowledge is required to start learning Python. It is beginner-friendly and offers extensive documentation and community support.</p>
+  </div>
+  <div class="content">
+    <p><strong>Python Features</strong></p>
+    <ul>
+      <li>Simple and easy-to-learn syntax</li>
+      <li>Dynamic typing and automatic memory management</li>
+      <li>Extensive standard library</li>
+      <li>Support for multiple programming paradigms</li>
+      <li>Wide range of third-party libraries and frameworks</li>
+    </ul>
+  </div>
+</div>
+<div class="thirdInfo">
+  <h2>Object-oriented programming</h2>
+  <p>
+    <a href="Python_Files/Python_third/Classes.html">Classes</a>
+    -
+    <a href="Python_Files/Python_third/Access_control.html">Access control</a>
+    -
+    <a href="Python_Files/Python_third/Constructors.html">Constructors</a>
+    -
+    <a href="Python_Files/Python_third/Destructor.html">Destructors</a>
+    -
+    <a href="Python_Files/Python_third/Inheritance.html">Inheritance</a>
+    -
+    <a href="Python_Files/Python_third/Virtual_functions.html">Virtual functions</a>
+    -
+    <a href="Python_Files/Python_third/Abstract_classes.html">Abstract classes</a>
+    -
+    <a href="Python_Files/Python_third/Overloading_operators.html">Overloading operators</a>
+  </p>
+  <div class="content">
+    <p>Python supports object-oriented programming (OOP) principles such as classes, inheritance, polymorphism, encapsulation, and abstraction. These features enable developers to create modular and reusable code.</p>
+  </div>
+</div>
+<div class="fourthInfo">
+  <h2>Advanced topics</h2>
+  <p>
+    <a href="Python_Files/Python_four/Exception_handling.html">Exception handling</a>
+    -
+    <a href="Python_Files/Python_four/Function_template.html">Function templates</a>
+    -
+    <a href="Python_Files/Python_four/Class_templates.html">Class templates</a>
+  </p>
+  <div class="content">
+    <p>Python offers advanced features such as exception handling to manage errors, and templates to promote code reusability and generic programming.</p>
+  </div>
+</div>
+<div class="fifthInfo">
+  <h2>Standard library</h2>
+  <p>
+    <a href="Python_Files/Python_five/sys.html">Sys (sys)</a>
+    -
+    <a href="Python_Files/Python_five/os.html">OS (os)</a>
+    -
+    <a href="Python_Files/Python_five/String.html">String (string)</a>
+    -
+    <a href="Python_Files/Python_five/Time.html">Time (time)</a>
+    -
+    <a href="Python_Files/Python_five/Math.html">Math (math)</a>
+    -
+    <a href="Python_Files/Python_five/Iostream.html">IO (io)</a>
+    -
+    <a href="Python_Files/Python_five/Standard_Templates_Library.html">Standard Library</a>
+  </p>
+  <div class="content">
+    <p>The Python Standard Library provides modules for tasks such as file I/O operations, string manipulation, mathematical computations, and more.</p>
+  </div>
+</div>
+<div class="sixthInfo">
+  <h2>Frameworks and libraries</h2>
     <p>
-      <a href="Python_Files/Python_third/Classes.html">Classes</a>
-      - 
-      <a href="Python_Files/Python_third/Access_control.html">Access control</a>
+      <a href="Python_Files/django.html">Django</a>
       -
-      <a href="Python_Files/Python_third/Constructors.html">Constructors</a>
+      <a href="Python_Files/flask.html">Flask</a>
       -
-      <a href="Python_Files/Python_third/Destructor.html">Destructors</a>
+      <a href="Python_Files/tkinter.html">Tkinter</a>
       -
-      <a href="Python_Files/Python_third/Inheritance.html">Inheritance</a>
+      <a href="Python_Files/requests.html">Requests</a>
       -
-      <a href="Python_Files/Python_third/Virtual_functions.html">Virtual functions</a>
+      <a href="Python_Files/pandas.html">Pandas</a>
       -
-      <a href="Python_Files/Python_third/Abstract_classes.html">Abstract classes</a>
+      <a href="Python_Files/numpy.html">NumPy</a>
       -
-      <a href="Python_Files/Python_third/Overloading_operators.html">Overloading operators</a>
+      <a href="Python_Files/matplotlib.html">Matplotlib</a>
+      -
+      <a href="Python_Files/scipy.html">SciPy</a>
     </p>
+    <div class="content">
+      <p>Python has a vast ecosystem of frameworks and libraries that simplify development across various domains, including web development, data analysis, and scientific computing.</p>
     </div>
-    <div class="fourthInfo">
-      <h2>Syntax and language elements</h2>
-    <p>
-      <a href="Python_Files/Python_four/Exception_handling.html">Exception handling</a>
-      - 
-      <a href="Python_Files/Python_four/Function_template.html">Function templates</a>
-      -
-      <a href="Python_Files/Python_four/Class_templates.html">Class templates</a>
-    </p>
-    </div>
-    <div class="fifthInfo">
-      <h2>Python course - Introduction to programming Python</h2>
-    <p>
-      <a href="Python_Files/Python_five/Stdio1.html">Stdio.h (cstdio)</a>
-      - 
-      <a href="Python_Files/Python_five/Stdlib1.html">Stdlib.h (cstdlib)</a>
-      -
-      <a href="Python_Files/Python_five/String.html">String.h (cstring)</a>
-      -
-      <a href="Python_Files/Python_five/Time.html">Time.h (ctime)</a>
-      -
-      <a href="Python_Files/Python_five/Math.html">Math.h (cmath)</a>
-      -
-      <a href="Python_Files/Python_five/Iostream.html">Iostream</a>
-      -
-      <a href="Python_Files/Python_five/Standard_Templates_Library.html">Standard Templates Library</a>
-    </p>
-    </div>
-    <div class="sixthInfo">
-      <h2>Programming
-        Windows.Forms applications</h2>
-    <p>
-      <a href="Python_Files/Python_six/Articles.html">Articles</a>
-      - 
-      <a href="#">Discussion forum</a>  <!--сдесь недобавлял-->
-    </p>
-    </div>
+  </div>
+  <div class="content">
+    <p><strong>Conclusion</strong></p>
+    <p>Python's simplicity, versatility, and strong community support make it an ideal choice for beginners and experienced developers alike. Whether you're building web applications, analyzing data, or exploring artificial intelligence, Python offers the tools and libraries you need to succeed.</p>
+  </div>
 </main>
+
 </body>
 </html>
+
+

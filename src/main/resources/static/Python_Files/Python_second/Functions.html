@@ -2,9 +2,107 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Python Functions</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Functions in Python are blocks of reusable code that perform a specific task. They help in organizing code into manageable pieces and promote code reusability.</p>
+        </section>
+        <section>
+            <h2>Defining a Function</h2>
+            <p>A function is defined using the <code>def</code> keyword, followed by the function name and parameters (if any). It may return a value using the <code>return</code> statement.</p>
+            <pre><code>def greet(name):
+    return f"Hello, {name}!"
 
+message = greet("Alice")  # 'Hello, Alice!'</code></pre>
+        </section>
+        <section>
+            <h2>Function Parameters</h2>
+            <p>Functions can have parameters (inputs) that allow the function to accept data or arguments. Parameters can have default values.</p>
+            <pre><code>def add_numbers(x, y=0):
+    return x + y
+
+result1 = add_numbers(5, 3)  # 8
+result2 = add_numbers(5)     # 5 (default y=0 is used)</code></pre>
+        </section>
+        <section>
+            <h2>Returning Values</h2>
+            <p>Functions can return values using the <code>return</code> statement. They can return multiple values as a tuple.</p>
+            <pre><code>def calculate(x, y):
+    sum = x + y
+    difference = x - y
+    return sum, difference
+
+result = calculate(10, 5)
+# result is a tuple: (15, 5)</code></pre>
+        </section>
+        <section>
+            <h2>Function Docstring</h2>
+            <p>It's good practice to include a docstring at the beginning of a function to describe its purpose, parameters, and return value.</p>
+            <pre><code>def square(x):
+    """
+    Returns the square of a number.
+
+    Parameters:
+    x (int): The number to be squared.
+
+    Returns:
+    int: The square of x.
+    """
+    return x ** 2</code></pre>
+        </section>
+        <section>
+            <h2>Anonymous Functions (Lambda Functions)</h2>
+            <p>Python supports anonymous functions using the <code>lambda</code> keyword. They are typically used for short functions.</p>
+            <pre><code>double = lambda x: x * 2
+result = double(5)  # 10</code></pre>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Functions are essential for structuring Python code into reusable blocks. They enhance code readability, maintainability, and promote code reuse, contributing to efficient and organized programming.</p>
+        </section>
+    </main>
 </body>
 </html>

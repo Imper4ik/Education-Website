@@ -2,9 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Function Templates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>C++ Function Templates</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Function templates in C++ allow you to write generic functions that can work with different data types. They provide a way to create functions that are independent of data types and reduce code duplication.</p>
+        </section>
+        <section>
+            <h2>Syntax of Function Templates</h2>
+            <p>To define a function template in C++, you use the `template` keyword followed by the template parameter list:</p>
+            <pre><code>template &lt;typename T&gt;
+T max(T a, T b) {
+    return (a > b) ? a : b;
+}</code></pre>
+            <p>This example defines a function template `max` that returns the maximum of two values of type `T`.</p>
+        </section>
+        <section>
+            <h2>Using Function Templates</h2>
+            <p>Examples of using function templates:</p>
+            <pre><code>int main() {
+    // Using max with integers
+    int result1 = max(5, 10);
+    std::cout &lt;&lt; "Max of 5 and 10: " &lt;&lt; result1 &lt;&lt; std::endl;
 
+    // Using max with doubles
+    double result2 = max(3.14, 2.71);
+    std::cout &lt;&lt; "Max of 3.14 and 2.71: " &lt;&lt; result2 &lt;&lt; std::endl;
+
+    return 0;
+}</code></pre>
+            <p>This demonstrates using the `max` function template with different data types (`int` and `double`). The compiler generates specific instances of the function for each data type.</p>
+        </section>
+        <section>
+            <h2>Benefits of Function Templates</h2>
+            <p>Function templates provide several benefits:</p>
+            <ul>
+                <li><strong>Code Reusability:</strong> Write generic code that works with any data type.</li>
+                <li><strong>Type Safety:</strong> Compile-time type checking ensures type correctness.</li>
+                <li><strong>Reduced Code Duplication:</strong> Eliminate the need for separate functions for each data type.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>C++ function templates are essential for creating flexible and reusable functions that can operate on different data types. Mastering function templates is key to writing efficient and versatile C++ programs.</p>
+        </section>
+    </main>
 </body>
 </html>

@@ -2,9 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Destructors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Python Destructors</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Destructors in Python are special methods that are automatically called when an object is about to be destroyed or deleted. They are used to perform cleanup actions, such as releasing resources like files or database connections.</p>
+        </section>
+        <section>
+            <h2>Defining a Destructor</h2>
+            <p>In Python, the destructor method is defined using the special method <code>__del__</code>. This method is automatically called when there are no more references to the object, or when the object is explicitly deleted using <code>del</code>.</p>
+            <pre><code>class MyClass:
+    def __init__(self, name):
+        self.name = name
 
+    def __del__(self):
+        print(f"Object {self.name} is being destroyed")</code></pre>
+        </section>
+        <section>
+            <h2>Automatic Garbage Collection</h2>
+            <p>Python uses automatic garbage collection, which means that you usually don't need to explicitly call the destructor. The interpreter automatically determines when an object is no longer needed and calls the destructor.</p>
+        </section>
+        <section>
+            <h2>Example</h2>
+            <p>Below is an example demonstrating the use of a destructor in Python:</p>
+            <pre><code># Define a class with a destructor
+class Car:
+    def __init__(self, brand):
+        self.brand = brand
+
+    def __del__(self):
+        print(f"Car {self.brand} is being destroyed")
+
+# Create objects
+car1 = Car("Toyota")
+car2 = Car("BMW")
+
+# Deleting objects
+del car1
+del car2</code></pre>
+            <p>When you run the above code, you'll see messages indicating the destruction of each car object.</p>
+        </section>
+        <section>
+            <h2>Use Cases</h2>
+            <p>Destructors are useful for cleaning up resources like open files, database connections, or network sockets when an object is no longer needed. They help ensure that resources are properly released, preventing memory leaks and other resource-related issues.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Understanding how to define and use destructors in Python is important for managing resource cleanup and ensuring efficient memory management in your applications. Python's automatic garbage collection simplifies memory management, making destructors less commonly used compared to languages without automatic memory management.</p>
+        </section>
+    </main>
 </body>
 </html>

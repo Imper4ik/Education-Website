@@ -2,9 +2,107 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Character Strings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
-
+    <header>
+        <h1>Python Character Strings</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Character strings (or strings) in Python are sequences of characters enclosed in single quotes (' ') or double quotes (" "). They are used to store and manipulate textual data.</p>
+        </section>
+        <section>
+            <h2>Creating Strings</h2>
+            <p>Strings can be created using single quotes or double quotes:</p>
+            <pre><code>single_quoted_string = 'Hello, Python!'
+double_quoted_string = "Python is awesome!"</code></pre>
+        </section>
+        <section>
+            <h2>Accessing Characters</h2>
+            <p>You can access characters in a string using indexing:</p>
+            <pre><code>my_string = "Hello"
+first_char = my_string[0]  # 'H'
+last_char = my_string[-1]  # 'o'</code></pre>
+        </section>
+        <section>
+            <h2>String Operations</h2>
+            <p>Python provides several operations for manipulating strings:</p>
+            <ul>
+                <li><code>len()</code> - Returns the length of the string.</li>
+                <li><code>concatenation (+)</code> - Combines two strings.</li>
+                <li><code>repetition (*)</code> - Repeats a string a specified number of times.</li>
+                <li><code>in</code> - Checks if a substring exists in the string.</li>
+            </ul>
+            <pre><code>message = "Hello"
+length = len(message)  # 5
+combined = message + ", World!"  # 'Hello, World!'
+repeated = message * 3  # 'HelloHelloHello'
+contains_o = 'o' in message  # True</code></pre>
+        </section>
+        <section>
+            <h2>String Methods</h2>
+            <p>Python strings have built-in methods for various operations:</p>
+            <pre><code>my_string = " Hello, Python! "
+lowercase = my_string.lower()  # ' hello, python! '
+uppercase = my_string.upper()  # ' HELLO, PYTHON! '
+stripped = my_string.strip()  # 'Hello, Python!'
+split_words = my_string.split(',')  # [' Hello', ' Python! ']</code></pre>
+        </section>
+        <section>
+            <h2>Formatting Strings</h2>
+            <p>Strings can be formatted using:</p>
+            <ul>
+                <li><code>format()</code> method</li>
+                <li>F-strings (formatted string literals)</li>
+            </ul>
+            <pre><code>name = "Alice"
+age = 30
+formatted_string = "Name: {}, Age: {}".format(name, age)  # 'Name: Alice, Age: 30'
+f_string = f"Name: {name}, Age: {age}"  # 'Name: Alice, Age: 30'</code></pre>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Strings in Python are versatile and powerful for handling textual data. Understanding how to create, manipulate, and format strings is essential for effective programming in Python.</p>
+        </section>
+    </main>
 </body>
 </html>

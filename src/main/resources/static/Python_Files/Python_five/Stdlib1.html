@@ -2,9 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Standard Library (stdlib)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Python Standard Library (stdlib)</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>The Python Standard Library (`stdlib`) provides a rich set of modules and functions that are part of every Python installation. These modules cover a wide range of functionalities necessary for various programming tasks.</p>
+        </section>
+        <section>
+            <h2>Commonly Used Modules</h2>
+            <p>Examples of commonly used modules in the Python Standard Library:</p>
+            <ul>
+                <li><strong>os:</strong> Operating system interface for file operations and process management.</li>
+                <li><strong>sys:</strong> System-specific parameters and functions.</li>
+                <li><strong>math:</strong> Mathematical functions.</li>
+                <li><strong>datetime:</strong> Date and time handling.</li>
+                <li><strong>random:</strong> Generate pseudo-random numbers.</li>
+                <li><strong>json:</strong> Work with JSON data.</li>
+            </ul>
+            <p>These modules provide essential tools for tasks such as file handling, mathematical calculations, date manipulation, and more.</p>
+        </section>
+        <section>
+            <h2>Example: Using the os Module</h2>
+            <p>Example of using the `os` module to list files in a directory:</p>
+            <pre><code>import os
 
+def main():
+    # Example of using os module
+    directory = '.'
+    files = os.listdir(directory)
+    print(f"Files in {directory}: {files}")
+
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>This example demonstrates listing files in the current directory using `os.listdir()`.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>The Python Standard Library (`stdlib`) is a powerful resource that enhances Python's versatility and makes it suitable for various programming tasks. Familiarizing yourself with its modules and functions is crucial for efficient Python development.</p>
+        </section>
+    </main>
 </body>
 </html>

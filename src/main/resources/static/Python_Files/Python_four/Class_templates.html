@@ -2,9 +2,98 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Class Templates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>C++ Class Templates</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Class templates in C++ allow you to define classes that can work with any data type. They enable you to write generic classes and functions that can handle different types of data without code duplication.</p>
+        </section>
+        <section>
+            <h2>Syntax of Class Templates</h2>
+            <p>To define a class template in C++, you use the following syntax:</p>
+            <pre><code>template &lt;typename T&gt;
+class MyTemplate {
+public:
+    MyTemplate(T value) : data(value) {}
+    void display() {
+        std::cout &lt;&lt; "Value: " &lt;&lt; data &lt;&lt; std::endl;
+    }
+private:
+    T data;
+};</code></pre>
+            <p>In this example, `MyTemplate` is a class template that can store and display a value of any type `T`.</p>
+        </section>
+        <section>
+            <h2>Using Class Templates</h2>
+            <p>Examples of using class templates:</p>
+            <pre><code>int main() {
+    // Instantiate MyTemplate with int
+    MyTemplate&lt;int&gt; intObj(5);
+    intObj.display();
 
+    // Instantiate MyTemplate with double
+    MyTemplate&lt;double&gt; doubleObj(3.14);
+    doubleObj.display();
+
+    return 0;
+}</code></pre>
+            <p>This demonstrates using `MyTemplate` with different data types (`int` and `double`). Each instance operates independently with its respective type.</p>
+        </section>
+        <section>
+            <h2>Benefits of Class Templates</h2>
+            <p>Class templates provide several benefits:</p>
+            <ul>
+                <li><strong>Code Reusability:</strong> Write generic code that works with any data type.</li>
+                <li><strong>Flexibility:</strong> Use templates to create data structures and algorithms that are adaptable to various types.</li>
+                <li><strong>Performance:</strong> Avoid the overhead of runtime polymorphism for type-specific operations.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>C++ class templates are a powerful feature for writing flexible and reusable code that can work with multiple data types. Understanding how to define and use class templates is essential for effective C++ programming.</p>
+        </section>
+    </main>
 </body>
 </html>

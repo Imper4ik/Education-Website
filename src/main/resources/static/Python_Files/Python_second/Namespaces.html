@@ -2,9 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Namespaces</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Python Namespaces</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Namespaces in Python are containers for mapping names (identifiers) to objects. They help in avoiding name collisions and provide a way to organize variables, functions, and classes into separate scopes.</p>
+        </section>
+        <section>
+            <h2>Types of Namespaces</h2>
+            <p>Python has the following types of namespaces:</p>
+            <ul>
+                <li><strong>Local Namespace:</strong> Scope of a function or method. It includes local variables.</li>
+                <li><strong>Global Namespace:</strong> Scope of the current module. It includes global variables and functions.</li>
+                <li><strong>Built-in Namespace:</strong> Provided by Python itself. It includes built-in functions and exceptions.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Accessing Namespaces</h2>
+            <p>You can access namespaces using:</p>
+            <ul>
+                <li><code>locals()</code> - Returns a dictionary representing the current local namespace.</li>
+                <li><code>globals()</code> - Returns a dictionary representing the current global namespace.</li>
+                <li><code>dir()</code> - Returns a list of names in the specified namespace.</li>
+            </ul>
+            <pre><code># Example of accessing local and global namespaces
+def example_func():
+    local_var = 10
+    print(locals())  # {'local_var': 10}
 
+global_var = 20
+print(globals())  # Includes global variables and functions</code></pre>
+        </section>
+        <section>
+            <h2>Namespace Resolution</h2>
+            <p>Python follows a specific order (LEGB rule) to resolve namespaces:</p>
+            <ol>
+                <li>Local (L): Inside the current function or method.</li>
+                <li>Enclosing (E): In any enclosing functions or methods (nested functions).</li>
+                <li>Global (G): At the top level of the current module.</li>
+                <li>Built-in (B): Provided by the built-in namespace.</li>
+            </ol>
+        </section>
+        <section>
+            <h2>Namespace Collision</h2>
+            <p>Namespace collisions occur when two namespaces have variables or functions with the same name. This can be avoided by proper namespace management and naming conventions.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Understanding namespaces is crucial for managing variables and functions in Python effectively. They help in organizing code into manageable scopes and avoiding conflicts between names.</p>
+        </section>
+    </main>
 </body>
 </html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python os Module</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Python os Module</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>The `os` module in Python provides functions to interact with the operating system. It allows you to perform tasks such as navigating the file system, manipulating files and directories, and accessing environment variables.</p>
+        </section>
+        <section>
+            <h2>File and Directory Operations</h2>
+            <p>The `os` module facilitates various file and directory operations:</p>
+            <pre><code>os.getcwd(), os.chdir(), os.listdir(), os.mkdir(), os.rmdir()</code></pre>
+            <p>These functions are used for getting the current working directory, changing directories, listing directory contents, creating directories, and removing directories respectively.</p>
+        </section>
+        <section>
+            <h2>Path Manipulation</h2>
+            <p>Python's `os.path` submodule offers utilities for path manipulations:</p>
+            <pre><code>os.path.join(), os.path.abspath(), os.path.exists(), os.path.isfile(), os.path.isdir()</code></pre>
+            <p>These functions help in constructing paths, getting absolute paths, checking path existence, and determining if a path is a file or directory.</p>
+        </section>
+        <section>
+            <h2>Environment Variables</h2>
+            <p>The `os` module provides access to environment variables:</p>
+            <pre><code>os.environ, os.getenv()</code></pre>
+            <p>These functions allow retrieving environment variable values and accessing the entire environment as a dictionary.</p>
+        </section>
+        <section>
+            <h2>Executing Commands</h2>
+            <p>Using `os` module for executing system commands:</p>
+            <pre><code>import os
+
+# Example of executing a system command
+os.system('ls -l')</code></pre>
+            <p>This example demonstrates executing the `ls -l` command using `os.system()`.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>The `os` module in Python is essential for performing system-level operations, managing files and directories, accessing environment variables, and executing system commands. Mastering its functions enables efficient interaction with the operating system from within Python applications.</p>
+        </section>
+    </main>
+</body>
+</html>

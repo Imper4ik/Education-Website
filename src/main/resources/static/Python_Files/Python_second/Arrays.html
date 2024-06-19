@@ -2,9 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Arrays</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Python Arrays</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Arrays in Python are data structures used to store multiple elements of the same type. Unlike some other programming languages, Python does not have a built-in array type, but it provides several alternatives, such as lists and NumPy arrays, which serve similar purposes.</p>
+        </section>
+        <section>
+            <h2>Lists</h2>
+            <p>Lists are the most common way to work with arrays-like structures in Python:</p>
+            <pre><code>my_list = [1, 2, 3, 4, 5]
+print("Elements of the list:")
+for element in my_list:
+    print(element)</code></pre>
+            <p>Lists can store elements of different data types and are versatile for many programming tasks.</p>
+        </section>
+        <section>
+            <h2>NumPy Arrays</h2>
+            <p>NumPy is a powerful library for numerical computing in Python, providing an array object:</p>
+            <pre><code>import numpy as np
 
+my_array = np.array([1, 2, 3, 4, 5])
+print("Elements of the NumPy array:")
+for element in my_array:
+    print(element)</code></pre>
+            <p>NumPy arrays are efficient for numerical operations and allow multidimensional arrays and advanced operations.</p>
+        </section>
+        <section>
+            <h2>Accessing Elements</h2>
+            <p>Accessing elements in arrays:</p>
+            <pre><code>my_list = [10, 20, 30, 40, 50]
+print("First element:", my_list[0])
+print("Last element:", my_list[-1])</code></pre>
+            <p>Arrays in Python are accessed using indexing, starting from 0, and negative indices for counting from the end.</p>
+        </section>
+        <section>
+            <h2>Manipulating Arrays</h2>
+            <p>Manipulating arrays in Python:</p>
+            <pre><code>import numpy as np
+
+# Create a NumPy array
+arr = np.array([1, 2, 3, 4, 5])
+
+# Append elements
+arr = np.append(arr, 6)
+print("Appended array:", arr)
+
+# Sorting elements
+sorted_arr = np.sort(arr)
+print("Sorted array:", sorted_arr)</code></pre>
+            <p>Arrays can be modified by adding elements, sorting, and performing various operations based on the array type.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Arrays in Python, primarily represented using lists and NumPy arrays, are fundamental for storing and manipulating collections of elements. Understanding their usage and operations is crucial for effective Python programming, especially in data manipulation and scientific computing.</p>
+        </section>
+    </main>
 </body>
 </html>

@@ -2,9 +2,125 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python String Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Python String Operations</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Strings in Python are sequences of characters, and Python provides many built-in functions and methods to manipulate and work with strings efficiently.</p>
+        </section>
+        <section>
+            <h2>Basic String Operations</h2>
+            <p>Examples of basic string operations:</p>
+            <pre><code>def main():
+    # Example of basic string operations
+    message = "Hello, World!"
+    print("Original:", message)
 
+    # Length of a string
+    print("Length:", len(message))
+
+    # Accessing characters
+    print("First character:", message[0])
+    print("Last character:", message[-1])
+
+    # Slicing a string
+    print("Sliced message:", message[7:])
+
+    # Concatenation
+    name = "Alice"
+    greeting = "Hello, " + name
+    print("Concatenated:", greeting)
+
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>This example demonstrates operations such as accessing characters, slicing, and concatenation.</p>
+        </section>
+        <section>
+            <h2>String Methods</h2>
+            <p>Examples of using string methods:</p>
+            <pre><code>def main():
+    # Example of string methods
+    message = "   Hello, World!   "
+    print("Original message:", message)
+
+    # Removing whitespace
+    stripped_message = message.strip()
+    print("Stripped:", stripped_message)
+
+    # Upper and lower case
+    print("Uppercase:", message.upper())
+    print("Lowercase:", message.lower())
+
+    # Finding substrings
+    print("Index of 'World':", message.find("World"))
+
+    # Replacing text
+    new_message = message.replace("World", "Python")
+    print("Replaced message:", new_message)
+
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>This snippet shows methods like `strip()`, `upper()`, `lower()`, `find()`, and `replace()` for string manipulation.</p>
+        </section>
+        <section>
+            <h2>Formatted Strings</h2>
+            <p>Creating formatted strings in Python:</p>
+            <pre><code>def main():
+    # Example of formatted strings
+    name = "Alice"
+    age = 30
+    print(f"My name is {name} and I am {age} years old.")
+
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>Formatted string literals (f-strings) allow for easy interpolation of variables into strings.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Python provides powerful tools for working with strings, including basic operations, methods for manipulation, and formatted string literals. Understanding these features is essential for effective string handling in Python programming.</p>
+        </section>
+    </main>
 </body>
 </html>

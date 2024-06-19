@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python sys Module</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Python sys Module</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>The `sys` module in Python provides access to system-specific parameters and functions. It allows interaction with the interpreter and operating system, providing utilities for tasks such as command-line arguments, standard input/output handling, and more.</p>
+        </section>
+        <section>
+            <h2>Key Functions and Attributes</h2>
+            <p>Some of the important functions and attributes of the `sys` module include:</p>
+            <pre><code>sys.argv, sys.stdin, sys.stdout, sys.stderr</code></pre>
+            <p>These attributes provide access to command-line arguments, standard input, output, and error streams respectively.</p>
+        </section>
+        <section>
+            <h2>Additional Utilities</h2>
+            <p>The `sys` module also includes utilities for interacting with the Python interpreter and environment:</p>
+            <pre><code>sys.version, sys.platform, sys.path</code></pre>
+            <p>These attributes give information about the Python version, platform details, and module search path.</p>
+        </section>
+        <section>
+            <h2>Exception Handling</h2>
+            <p>Using `sys` module with exception handling:</p>
+            <pre><code>import sys
+
+try:
+    # Perform some operations
+    result = 10 / 0
+except Exception as e:
+    sys.stderr.write(f"Error: {str(e)}\n")
+    sys.exit(1)</code></pre>
+            <p>This example demonstrates catching an exception and using `sys.stderr` for error output.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>The `sys` module in Python is essential for system-level programming tasks and interaction with the Python interpreter. Understanding its functions and attributes can greatly enhance the capability and robustness of Python applications.</p>
+        </section>
+    </main>
+</body>
+</html>

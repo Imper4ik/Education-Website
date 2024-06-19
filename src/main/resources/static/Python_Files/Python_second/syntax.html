@@ -2,9 +2,132 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>OOP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Syntax</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
-<H1>Python Syntax</H1>
+    <header>
+        <h1>Python Syntax</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Python syntax refers to the rules that define the structure and meaning of Python programming language statements. It includes guidelines for writing code that is both syntactically correct and semantically meaningful.</p>
+        </section>
+        <section>
+            <h2>Basic Structure</h2>
+            <p>Python programs are composed of statements, which are instructions that the interpreter can execute. Statements are typically written on separate lines and may end with a newline character or a semicolon (<code>;</code>) if multiple statements are written on the same line.</p>
+            <pre><code># Example of basic Python syntax
+print("Hello, World!")  # This is a statement
+x = 5  # This is another statement</code></pre>
+        </section>
+        <section>
+            <h2>Comments</h2>
+            <p>Comments are used to explain code and are ignored by the Python interpreter. They can be single-line or multi-line.</p>
+            <pre><code># This is a single-line comment
+"""
+This is a multi-line comment.
+It spans multiple lines.
+"""</code></pre>
+        </section>
+        <section>
+            <h2>Indentation</h2>
+            <p>Python uses indentation to define the structure of code blocks (e.g., loops, functions, classes). Indentation must be consistent within the same block and is usually 4 spaces per level.</p>
+            <pre><code># Example of indentation
+if x > 0:
+    print("x is positive")
+else:
+    print("x is non-positive")</code></pre>
+        </section>
+        <section>
+            <h2>Variables and Data Types</h2>
+            <p>Variables are used to store data values. Python is dynamically typed, meaning you don't need to declare the type of a variable explicitly. It automatically assigns the data type based on the value assigned.</p>
+            <pre><code># Example of variables and data types
+name = "Alice"  # String
+age = 30  # Integer
+is_student = True  # Boolean</code></pre>
+        </section>
+        <section>
+            <h2>Control Flow</h2>
+            <p>Python uses control structures like <code>if</code>, <code>for</code>, <code>while</code>, and <code>try...except</code> to control the flow of execution based on conditions.</p>
+            <pre><code># Example of control flow
+if age >= 18:
+    print("You are an adult")
+else:
+    print("You are a minor")</code></pre>
+        </section>
+        <section>
+            <h2>Functions</h2>
+            <p>Functions in Python are defined using the <code>def</code> keyword. They allow you to encapsulate code into reusable blocks and can optionally return a value.</p>
+            <pre><code># Example of a function
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Alice"))  # Output: Hello, Alice!</code></pre>
+        </section>
+        <section>
+            <h2>Classes and Objects</h2>
+            <p>Python supports object-oriented programming (OOP) with classes and objects. Classes are blueprints for creating objects with attributes and methods.</p>
+            <pre><code># Example of a class
+class Person:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+    def greet(self):
+        return f"Hello, my name is {self.name} and I am {self.age} years old."
+
+alice = Person("Alice", 30)
+print(alice.greet())  # Output: Hello, my name is Alice and I am 30 years old.</code></pre>
+        </section>
+        <section>
+            <h2>Modules and Packages</h2>
+            <p>Python modules are files containing Python code. Packages are directories containing multiple modules. They allow you to organize and reuse code effectively.</p>
+            <pre><code># Example of importing a module
+import math
+
+print(math.sqrt(16))  # Output: 4.0</code></pre>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Python syntax is intuitive and easy to learn. It provides powerful constructs for writing clear and concise code, making it suitable for both beginners and experienced programmers.</p>
+        </section>
+    </main>
 </body>
 </html>

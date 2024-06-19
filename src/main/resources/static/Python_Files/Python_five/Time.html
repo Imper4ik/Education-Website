@@ -2,9 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Time Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Python Time Operations</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Python provides several modules for handling time-related operations, including retrieving current time, formatting dates, and performing date arithmetic.</p>
+        </section>
+        <section>
+            <h2>Working with Dates and Times</h2>
+            <p>Examples of basic date and time operations:</p>
+            <pre><code>import datetime
 
+def main():
+    # Example of retrieving current date and time
+    current_datetime = datetime.datetime.now()
+    print("Current datetime:", current_datetime)
+
+    # Formatting dates
+    formatted_date = current_datetime.strftime("%Y-%m-%d %H:%M:%S")
+    print("Formatted datetime:", formatted_date)
+
+    # Date arithmetic
+    future_date = current_datetime + datetime.timedelta(days=7)
+    print("Future date:", future_date.strftime("%Y-%m-%d"))
+
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>This example demonstrates retrieving current date and time, formatting dates using `strftime()`, and performing date arithmetic with `timedelta`.</p>
+        </section>
+        <section>
+            <h2>Time Zones</h2>
+            <p>Working with time zones:</p>
+            <pre><code>import pytz
+
+def main():
+    # Example of working with time zones
+    eastern = pytz.timezone('US/Eastern')
+    local_time = datetime.datetime.now(eastern)
+    print("Local time (Eastern Time Zone):", local_time.strftime("%Y-%m-%d %H:%M:%S %Z%z"))
+
+if __name__ == "__main__":
+    main()</code></pre>
+            <p>This snippet shows how to work with different time zones using the `pytz` module.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Python's datetime module and third-party libraries like `pytz` provide robust capabilities for handling date and time operations, making it versatile for applications requiring time-based calculations and formatting.</p>
+        </section>
+    </main>
 </body>
 </html>

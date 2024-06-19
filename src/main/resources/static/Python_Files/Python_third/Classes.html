@@ -2,9 +2,108 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Classes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Python Classes</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Classes in Python are blueprints for creating objects. They define attributes (variables) and methods (functions) that characterize the objects. Classes provide structure and behavior to objects, enabling code reuse and maintaining clean code.</p>
+        </section>
+        <section>
+            <h2>Defining a Class</h2>
+            <p>A class is defined using the <code>class</code> keyword, followed by the class name and a colon. Inside the class body, you define attributes and methods.</p>
+            <pre><code>class MyClass:
+    def __init__(self, param1, param2):
+        self.attribute1 = param1
+        self.attribute2 = param2
 
+    def method1(self):
+        # Method definition
+        pass</code></pre>
+        </section>
+        <section>
+            <h2>Creating Objects (Instances)</h2>
+            <p>An object or instance of a class is created using the class name followed by parentheses <code>()</code>. This invokes the class's constructor method (<code>__init__</code>) to initialize the object.</p>
+            <pre><code># Creating an object of MyClass
+obj = MyClass("value1", "value2")</code></pre>
+        </section>
+        <section>
+            <h2>Attributes and Methods</h2>
+            <p>Attributes are variables bound to an instance or class, accessible using dot notation (<code>obj.attribute1</code>). Methods are functions defined within a class, accessed similarly (<code>obj.method1()</code>).</p>
+        </section>
+        <section>
+            <h2>Constructor Method (__init__)</h2>
+            <p>The <code>__init__</code> method initializes new instances of a class. It is called automatically when an object is created, allowing initialization of attributes.</p>
+            <pre><code>class MyClass:
+    def __init__(self, param1, param2):
+        self.attribute1 = param1
+        self.attribute2 = param2</code></pre>
+        </section>
+        <section>
+            <h2>Class Inheritance</h2>
+            <p>Python supports inheritance, allowing one class (subclass) to inherit attributes and methods from another (base or parent class). This promotes code reuse and hierarchy.</p>
+            <pre><code># Parent class
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        raise NotImplementedError("Subclass must implement abstract method")
+
+# Child class inheriting from Animal
+class Dog(Animal):
+    def speak(self):
+        return "Woof!"</code></pre>
+        </section>
+        <section>
+            <h2>Encapsulation</h2>
+            <p>Encapsulation is achieved by bundling data (attributes) and methods that operate on the data within a single unit (class). Access modifiers like public, protected, and private help control access to class members.</p>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Classes in Python are fundamental for object-oriented programming, providing structure, encapsulation, and inheritance. Understanding how to define, instantiate, and use classes is essential for building robust and maintainable applications.</p>
+        </section>
+    </main>
 </body>
 </html>

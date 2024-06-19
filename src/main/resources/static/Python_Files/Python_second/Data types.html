@@ -2,9 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Data Types</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            border-left: 3px solid #333;
+            padding: 10px;
+            overflow: auto;
+        }
+        code {
+            font-family: "Courier New", Courier, monospace;
+        }
+    </style>
 </head>
 <body>
-
+    <header>
+        <h1>Python Data Types</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Introduction</h2>
+            <p>Data types in Python define the type of data a variable can hold. Python is dynamically typed, meaning you don't need to declare the type of a variable explicitly. The interpreter determines the type dynamically based on the value assigned to it.</p>
+        </section>
+        <section>
+            <h2>Numeric Types</h2>
+            <p>Python supports several numeric types:</p>
+            <ul>
+                <li><code>int</code> - Integer numbers (e.g., 5, -10)</li>
+                <li><code>float</code> - Floating-point numbers (e.g., 3.14, -2.5)</li>
+                <li><code>complex</code> - Complex numbers (e.g., 2 + 3j)</li>
+            </ul>
+            <pre><code>num1 = 10
+num2 = 3.14
+num3 = 4 + 5j</code></pre>
+        </section>
+        <section>
+            <h2>Boolean Type</h2>
+            <p>The <code>bool</code> type represents boolean values, True or False:</p>
+            <pre><code>flag = True
+is_valid = False</code></pre>
+        </section>
+        <section>
+            <h2>Sequence Types</h2>
+            <p>Python has several sequence types:</p>
+            <ul>
+                <li><code>str</code> - String type for text (e.g., "Hello, Python")</li>
+                <li><code>list</code> - Ordered collection of items (e.g., [1, 2, 3])</li>
+                <li><code>tuple</code> - Immutable ordered collection (e.g., (1, 2, 3))</li>
+            </ul>
+            <pre><code>message = "Hello, Python"
+my_list = [1, 2, 3]
+my_tuple = (4, 5, 6)</code></pre>
+        </section>
+        <section>
+            <h2>Set Types</h2>
+            <p>The <code>set</code> type represents unordered collections of unique items:</p>
+            <pre><code>my_set = {1, 2, 3}</code></pre>
+        </section>
+        <section>
+            <h2>Mapping Type</h2>
+            <p>The <code>dict</code> type is a collection of key-value pairs:</p>
+            <pre><code>my_dict = {"name": "John", "age": 30}</code></pre>
+        </section>
+        <section>
+            <h2>None Type</h2>
+            <p>The <code>NoneType</code> represents a null or absence of value:</p>
+            <pre><code>my_var = None</code></pre>
+        </section>
+        <section>
+            <h2>Summary</h2>
+            <p>Understanding Python's data types is fundamental for writing effective and structured code. Python's dynamic typing and rich set of built-in data types provide flexibility and power in handling various types of data and computations.</p>
+        </section>
+    </main>
 </body>
 </html>
