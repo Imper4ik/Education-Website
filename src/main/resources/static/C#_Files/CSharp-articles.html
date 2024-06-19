@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles in C#</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('imagens/BCKG.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            color: white;
+        }
+
+        .top-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: hsl(0, 0%, 20%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .top-menu li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .top-menu li.right {
+            float: right;
+        }
+
+        .top-menu li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .top-menu li a:hover {
+            background-color: #555;
+        }
+
+        .icon-container {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            color: white;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        main {
+            margin-top: 70px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            max-width: 900px;
+            margin: 80px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        h1, h2 {
+            color: #00ff99; /* Green color for headings */
+        }
+
+        .align-left {
+            text-align: left;
+        }
+
+        pre {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="top-of-the-site">
+    <nav>
+      <ul class="top-menu">
+        <li style="margin-left: 50px;"><a href="Home.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">About ▴</a>
+          <div class="dropdown-content">
+            <a href="c-sharp">C#</a>
+            <a href="c-plus-plus">C++</a>
+            <a href="java">Java</a>
+            <a href="python">Python</a>
+          </div>
+        </li>
+        <li><a href="#docs">Docs</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#other">Other</a></li>
+        <li class="right"><a href="#sign-in">Sign in</a></li>
+        <li class="right"><a href="#sign-up">Sign up</a></li>
+      </ul>
+    </nav>
+
+    <div class="icon-container">
+       <img src="imagens/web-development.png" alt="Icon" class="icon">
+    </div>
+  </div>
+</header>
+
+<main>
+    <h1 class="align-left">Articles in C#</h1>
+    <p class="align-left">In C#, articles, like in natural languages, can be definite or indefinite. However, in programming, the concept translates more into how we manage definite and indefinite instances of classes and objects. Understanding how to declare and instantiate objects is crucial for writing effective C# code.</p>
+    <p class="align-left">Here's an example of defining a class and creating instances:</p>
+    <pre class="align-left">
+        <code>
+using System;
+
+class Article
+{
+    public string Title { get; set; }
+    public string Content { get; set; }
+
+    public Article(string title, string content)
+    {
+        Title = title;
+        Content = content;
+    }
+
+    public void Display()
+    {
+        Console.WriteLine("Title: " + Title);
+        Console.WriteLine("Content: " + Content);
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        // Definite instance
+        Article definiteArticle = new Article("Definite Article", "This is a definite article.");
+        definiteArticle.Display();
+
+        // Indefinite instances
+        Article article1 = new Article("Article 1", "Content of article 1.");
+        Article article2 = new Article("Article 2", "Content of article 2.");
+
+        article1.Display();
+        article2.Display();
+    }
+}
+        </code>
+    </pre>
+    <p class="align-left">In this example, we define a class `Article` with properties `Title` and `Content`. We create a definite instance `definiteArticle` and two indefinite instances `article1` and `article2`. Each instance is initialized with specific values and can call the `Display` method to output its content.</p>
+    <p class="align-left">By understanding how to work with classes and instances in C#, you can manage and manipulate data effectively, creating flexible and maintainable code.</p>
+</main>
+
+</body>
+</html>

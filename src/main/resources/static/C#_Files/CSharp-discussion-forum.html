@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Forum in C#</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('imagens/BCKG.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            color: white;
+        }
+
+        .top-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: hsl(0, 0%, 20%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .top-menu li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .top-menu li.right {
+            float: right;
+        }
+
+        .top-menu li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .top-menu li a:hover {
+            background-color: #555;
+        }
+
+        .icon-container {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            color: white;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+        }
+
+        main {
+            margin-top: 70px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            max-width: 900px;
+            margin: 80px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        h1, h2 {
+            color: #00ff99; /* Green color for headings */
+        }
+
+        .align-left {
+            text-align: left;
+        }
+
+        pre {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+
+        code {
+            color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="top-of-the-site">
+    <nav>
+      <ul class="top-menu">
+        <li style="margin-left: 50px;"><a href="Home.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">About ▴</a>
+          <div class="dropdown-content">
+            <a href="c-sharp">C#</a>
+            <a href="c-plus-plus">C++</a>
+            <a href="java">Java</a>
+            <a href="python">Python</a>
+          </div>
+        </li>
+        <li><a href="#docs">Docs</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#other">Other</a></li>
+        <li class="right"><a href="#sign-in">Sign in</a></li>
+        <li class="right"><a href="#sign-up">Sign up</a></li>
+      </ul>
+    </nav>
+
+    <div class="icon-container">
+       <img src="imagens/web-development.png" alt="Icon" class="icon">
+    </div>
+  </div>
+</header>
+
+<main>
+    <h1 class="align-left">Discussion Forum in C#</h1>
+    <p class="align-left">Creating a discussion forum in C# involves designing a system where users can post topics, reply to discussions, and interact with each other. This typically involves both front-end and back-end development, utilizing web frameworks like ASP.NET for a robust implementation.</p>
+    <p class="align-left">Here's a simplified example of how you might define classes for a discussion forum:</p>
+    <pre class="align-left">
+        <code>
+using System;
+using System.Collections.Generic;
+
+class User
+{
+    public string Username { get; set; }
+    public string Email { get; set; }
+
+    public User(string username, string email)
+    {
+        Username = username;
+        Email = email;
+    }
+}
+
+class Post
+{
+    public User Author { get; set; }
+    public string Content { get; set; }
+    public DateTime Timestamp { get; set; }
+
+    public Post(User author, string content)
+    {
+        Author = author;
+        Content = content;
+        Timestamp = DateTime.Now;
+    }
+}
+
+class Topic
+{
+    public string Title { get; set; }
+    public List<Post> Posts { get; set; }
+
+    public Topic(string title)
+    {
+        Title = title;
+        Posts = new List<Post>();
+    }
+
+    public void AddPost(Post post)
+    {
+        Posts.Add(post);
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        User user1 = new User("Alice", "alice@example.com");
+        User user2 = new User("Bob", "bob@example.com");
+
+        Topic topic = new Topic("Discussion on C#");
+
+        Post post1 = new Post(user1, "I love learning C#!");
+        Post post2 = new Post(user2, "Me too! It's a great language.");
+
+        topic.AddPost(post1);
+        topic.AddPost(post2);
+
+        Console.WriteLine("Topic: " + topic.Title);
+        foreach (var post in topic.Posts)
+        {
+            Console.WriteLine(post.Author.Username + " posted: " + post.Content + " at " + post.Timestamp);
+        }
+    }
+}
+        </code>
+    </pre>
+    <p class="align-left">In this example, we define classes `User`, `Post`, and `Topic` to represent users, posts, and discussion topics in a forum. The `Program` class demonstrates how to create users, a topic, and add posts to the topic, displaying the discussion in the console.</p>
+    <p class="align-left">A complete discussion forum would involve more features such as user authentication, database storage, and a web interface. Using a framework like ASP.NET, you can build a fully functional and scalable discussion forum.</p>
+</main>
+
+</body>
+</html>
