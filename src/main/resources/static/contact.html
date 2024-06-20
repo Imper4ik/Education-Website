@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imagens/web-development.png" type="image/png">
+</head>
+<body>
+
+<header>
+    <div class="top-of-the-site">
+        <nav>
+            <ul class="top-menu">
+                <li style="margin-left: 50px;"><a href="home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">About ▼</a>
+                    <div class="dropdown-content">
+                        <a href="CSharp-home.html">C#</a>
+                        <a href="c-plus-plus.html">C++</a>
+                        <a href="python">Python</a>
+                    </div>
+                </li>
+                <li><a href="docs.html">Docs</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="right"><a href="login.html">Sign in</a></li>
+                <li class="right"><a href="register.html">Sign up</a></li>
+            </ul>
+        </nav>
+
+        <div class="icon-container">
+            <img src="imagens/web-development.png" alt="Icon" class="icon">
+        </div>
+    </div>
+</header>
+<style>
+.top-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: hsl(200, 100%, 20%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.top-menu li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.top-menu li.right {
+    float: right;
+}
+
+.top-menu li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.top-menu li a:hover {
+    background-color: #555;
+}
+
+.icon-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    color: white;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: hsl(200, 100%, 20%);
+    min-width: 94px;
+    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: #555;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+main {
+    margin-top: 70px;
+    color: white;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 80px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+h1, h2 {
+    margin-left: 10px;
+    color: #00ccff;
+}
+
+.firstInfo, .secondInfo, .thirdInfo, .fourthInfo, .fifthInfo, .sixthInfo {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+a {
+    color: #00ccff;
+}
+
+a:hover {
+    color: black;
+    background-color: azure;
+}
+
+p {
+    margin-left: 10px;
+    line-height: 1.5;
+}
+
+.content {
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.content p, .content ul {
+    margin: 10px 0;
+}
+
+ul {
+    padding-left: 20px;
+}
+</style>
+<main>
+    <div class="firstInfo">
+  <h1>Our contacts</h1>
+</div>
+<div class="secondInfo">
+   <a href=""Butouski Mykita 115666 </a>
+   <a href=""Taras Vera 115361 </a>
+   <a href=""Bozhor Dmytro 117498 </a>
+   <a href=""Hrymaliuk Vadym 115551 </a>
+   <a href=""Nykyforuk Vladyslav 115511  </a>
+   <a href=""Skyda David 115414  </a>
+</div>
+</main>
+</body>
+</html>
